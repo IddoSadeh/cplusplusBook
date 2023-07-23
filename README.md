@@ -1,5 +1,5 @@
 # Foreward
-As I progress through my programming journey I learn more and mroe the importance of documentation. This document will overview the development process of my first online coding textbook.
+As I progress through my programming journey I learn more and more the importance of documentation. This document will overview the development process of my first online coding textbook.
 
 The markdown file shows in chronological order how I built this book.
 
@@ -41,10 +41,13 @@ https://jupyterbook.org/en/stable/start/build.html#build-your-book
 
 https://jupyterbook.org/en/stable/start/new-file.html
 
-*publish your book*
+# publish your book
 
 https://jupyterbook.org/en/stable/start/publish.html
 
-*note: every time i make changes, do the following:
+-  every time i make changes, do the following:
 
 To update your online book, make changes to your book’s content on the main branch of your repository, re-build your book with <code>jupyter-book build mybookname/</code> and then use <code>ghp-import -n -p -f mylocalbook/_build/html</code> as before to push the newly built HTML to the <code>gh-pages</code> branch.
+
+- bought domain from google. to connect domain to github:
+
