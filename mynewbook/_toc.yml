@@ -5,6 +5,7 @@ format: jb-book
 root: intro
 parts:
 - caption: C++
+  numbered: True
   chapters:
   - file: cplusplus/start.md
 - caption: AP CSA - Java
@@ -13,10 +14,10 @@ parts:
 - caption: Intro to Programming with Python
   chapters:
   - file: py/start.md
-- caption: Example Files - to delete
-  chapters:
-  - file: examplepages/mdfile.md
-  - file: examplepages/markdown
-  - file: examplepages/notebooks
-  - file: examplepages/markdown-notebooks
+# - caption: Example Files - to delete
+#   chapters:
+#   - file: examplepages/mdfile.md
+#   - file: examplepages/markdown
+#   - file: examplepages/notebooks
+#   - file: examplepages/markdown-notebooks
 
