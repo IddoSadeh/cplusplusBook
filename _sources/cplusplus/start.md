@@ -1,7 +1,10 @@
 
 # Introduction
 
-Why learn C++?
+```{contents}
+```
+
+# Why learn C++?
 
 C++ is a fast language and it's used everywhere, you can find C++ applications everywhere 
 from the bottom of the oceans to the surface of Mars {cite:p}`bjarnestroustrup_2014_programming`. Compared to other programming languages, you could say that C++ is a middle-level language. Programming languages tend to be on a spectrum: the higher the level of programming language, the more it resembles human language, and languages that are closer to being lower level resemble hardware instructions. Higher-level languages such as Python, Java, and C# are very easy to write with and to understand, but they tend to be slower. C++ takes a little more effort to write but it's very fast. It has the benefit of working closely with machine hardware while still somewhat resembling human language.
