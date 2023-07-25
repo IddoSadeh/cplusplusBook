@@ -1,0 +1,649 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2. Hello World &#8212; Programmado</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'cplusplus/hello';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Nothin Here Yet :(" href="../java/start.html" />
+    <link rel="prev" title="1. Introduction" href="start.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Programmado</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome!
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="start.html">1. Introduction</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Hello World</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">AP CSA - Java</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../java/start.html">Nothin Here Yet :(</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Intro to Programming with Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../py/start.html">Nothin Here Yet :(</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/IddoSadeh/programado" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/IddoSadeh/programado/issues/new?title=Issue%20on%20page%20%2Fcplusplus/hello.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/cplusplus/hello.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Hello World</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-first-program">2.1. Your First Program</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comments">2.1.1. Comments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#include">2.1.2. #include</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#std">2.1.3. std::</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.1.4. &lt;&lt;</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#int-main">2.1.5. int main()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.1.6. ;</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#errors">2.2. Errors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-errors">2.2.1. Syntax errors</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliography">2.3. Bibliography</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="hello-world">
+<h1><a class="toc-backref" href="#id7"><span class="section-number">2. </span>Hello World</a><a class="headerlink" href="#hello-world" title="Permalink to this headline">#</a></h1>
+<div class="contents topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#hello-world" id="id7">Hello World</a></p>
+<ul>
+<li><p><a class="reference internal" href="#your-first-program" id="id8">Your First Program</a></p>
+<ul>
+<li><p><a class="reference internal" href="#comments" id="id9">Comments</a></p></li>
+<li><p><a class="reference internal" href="#include" id="id10">#include</a></p></li>
+<li><p><a class="reference internal" href="#std" id="id11">std::</a></p></li>
+<li><p><a class="reference internal" href="#id1" id="id12">&lt;&lt;</a></p></li>
+<li><p><a class="reference internal" href="#int-main" id="id13">int main()</a></p></li>
+<li><p><a class="reference internal" href="#id2" id="id14">;</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#errors" id="id15">Errors</a></p>
+<ul>
+<li><p><a class="reference internal" href="#syntax-errors" id="id16">Syntax errors</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#bibliography" id="id17">Bibliography</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="your-first-program">
+<h2><a class="toc-backref" href="#id8"><span class="section-number">2.1. </span>Your First Program</a><a class="headerlink" href="#your-first-program" title="Permalink to this headline">#</a></h2>
+<p>In the previous chapter we wrote our first C++ program:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="c1"> //line 1</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="c1">//line 2</span>
+<span class="p">{</span><span class="w"> </span><span class="c1">//line 3</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Hello World&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">//line 4</span>
+<span class="p">}</span><span class="w"> </span><span class="c1">//line 5</span>
+</pre></div>
+</div>
+<p>Lets make some sense of the different components of this code before we move on to new topics.</p>
+<div class="section" id="comments">
+<h3><a class="toc-backref" href="#id9"><span class="section-number">2.1.1. </span>Comments</a><a class="headerlink" href="#comments" title="Permalink to this headline">#</a></h3>
+<p>As you may have noticed, the code block above is a bit different than from the on in the previous chapter. The difference lies in the comments I added so I can refer to the different lines of code throughout this chapter.</p>
+<p>Throughout your coding journey you will write a lot of code. You will read a lot of code. And others will read your code. It is therefore important to keep our code clean and legible. Comments are one way to help us do so.</p>
+<p>There are two ways to write comments in C++. For single line comments we use two back slashes:</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// This is a single line comment</span>
+</pre></div>
+</div>
+<p>And for Multi line comments we use a sequence of the form slash, asterisk, text, asterik, slash as follows:</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/* </span>
+<span class="cm">This is a multi line comment</span>
+<span class="cm">*/</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="include">
+<h3><a class="toc-backref" href="#id10"><span class="section-number">2.1.2. </span>#include</a><a class="headerlink" href="#include" title="Permalink to this headline">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">#include</span></code> statement in C++ is a preprocessor directive. It instructs the computer what external files or libraries are needed to run this program. These files and libraries are called <strong>header files</strong>  in C++</p>
+<p>In line 1 we include the <code class="docutils literal notranslate"><span class="pre">iostream</span></code> library, which is needed for the Input/Output (I/O) communication with your console. In this code, we need it so the computer can understand what the standard ouput stream <code class="docutils literal notranslate"><span class="pre">cout</span></code>, and what the endline operation <code class="docutils literal notranslate"><span class="pre">endl</span></code> means. In the future, you will probably also use the standard input stream <code class="docutils literal notranslate"><span class="pre">cin</span></code>.</p>
+<p>We wont go to deep into header files and libraries until later on in this textbook. In the next few chapters, we will use pre built header files and introduce tham as needed.</p>
+</div>
+<div class="section" id="std">
+<h3><a class="toc-backref" href="#id11"><span class="section-number">2.1.3. </span>std::</a><a class="headerlink" href="#std" title="Permalink to this headline">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">std</span></code> is an abbreviation for “standard”. When we use <code class="docutils literal notranslate"><span class="pre">std::</span></code> we are telling the computer we want to use the standard namespace. Namespace is an advanced topic we may go over in later chapters. In short, the computer will know we are referring to the <code class="docutils literal notranslate"><span class="pre">cout</span></code> defined in the <code class="docutils literal notranslate"><span class="pre">iostrem</span></code> header when we use <code class="docutils literal notranslate"><span class="pre">std::</span></code>.</p>
+<p>Using this abbreviation might get tiresome in long programs. We can fix this by letting the computer know we always want to use the standard namespace in the following manner:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="c1"> </span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span>
+<span class="p">{</span><span class="w"> </span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Hello World&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"> </span>
+<span class="p">}</span><span class="w"> </span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h3><a class="toc-backref" href="#id12"><span class="section-number">2.1.4. </span>&lt;&lt;</a><a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code> is a stream insertion operator. You’ll always want to pair this with the <code class="docutils literal notranslate"><span class="pre">cout</span></code> command. The input operator for <code class="docutils literal notranslate"><span class="pre">cin</span></code> will look similar, but backwards: <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>.</p>
+</div>
+<div class="section" id="int-main">
+<h3><a class="toc-backref" href="#id13"><span class="section-number">2.1.5. </span>int main()</a><a class="headerlink" href="#int-main" title="Permalink to this headline">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">main()</span></code> is a function the computer utilizes to know where to start executing your program. We’ll learn all about functions very soon.</p>
+<p>For now, all you need to remember (but not necessarly understand) is that functions will have 5 main components:</p>
+<ul class="simple">
+<li><p>A <em>return type</em>, in this case int.</p></li>
+<li><p>The return type will be followed by the <em>function name</em>, in this case main.</p></li>
+<li><p>The function name is followed by <em>circle brackets</em>, which can be used to define necessary inputs required for the funciton to work. In this case we dont need any inputs so the brackets are empty.</p></li>
+<li><p><em>Curly brackets</em> to associate code with a function.</p></li>
+<li><p><em>Code</em> that goes inside the brackets.</p></li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h3><a class="toc-backref" href="#id14"><span class="section-number">2.1.6. </span>;</a><a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<p>The last part of the code is the semicolon. The semicolon <em>must</em> be used after any executble line of code that is not a function or a #include statement</p>
+</div>
+</div>
+<div class="section" id="errors">
+<h2><a class="toc-backref" href="#id15"><span class="section-number">2.2. </span>Errors</a><a class="headerlink" href="#errors" title="Permalink to this headline">#</a></h2>
+<p>Errors are an integral part of building a program. You are very unlikely to write perfect code, even with years of experience. Errors act as a natural feedback loop that will allow for writing a working program. We can genarally categorize errors in to three categroies:</p>
+<ul class="simple">
+<li><p>Syntax Errors</p></li>
+<li><p>Runtime Erros</p></li>
+<li><p>Logic Errors</p></li>
+</ul>
+<p>Lets build upon the code we wrote to understand the three types of errors.</p>
+<div class="section" id="syntax-errors">
+<h3><a class="toc-backref" href="#id16"><span class="section-number">2.2.1. </span>Syntax errors</a><a class="headerlink" href="#syntax-errors" title="Permalink to this headline">#</a></h3>
+<p>The word Syntax is defined as <em>the rules that state how words and phrases must be used in a computer language</em> by the oxford learners dictionary <span id="id3">[<a class="reference internal" href="../examplepages/markdown.html#id4" title="Oxford learners dictionary. 2021. URL: https://www.oxfordlearnersdictionaries.com/definition/english/syntax."><em>Oxford Learners Dictionary</em>, 2021</a>]</span>.</p>
+<p>A syntax error occurs <em>before</em> code execution. In other words, when you try to build your program, the computer (the compiler) will check if every word you used is defined in C++, and if you left out any important details in your code.</p>
+<p>To truly understand syntax errros, try to build the following code and fix any errros:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span>
+
+<span class="nn">int</span><span class="w"> </span><span class="nn">main</span><span class="p">[]</span><span class="w"> </span>
+<span class="p">{</span><span class="w"> </span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Hello World&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"> </span>
+<span class="p">}</span><span class="w"> </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="bibliography">
+<h2><a class="toc-backref" href="#id17"><span class="section-number">2.3. </span>Bibliography</a><a class="headerlink" href="#bibliography" title="Permalink to this headline">#</a></h2>
+<div class="docutils container" id="id4">
+<dl class="citation">
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id3">syn21</a></span></dt>
+<dd><p>Oxford learners dictionary. 2021. URL: <a class="reference external" href="https://www.oxfordlearnersdictionaries.com/definition/english/syntax">https://www.oxfordlearnersdictionaries.com/definition/english/syntax</a>.</p>
+</dd>
+<dt class="label" id="id5"><span class="brackets">Str14</span></dt>
+<dd><p>Bjarne Stroustrup. <em>Programming : principles and practice using C++</em>. Addison-Wesley, 2 edition, 2014.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./cplusplus"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="start.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Introduction</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../java/start.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Nothin Here Yet :(</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-first-program">2.1. Your First Program</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comments">2.1.1. Comments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#include">2.1.2. #include</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#std">2.1.3. std::</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.1.4. &lt;&lt;</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#int-main">2.1.5. int main()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.1.6. ;</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#errors">2.2. Errors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-errors">2.2.1. Syntax errors</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliography">2.3. Bibliography</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Iddo Sadeh
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
