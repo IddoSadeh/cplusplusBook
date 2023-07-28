@@ -1,8 +1,15 @@
-# Hello World
+# Your First Program
+In this chapter we will go over the the program we wrote at the end of the previous chapter, and use some momentum to learn some basic programming terms and concepts.
+By the end of this chapter you should be able to:
+- Understand the building blocks of a basic C++ program.
+- Identify types of Errors in your program.
+- Know the basic ways to save values in C++.
+
+## Table of Contents:
 ```{contents}
 ```
 
-## Your First Program
+## Hello World
 
 In the previous chapter we wrote our first C++ program:
 
@@ -36,7 +43,7 @@ This is a multi line comment
 */
 ```
 
-### #include
+### Header Files
 
 The `#include` statement in C++ is a preprocessor directive. It instructs the computer what external files or libraries are needed to run this program. These files and libraries are called **header files**  in C++ 
 
@@ -44,7 +51,12 @@ In line 1 we include the `iostream` library, which is needed for the Input/Outpu
 
 We wont go to deep into header files and libraries until later on in this textbook. In the next few chapters, we will use pre built header files and introduce tham as needed.
 
-### std::
+### Input and Output
+
+The program we wrote writes to our console. If it wasn't clear from the previous section, we did this with the help of the keyword `cout`. If we want to read from the console, we will use the keyword `cin`. 
+
+There do exist other ways to to read and write in a program, but for the next few lessons all you'll need is `cout` and `cin`.
+### Standard Namespace
 
 ``std`` is an abbreviation for "standard". When we use ``std::`` we are telling the computer we want to use the standard namespace. Namespace is an advanced topic we may go over in later chapters. In short, the computer will know we are referring to the ``cout`` defined in the ``iostrem`` header when we use ``std::``.
 
@@ -61,11 +73,11 @@ int main()
 } 
 ```
 
-### <<
+### Steam Operators
 
 ``<<`` is a stream insertion operator. You'll always want to pair this with the ``cout`` command. The input operator for ``cin`` will look similar, but backwards: ``>>``.
 
-### int main()
+### Main Function
 
 ``int main()`` is a function the computer utilizes to know where to start executing your program. We'll learn all about functions very soon. 
 
@@ -76,9 +88,9 @@ For now, all you need to remember (but not necessarly understand) is that functi
 - *Curly brackets* to associate code with a function. 
 - *Code* that goes inside the brackets.
 
-### ;
+### Semicolons
 
-The last part of the code is the semicolon. The semicolon *must* be used after any executble line of code that is not a function or a #include statement
+The last part of the code is the semicolon. The semicolon *must* be used after any executble line of code that is not a function or a #include statement. Why? Errors 🤮.
 
 ## Errors
 
@@ -106,6 +118,78 @@ int main[]
     cout << "Hello World" << endl; 
 } 
 ```
+
+
+
+### Runtime errors
+Runtime errors are errors you experience after your program is already running. A common type of runtime error is referred to as an *input error*, these types of errors occur when a user inputs a value which the program can not handle such as division by 0.
+
+Try running the code below and inputing 0 to see what a runtime error looks like:
+
+```c++
+#include <iostream> 
+using namespace std;
+
+int main() 
+{ 
+    cout << "This program will divide 5 by any number you'd like" << endl; 
+    int i = 5;
+    cout << "Inpute a number to divide:" << endl;
+    int j;
+    cin >> j;
+    cout << "the result is " << i/j;
+} 
+```
+
+**Food for thought:"" How would you fix this error?
+
+### Logic Errors
+Logic errors may be the most dangerous errors because occur when a program does not do what we intend it to do. Often we won't even notice we have a logic error until we fail an exam at college or when [a mars orbiter stops transmitting signals back to earth](https://solarsystem.nasa.gov/missions/mars-climate-orbiter/in-depth/).
+
+Can you spot the logic error in the following code:
+```c++
+#include <iostream> 
+using namespace std;
+
+int main() 
+{ 
+    cout << "This program will multiple 5 by any number you'd like" << endl; 
+    int i = 5;
+    cout << "Inpute a number to multiply:" << endl;
+    int j;
+    cin >> j;
+    cout << "the result is " << i*j;
+} 
+```
+The problem in the code above is the types we used 😕. But what are types?
+
+## Types and Variables
+
+In the section above you may have noticed the `int` keyword. To understand what an `int` is and why we saw a logic error with the code above, we will need to learn some basic terminology. 
+
+Essentialy to do anything practical while programming, we need to be able to save and reuse data. To do so we create what is referred to as **variables**. Variables are stored in what we call **objects**. To access the objects we need a **name**, and to define constraints on what an object can and cannot do, we will give every variable a **type** as well.
+
+If this seems a bit complex picture our computer as a warehouse filled with storage units. In this warehouse:
+- The storage units are **objects**.
+- To access/use the storage units we need to define a **variable**.
+- When we use the storage unit we want to make sure that we do it within the constraints of the warehouse. We do this by defining a **type**.
+- To find a storage unit we give it a **name** which the warehouse workers (our computer) know how to map to its physical location.
+
+Formally, when ever we store new data we will write a line of code like this:
+
+```C++
+Type name = newData;
+```
+
+The common types and their constraints you will see in the next few lessons are:
+- `int` - Short for integers, stores a whole number value.
+- `double`- Stores floating-point numbers (i.e. decimals)
+- `char` - Short for character, stores individual characters.
+- `string` - A "string" of characters, stores text.
+- `bool` - Short for boolean, a logic type (`true` or `false`).
+
+So to circle back to what is `int` and why we saw an error. When we defined a variable as `int`, our computer expected we only store whole numbers in it. If you tried to enter a decimal in the program with the logic error, the computer will ignore any decimal input. To fix our logic error it, we should have used the `double` type to insure our code will work for all inputs.
+
 
 
 ## Bibliography

@@ -1,6 +1,11 @@
 
 # Introduction
-
+This Chapter will introduce you to C++ and go over the requirments for setting up your C++ environemnt. By the end of the chpter you will:
+- Have some background about C++.
+- Familiriaze yourself with the command line and version control systems.
+- Setup your C++ working environment.
+- Run your first C++ program.
+## Table of Contents
 ```{contents}
 ```
 
