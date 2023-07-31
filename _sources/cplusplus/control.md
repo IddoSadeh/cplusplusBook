@@ -11,7 +11,7 @@ In the last chapter we got technical and learned about Variables and Data types.
 ```{contents}
 ```
 
-# Control Structures
+## Intro
 
 Control structures manage the execution flow of your program. They allow your code to make decisions based on conditions or repeat an operation multiple times. C++ has several control structures, which we will cover in this chapter: `if`, `else`, `while`, `for`, and `switch`.
 
