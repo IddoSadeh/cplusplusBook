@@ -1,0 +1,1174 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3. More on Variables and Types &#8212; Programmado</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'cplusplus/variables';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Nothin Here Yet :(" href="../java/start.html" />
+    <link rel="prev" title="2. Your First Program" href="hello.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Programmado</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome!
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="start.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hello.html">2. Your First Program</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. More on Variables and Types</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">AP CSA - Java</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../java/start.html">Nothin Here Yet :(</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Intro to Programming with Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../py/start.html">Nothin Here Yet :(</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/IddoSadeh/programado" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/IddoSadeh/programado/issues/new?title=Issue%20on%20page%20%2Fcplusplus/variables.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/cplusplus/variables.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>More on Variables and Types</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">3.1. Table of Contents</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables">3.2. Variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-declaration-and-assignment-continued">3.2.1. Variable Declaration and Assignment Continued</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constants">3.2.2. Constants</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#naming-conventions">3.2.3. Naming Conventions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#naming-rules">3.2.4. Naming Rules</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types">3.3. Types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-systems-binary-and-decimal">3.3.1. Counting Systems: Binary, and Decimal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integers">3.3.2. Integers</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#signed-vs-unsigned">3.3.2.1. Signed vs Unsigned</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#max-and-min-integers">3.3.2.2. Max and Min Integers</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-overflow">3.3.2.3. Integer Overflow</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-operations-with-integers">3.3.2.4. Mathematical Operations with Integers</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#double">3.3.3. Double</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#floating-point-representation">3.3.3.1. Floating-Point Representation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-operations-with-doubles">3.3.3.2. Mathematical Operations with Doubles</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#char">3.3.4. Char</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string">3.3.5. String</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean">3.3.6. Boolean</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-representation">3.3.6.1. Boolean Representation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-operations">3.3.6.2. Boolean Operations</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#type-conversions">3.3.7. Type Conversions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#implicit-conversion">3.3.7.1. Implicit Conversion</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#explicit-conversion">3.3.7.2. Explicit Conversion</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-functions">3.3.7.3. Conversion Functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">3.4. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-questions">3.5. Practice Questions</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="more-on-variables-and-types">
+<h1><a class="toc-backref" href="#id1"><span class="section-number">3. </span>More on Variables and Types</a><a class="headerlink" href="#more-on-variables-and-types" title="Permalink to this headline">#</a></h1>
+<p>In the previous chapter I introduced you to variables and data types. In this chapter we will dive deeper into these topics. By the end of the chapter you will:</p>
+<ul class="simple">
+<li><p>Familiarize yourself with some more vocabulary and ways to use variables.</p></li>
+<li><p>Learn variable naming conventions.</p></li>
+<li><p>Know about constant variables.</p></li>
+<li><p>Understand Binary, Decimal and Hexidecimal counting systems.</p></li>
+<li><p>See the diifferent types in their constraints.</p></li>
+</ul>
+<div class="section" id="table-of-contents">
+<h2><a class="toc-backref" href="#id2"><span class="section-number">3.1. </span>Table of Contents</a><a class="headerlink" href="#table-of-contents" title="Permalink to this headline">#</a></h2>
+<div class="contents topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#more-on-variables-and-types" id="id1">More on Variables and Types</a></p>
+<ul>
+<li><p><a class="reference internal" href="#table-of-contents" id="id2">Table of Contents</a></p></li>
+<li><p><a class="reference internal" href="#variables" id="id3">Variables</a></p>
+<ul>
+<li><p><a class="reference internal" href="#variable-declaration-and-assignment-continued" id="id4">Variable Declaration and Assignment Continued</a></p></li>
+<li><p><a class="reference internal" href="#constants" id="id5">Constants</a></p></li>
+<li><p><a class="reference internal" href="#naming-conventions" id="id6">Naming Conventions</a></p></li>
+<li><p><a class="reference internal" href="#naming-rules" id="id7">Naming Rules</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#types" id="id8">Types</a></p>
+<ul>
+<li><p><a class="reference internal" href="#counting-systems-binary-and-decimal" id="id9">Counting Systems: Binary, and Decimal</a></p></li>
+<li><p><a class="reference internal" href="#integers" id="id10">Integers</a></p>
+<ul>
+<li><p><a class="reference internal" href="#signed-vs-unsigned" id="id11">Signed vs Unsigned</a></p></li>
+<li><p><a class="reference internal" href="#max-and-min-integers" id="id12">Max and Min Integers</a></p></li>
+<li><p><a class="reference internal" href="#integer-overflow" id="id13">Integer Overflow</a></p></li>
+<li><p><a class="reference internal" href="#mathematical-operations-with-integers" id="id14">Mathematical Operations with Integers</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#double" id="id15">Double</a></p>
+<ul>
+<li><p><a class="reference internal" href="#floating-point-representation" id="id16">Floating-Point Representation</a></p></li>
+<li><p><a class="reference internal" href="#mathematical-operations-with-doubles" id="id17">Mathematical Operations with Doubles</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#char" id="id18">Char</a></p></li>
+<li><p><a class="reference internal" href="#string" id="id19">String</a></p></li>
+<li><p><a class="reference internal" href="#boolean" id="id20">Boolean</a></p>
+<ul>
+<li><p><a class="reference internal" href="#boolean-representation" id="id21">Boolean Representation</a></p></li>
+<li><p><a class="reference internal" href="#boolean-operations" id="id22">Boolean Operations</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#type-conversions" id="id23">Type Conversions</a></p>
+<ul>
+<li><p><a class="reference internal" href="#implicit-conversion" id="id24">Implicit Conversion</a></p></li>
+<li><p><a class="reference internal" href="#explicit-conversion" id="id25">Explicit Conversion</a></p></li>
+<li><p><a class="reference internal" href="#conversion-functions" id="id26">Conversion Functions</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#summary" id="id27">Summary</a></p></li>
+<li><p><a class="reference internal" href="#practice-questions" id="id28">Practice Questions</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="variables">
+<h2><a class="toc-backref" href="#id3"><span class="section-number">3.2. </span>Variables</a><a class="headerlink" href="#variables" title="Permalink to this headline">#</a></h2>
+<p>We learned a bit about variables in the previous chapter. You may recall that if we want to store new data we will use the notation:</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="n">type</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newData</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>However, there is a bit more to learn about variables before we can get started on writing more complex programming.</p>
+<div class="section" id="variable-declaration-and-assignment-continued">
+<h3><a class="toc-backref" href="#id4"><span class="section-number">3.2.1. </span>Variable Declaration and Assignment Continued</a><a class="headerlink" href="#variable-declaration-and-assignment-continued" title="Permalink to this headline">#</a></h3>
+<p>So far we saw that variables can be declared in the following ways:</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="n">type</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newData</span><span class="p">;</span><span class="w"> </span><span class="cm">/* Declare and assign anew variable at the same type */</span>
+
+<span class="n">type</span><span class="w"> </span><span class="n">name2</span><span class="p">;</span><span class="w"> </span><span class="cm">/* Declare a variable for future use*/</span>
+</pre></div>
+</div>
+<p>Variable declaration however is not limited to declaring only one variable. We can also declare mutliple variables on the same line in the following way:</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="n">type</span><span class="w"> </span><span class="n">name1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newData1</span><span class="p">,</span><span class="w"> </span><span class="n">name2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newData2</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newData3</span><span class="p">;</span><span class="w"> </span><span class="cm">/* Declare and assign mutliple variables at the same type */</span>
+
+<span class="n">type</span><span class="w"> </span><span class="n">name4</span><span class="p">,</span><span class="w"> </span><span class="n">name5</span><span class="p">,</span><span class="w"> </span><span class="n">name6</span><span class="p">,</span><span class="w"> </span><span class="n">name7</span><span class="p">;</span><span class="w"> </span><span class="cm">/* Declare multiple variables for future use*/</span>
+</pre></div>
+</div>
+<p>Another handy trick is the ability to assign the same value to multiple variables as such:</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="n">name4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name7</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newData4</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Fruthermore, you can actually also save data from variable in to another:</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="n">name3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name2</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>All the examples above may seem a bit abstract. Try running the following example, and then change the code to use the new declaration and assignment methods we learned makiung sure the code functionality stays the same. If you want to challenge yourself, try and make the code inside the <code class="docutils literal notranslate"><span class="pre">main</span></code> function no more than 4 lines long.</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="c1"> </span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span>
+<span class="p">{</span><span class="w"> </span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">pi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14</span><span class="p">;</span><span class="w"> </span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">volume</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">input</span><span class="p">;</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;enter a radius of a sphere to get its volume&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">input</span><span class="p">;</span>
+<span class="w">    </span><span class="n">radius</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">input</span><span class="p">;</span>
+<span class="w">    </span><span class="n">volume</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">radius</span><span class="o">*</span><span class="n">radius</span><span class="o">*</span><span class="n">radius</span><span class="o">*</span><span class="n">pi</span><span class="p">;</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">volume</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="constants">
+<h3><a class="toc-backref" href="#id5"><span class="section-number">3.2.2. </span>Constants</a><a class="headerlink" href="#constants" title="Permalink to this headline">#</a></h3>
+<p>I your still reading, there is one more variable concept that is very useful. In this stage of the coding journey it may not seem so, but in the future, it will ensure your code is secure when you write projects with thousands of lines.</p>
+<p>You may recall that I mentioned that variables can be changed throughout the program. However, some variables <em>should not</em> be changed. For example, pi is a constant that mostly hasn’t changed in a few hundred years. In such cases <code class="docutils literal notranslate"><span class="pre">C++</span></code> has a keywoard that ensures a variable can never be changed. If you wish to create such a variable use the keyword <code class="docutils literal notranslate"><span class="pre">const</span></code>, for example:</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">PI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>I encourage you, the reader, to see for yourself that adding the const keyword before a variable declaration does in fact make it read-only. You can do so by trying to play with the following program:</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="c1"> </span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span>
+<span class="p">{</span><span class="w"> </span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">PI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14</span><span class="p">;</span>
+<span class="w">    </span><span class="n">PI</span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">PI</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="naming-conventions">
+<h3><a class="toc-backref" href="#id6"><span class="section-number">3.2.3. </span>Naming Conventions</a><a class="headerlink" href="#naming-conventions" title="Permalink to this headline">#</a></h3>
+<p>You probably noticed something odd when I declared the constant variable in the previous example. I opted to use uppercase letters for the variable name, but why?</p>
+<p>In programming, the way you name your variables, functions, classes, and other entities is known as a naming convention. The convention adopted can vary between programming languages, projects, or even between different programmers on the same team. However, they all serve the same goal: to make the code more readable and understandable, not just for others, but also for your future self.</p>
+<p>One such, widely accepted, convention is to use uppercase letters for the names of constant variables. This practice is a convention that comes from an older language called C, in which constants were often defined using a preprocessor directive #define, which by convention was always written in uppercase.</p>
+<p>Another naming convention typically followed in C++ involves the use of “camel case” or “snake case”.</p>
+<p>In camel case, each new word starts with a capital letter, and there are no underscores between words. For example:</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">myAwesomeVariable</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>In snake case, all letters are lowercase, and underscores separate words. For example:</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">my_awesome_variable</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>These conventions are not mandated by the C++ language itself, but they have become standard practice in many codebases. It is important to note that while the language doesn’t require you to follow these conventions, many C++ style guides and coding standards do. They make your code more readable and easier to maintain.</p>
+<p><strong>Consistency Is Key</strong></p>
+<p>The most important aspect of any naming convention is consistency. When working on a project, especially in a team, it is crucial to agree on a naming convention and stick to it throughout the project. If one part of the code uses snake case and another uses camel case, it can make the codebase harder to read and understand.</p>
+<p>Naming conventions can also extend beyond just variable names. They can cover function names, class names, file names, and other entities in your code. In subsequent sections, we will cover these in detail and explore the commonly followed conventions in C++.</p>
+<p>Remember, code is more often read than written, so clarity should always be a priority. Good naming conventions, well-applied, are a significant step in that direction.</p>
+</div>
+<div class="section" id="naming-rules">
+<h3><a class="toc-backref" href="#id7"><span class="section-number">3.2.4. </span>Naming Rules</a><a class="headerlink" href="#naming-rules" title="Permalink to this headline">#</a></h3>
+<p>Aside from naming conventions, there are also naming rules that <strong>must</strong> be followed. The general rules are:</p>
+<ul class="simple">
+<li><p>Names contain letters, digits and underscores. Nothing else.</p></li>
+<li><p>Names must begin with either a letter or an underscore (_).</p></li>
+<li><p>Names are case sensitive (pi and PI are different variables).</p></li>
+<li><p>Reserved words cannot be used as names.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="types">
+<h2><a class="toc-backref" href="#id8"><span class="section-number">3.3. </span>Types</a><a class="headerlink" href="#types" title="Permalink to this headline">#</a></h2>
+<p>In the previous chapter, we discussed some of the basic types in C++ such as <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">double</span></code>, <code class="docutils literal notranslate"><span class="pre">char</span></code>, <code class="docutils literal notranslate"><span class="pre">string</span></code>, and <code class="docutils literal notranslate"><span class="pre">bool</span></code>. In this chapter, we will delve deeper into these types, introduce some concepts related to how data is represented in computers, and understand the implications of these representations.</p>
+<div class="section" id="counting-systems-binary-and-decimal">
+<h3><a class="toc-backref" href="#id9"><span class="section-number">3.3.1. </span>Counting Systems: Binary, and Decimal</a><a class="headerlink" href="#counting-systems-binary-and-decimal" title="Permalink to this headline">#</a></h3>
+<p>Before diving into specific types, it’s important to understand the number systems that computers use to store and manipulate data: binary, decimal, and hexadecimal.</p>
+<p><strong>Decimal</strong></p>
+<p>The decimal system is the base-10 system we use in everyday life, comprises ten digits, from 0 to 9. This is the system we are most familiar with.</p>
+<p><strong>Binary</strong></p>
+<p>Computers fundamentally understand only two states—on and off, represented by 0 and 1. This is the binary system, or base-2. All computer data is ultimately represented as a series of these binary digits, or “bits”. A group of 8 bits is commonly referred to as a byte.</p>
+<p>We can convert from binary to decimal using the positional values. Each bit in a binary number represents 2 raised to an exponent, based on its position starting at the right most value.</p>
+<p>For example, if we wanted to convert the binary number 11011 to decimal we can do the following:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="text-center head"><p>Bit 4</p></th>
+<th class="text-center head"><p>Bit 3</p></th>
+<th class="text-center head"><p>Bit 2</p></th>
+<th class="text-center head"><p>Bit 1</p></th>
+<th class="text-center head"><p>Bit 0</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Binary (B)</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Position (P)</p></td>
+<td class="text-center"><p>4</p></td>
+<td class="text-center"><p>3</p></td>
+<td class="text-center"><p>2</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>2^P</p></td>
+<td class="text-center"><p>16</p></td>
+<td class="text-center"><p>8</p></td>
+<td class="text-center"><p>4</p></td>
+<td class="text-center"><p>2</p></td>
+<td class="text-center"><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>B*2^P</p></td>
+<td class="text-center"><p>16</p></td>
+<td class="text-center"><p>8</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>2</p></td>
+<td class="text-center"><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>Then, to find the decimal equivalent of the binary number 11011, we sum up the values in the last row (B*2^P):</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+</tbody>
+</table>
+<p>16 + 8 + 0 + 2 + 1 = 27</p>
+</div>
+<div class="section" id="integers">
+<h3><a class="toc-backref" href="#id10"><span class="section-number">3.3.2. </span>Integers</a><a class="headerlink" href="#integers" title="Permalink to this headline">#</a></h3>
+<p>In C++, integers are stored in binary. Depending on the system and the compiler, an <code class="docutils literal notranslate"><span class="pre">int</span></code> in C++ is typically 32 bits, or 4 bytes. That means it can represent 2^32 unique values.</p>
+<div class="section" id="signed-vs-unsigned">
+<h4><a class="toc-backref" href="#id11"><span class="section-number">3.3.2.1. </span>Signed vs Unsigned</a><a class="headerlink" href="#signed-vs-unsigned" title="Permalink to this headline">#</a></h4>
+<p>By default, an <code class="docutils literal notranslate"><span class="pre">int</span></code> in <code class="docutils literal notranslate"><span class="pre">C++</span></code> is <strong>signed</strong>, meaning it can represent both positive and negative numbers. Half of the 2^32 unique values represent negative numbers, and the other half represent positive numbers.</p>
+<p>If only positive values are needed, the <strong>unsigned</strong> keyword can be used. An <code class="docutils literal notranslate"><span class="pre">unsigned</span> <span class="pre">int</span></code> can represent twice as many positive numbers because all 2^32 values are used for positive numbers.</p>
+</div>
+<div class="section" id="max-and-min-integers">
+<h4><a class="toc-backref" href="#id12"><span class="section-number">3.3.2.2. </span>Max and Min Integers</a><a class="headerlink" href="#max-and-min-integers" title="Permalink to this headline">#</a></h4>
+<p>in a 32-bit integer in C++, one of those 32 bits is used for the sign. This representation is known as two’s complement, which is widely used for integer representation in computers.</p>
+<p>Here is a breakdown:</p>
+<ul class="simple">
+<li><p>The most significant bit (MSB), or the leftmost bit in the bit string, is typically used as the sign bit.</p></li>
+<li><p>When the sign bit is 0, the number is positive or zero. The remaining 31 bits are used to represent the magnitude (size) of the number.</p></li>
+<li><p>When the sign bit is 1, the number is negative. In two’s complement representation, the negative number is not just the positive representation with the sign bit flipped. Instead, to get a negative number, you take the positive number, flip all the bits (this is the one’s complement), and then add 1.</p></li>
+</ul>
+<p>This approach allows for simple and efficient arithmetic operations and also neatly solves the issue of representing zero and negatives. It does, however, mean that the range of integers that can be represented is not symmetric. A 32-bit integer in C++ can represent numbers in the range of -2,147,483,648 (-2^31) to 2,147,483,647 (2^31 - 1).</p>
+<p>If this is a bit confusing, here are two examples:</p>
+<p><strong>Example 1</strong></p>
+<p>A 2-bit system provides a good simple example. In a 2-bit system, we can represent numbers from -2 to 1.</p>
+<p>Let’s take the number 1 as an example. In a 2-bit binary format, it would be:</p>
+<p><code class="docutils literal notranslate"><span class="pre">01</span></code></p>
+<p>To find the negative of this number, i.e., -1, we first find the one’s complement (flip every bit):</p>
+<p><code class="docutils literal notranslate"><span class="pre">10</span></code></p>
+<p>Next, we add 1 to get the two’s complement:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span>
+<span class="o">+</span><span class="mi">1</span>
+<span class="o">--</span>
+<span class="mi">11</span>
+</pre></div>
+</div>
+<p>So -1 is represented as 11 in a 2-bit system.</p>
+<p>Here is the complete 2-bit two’s complement table for reference:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">00</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="mi">01</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="mi">10</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span> <span class="p">(</span><span class="n">two</span><span class="s1">&#39;s complement of 10 is 01+1=10, represents -2)</span>
+<span class="mi">11</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="p">(</span><span class="n">two</span><span class="s1">&#39;s complement of 01 is 10+1=11, represents -1)</span>
+</pre></div>
+</div>
+<p><strong>Example 2</strong></p>
+<p>In binary, let’s say we have the number 5, which is represented as follows in an 8-bit binary format (I’m using 8 bits for simplicity):</p>
+<p><code class="docutils literal notranslate"><span class="pre">0000</span> <span class="pre">0101</span></code></p>
+<p>To get the negative of this number, i.e., -5, in the two’s complement representation, we don’t just flip the sign bit (the leftmost bit). We first get the one’s complement of the number, i.e., we flip every bit:</p>
+<p><code class="docutils literal notranslate"><span class="pre">1111</span> <span class="pre">1010</span></code></p>
+<p>This gives us the one’s complement of 5. However, in two’s complement representation, we don’t stop here. We then add 1 to this result:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1111</span> <span class="mi">1010</span>
+         <span class="o">+</span><span class="mi">1</span>
+<span class="o">---------</span>
+<span class="mi">1111</span> <span class="mi">1011</span>
+</pre></div>
+</div>
+<p>So, -5 is represented as <code class="docutils literal notranslate"><span class="pre">1111</span> <span class="pre">1011</span></code> in two’s complement.</p>
+<p>This method may seem counter-intuitive at first, but it has several advantages, including making the addition and subtraction of positive and negative numbers more straightforward for computers. For example, if you add 0000 0101 (5) and 1111 1011 (-5) together, you get 1 0000 0000 (256 in unsigned 8-bit, but due to overflow in signed 8-bit, the leftmost 1 is discarded), resulting in 0000 0000, which is zero, as expected.</p>
+</div>
+<div class="section" id="integer-overflow">
+<h4><a class="toc-backref" href="#id13"><span class="section-number">3.3.2.3. </span>Integer Overflow</a><a class="headerlink" href="#integer-overflow" title="Permalink to this headline">#</a></h4>
+<p>Integer overflow happens when an integer value is computed that is outside the permissible range of the integer type. This can lead to unexpected behavior, as the integer value will wrap around.</p>
+<p><strong>Wrap Around</strong></p>
+<p>Consider an unsigned 32-bit integer. It can hold values from 0 to 4,294,967,295 (2^32 - 1). If we have a maximum unsigned 32-bit integer, 4,294,967,295, and add 1 to it, the result would logically be 4,294,967,296, which is outside the range of an unsigned 32-bit integer. This situation is what causes an overflow.</p>
+<p>However, in the binary world, this operation doesn’t result in an error or an exception, but rather it wraps around back to the start of the range. So, if we add 1 to an unsigned integer at its maximum limit, the result will be zero.</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">maxUnsignedInt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4294967295</span><span class="p">;</span>
+<span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">overflowedUnsignedInt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">maxUnsignedInt</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// this results in 0</span>
+</pre></div>
+</div>
+<p>A similar case happens for signed integers but includes the sign bit. For a signed 32-bit integer, the range is -2,147,483,648 to 2,147,483,647. If we add 1 to a variable at the maximum limit (2,147,483,647), we get -2,147,483,648, not an error or exception. This is because it wraps around to the start of the range.</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="kt">signed</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">maxSignedInt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2147483647</span><span class="p">;</span>
+<span class="kt">signed</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">overflowedSignedInt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">maxSignedInt</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// this results in -2147483648</span>
+</pre></div>
+</div>
+<p><strong>Implications</strong></p>
+<p>Integer overflow can lead to both program logic errors and potential security vulnerabilities. These problems occur when programmers make incorrect assumptions about the possible values an integer can have.</p>
+<p>Some programming languages have built-in mechanisms to deal with integer overflow, by throwing an exception when it occurs. But C++ is not one of them. The behavior of overflowing signed integers is technically undefined according to the C++ standard. This means that different compilers or systems can handle it differently, although in practice most use the wraparound behavior described above.</p>
+<p>Therefore, as a developer, you should always be cautious when performing integer arithmetic. Ensure you consider the boundaries and accurately predict the behavior of the code in these edge cases. Check for potential overflows, especially when dealing with user input or any data that could potentially be crafted to exploit an overflow vulnerability.</p>
+</div>
+<div class="section" id="mathematical-operations-with-integers">
+<h4><a class="toc-backref" href="#id14"><span class="section-number">3.3.2.4. </span>Mathematical Operations with Integers</a><a class="headerlink" href="#mathematical-operations-with-integers" title="Permalink to this headline">#</a></h4>
+<p>In C++, we can perform various mathematical operations with integers using operators. These include addition, subtraction, multiplication, division, and modulus operations.</p>
+<p>Basic Operators
+Here are the basic arithmetic operators in C++:</p>
+<ul class="simple">
+<li><p>+: addition</p></li>
+<li><p>-: subtraction</p></li>
+<li><p>*: multiplication</p></li>
+<li><p>/: division</p></li>
+<li></li>
+</ul>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">    </span><span class="c1">// 13</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">diff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">   </span><span class="c1">// 7</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">prod</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">   </span><span class="c1">// 30</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">div</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">    </span><span class="c1">// 3, note that this performs integer division</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">mod</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">    </span><span class="c1">// 1, this is the remainder of 10 / 3</span>
+</pre></div>
+</div>
+<p>Note that the / operator performs integer division if both operands are integers. This means that the result is also an integer, and any fractional part is discarded. If you want a floating-point result, one or both of the operands must be a floating-point number.</p>
+<p>Assignment Operators
+In addition to the basic operators, C++ also provides combined assignment operators. These are shortcuts for performing an operation on a variable and then storing the result back in the same variable.</p>
+<p>Here are the combined assignment operators:</p>
+<ul class="simple">
+<li><p>+=: addition assignment</p></li>
+<li><p>-=: subtraction assignment</p></li>
+<li><p>*=: multiplication assignment</p></li>
+<li><p>/=: division assignment</p></li>
+<li></li>
+</ul>
+<p>Here are some examples of these operators in action:</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="n">c</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">  </span><span class="c1">// equivalent to c = c + 5; now c is 15</span>
+<span class="n">c</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w">  </span><span class="c1">// equivalent to c = c - 3; now c is 12</span>
+<span class="n">c</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">  </span><span class="c1">// equivalent to c = c * 2; now c is 24</span>
+<span class="n">c</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span><span class="w">  </span><span class="c1">// equivalent to c = c / 6; now c is 4</span>
+<span class="n">c</span><span class="w"> </span><span class="o">%=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w">  </span><span class="c1">// equivalent to c = c % 3; now c is 1</span>
+</pre></div>
+</div>
+<p>These combined assignment operators are a very useful shortcut and can make your code more concise and easier to read.</p>
+<p>In the next section, we’ll discuss the double type in C++, which is used for representing floating-point numbers.</p>
+</div>
+</div>
+<div class="section" id="double">
+<h3><a class="toc-backref" href="#id15"><span class="section-number">3.3.3. </span>Double</a><a class="headerlink" href="#double" title="Permalink to this headline">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">double</span></code> type in C++ is used to represent floating-point numbers, i.e., numbers with a fractional part. These could be very large numbers, very small numbers, or numbers between integers.</p>
+<div class="section" id="floating-point-representation">
+<h4><a class="toc-backref" href="#id16"><span class="section-number">3.3.3.1. </span>Floating-Point Representation</a><a class="headerlink" href="#floating-point-representation" title="Permalink to this headline">#</a></h4>
+<p>double in C++ typically occupies 64 bits, or 8 bytes, of memory. It is based on the IEEE 754 standard for floating-point arithmetic. This standard represents floating-point numbers in three parts:</p>
+<ul class="simple">
+<li><p><strong>Sign bit</strong>: This bit indicates whether the number is positive or negative. 0 indicates a positive number and 1 indicates a negative number.</p></li>
+<li><p><strong>Exponent</strong>: This is an 11-bit field that represents the exponent in the floating-point number. It is used to calculate the magnitude of the number.</p></li>
+<li><p><strong>Mantissa</strong> (or fraction): This is a 52-bit field that represents the actual number (the significant digits).</p></li>
+</ul>
+<p>The value of the floating-point number is calculated as: <code class="docutils literal notranslate"><span class="pre">(-1)^sign_bit</span> <span class="pre">x</span> <span class="pre">(1</span> <span class="pre">+</span> <span class="pre">mantissa)</span> <span class="pre">x</span> <span class="pre">(2^(exponent</span> <span class="pre">-</span> <span class="pre">1023))</span></code>. The subtraction of 1023 from the exponent is to allow both small (less than 1) and large numbers to be represented.</p>
+<p>This representation allows <code class="docutils literal notranslate"><span class="pre">double</span></code> to represent a very wide range of values, but it comes with a trade-off in precision.</p>
+<p><strong>Precision Issues</strong>
+While double can represent a wide range of values, it can’t always represent them precisely. This is because the mantissa part of the floating-point representation is a binary fraction, and some decimal fractions can’t be precisely represented as binary fractions.</p>
+<p>For example, the decimal number 0.1 can’t be exactly represented in binary. As a result, operations involving such numbers may lead to tiny rounding errors. In most cases, these errors are insignificant and can be ignored, but in cases where high precision is required, they can lead to problems. This is sometimes referred to as floating-point error or round-off error.</p>
+</div>
+<div class="section" id="mathematical-operations-with-doubles">
+<h4><a class="toc-backref" href="#id17"><span class="section-number">3.3.3.2. </span>Mathematical Operations with Doubles</a><a class="headerlink" href="#mathematical-operations-with-doubles" title="Permalink to this headline">#</a></h4>
+<p>Similar to <code class="docutils literal notranslate"><span class="pre">int</span></code>, the <code class="docutils literal notranslate"><span class="pre">double</span></code> type supports all basic arithmetic operations:</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">d1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10.5</span><span class="p">;</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">d2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.2</span><span class="p">;</span>
+
+<span class="kt">double</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">d2</span><span class="p">;</span><span class="w">    </span><span class="c1">// 13.7</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">diff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">d2</span><span class="p">;</span><span class="w">   </span><span class="c1">// 7.3</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">prod</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">d2</span><span class="p">;</span><span class="w">   </span><span class="c1">// 33.6</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">div</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d1</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">d2</span><span class="p">;</span><span class="w">    </span><span class="c1">// 3.28125</span>
+</pre></div>
+</div>
+<p>Note that there is no modulus operator for <code class="docutils literal notranslate"><span class="pre">double</span></code>.</p>
+<p>The combined assignment operators (<code class="docutils literal notranslate"><span class="pre">+=</span></code>, <code class="docutils literal notranslate"><span class="pre">-=</span></code>, <code class="docutils literal notranslate"><span class="pre">*=</span></code>, <code class="docutils literal notranslate"><span class="pre">/=</span></code>) also work with double.</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10.5</span><span class="p">;</span>
+<span class="n">d</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mf">1.5</span><span class="p">;</span><span class="w">  </span><span class="c1">// now d is 12.0</span>
+<span class="n">d</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mf">2.0</span><span class="p">;</span><span class="w">  </span><span class="c1">// now d is 10.0</span>
+<span class="n">d</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mf">2.0</span><span class="p">;</span><span class="w">  </span><span class="c1">// now d is 20.0</span>
+<span class="n">d</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mf">5.0</span><span class="p">;</span><span class="w">  </span><span class="c1">// now d is 4.0</span>
+</pre></div>
+</div>
+<p>In the next section, we’ll discuss the char type in C++, which is used for representing individual characters.</p>
+</div>
+</div>
+<div class="section" id="char">
+<h3><a class="toc-backref" href="#id18"><span class="section-number">3.3.4. </span>Char</a><a class="headerlink" href="#char" title="Permalink to this headline">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">char</span></code> type in C++ is used to represent individual characters. This can include anything that can be typed on a keyboard, such as letters, numbers, punctuation marks, and control characters like \n (newline) or \t (tab).</p>
+<p><strong>Character Representation</strong></p>
+<p>A <code class="docutils literal notranslate"><span class="pre">char</span></code> in C++ occupies 8 bits, or 1 byte, of memory, which means it can represent 2^8 (or 256) unique values. These values are used to represent different characters according to a character set. The most commonly used character set is ASCII (American Standard Code for Information Interchange).</p>
+<p>ASCII is a 7-bit character set that defines 128 unique values, which include:</p>
+<ul class="simple">
+<li><p>Control characters like newline, carriage return, and tab</p></li>
+<li><p>Printable characters:</p>
+<ul>
+<li><p>Digits from 0 to 9 (ASCII values 48 to 57)</p></li>
+<li><p>Uppercase letters from A to Z (ASCII values 65 to 90)</p></li>
+<li><p>Lowercase letters from a to z (ASCII values 97 to 122)</p></li>
+<li><p>Punctuation marks and special characters</p></li>
+</ul>
+</li>
+</ul>
+<p>Here is a small subset of the ASCII table:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Character</p></th>
+<th class="head"><p>ASCII Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>48</p></td>
+</tr>
+<tr class="row-odd"><td><p>A</p></td>
+<td><p>65</p></td>
+</tr>
+<tr class="row-even"><td><p>a</p></td>
+<td><p>97</p></td>
+</tr>
+<tr class="row-odd"><td><p>$</p></td>
+<td><p>36</p></td>
+</tr>
+<tr class="row-even"><td><p>&#64;</p></td>
+<td><p>64</p></td>
+</tr>
+</tbody>
+</table>
+<p>The remaining values from 128 to 255 (when a <code class="docutils literal notranslate"><span class="pre">char</span></code> is considered as unsigned <code class="docutils literal notranslate"><span class="pre">char</span></code>) are used for extended character sets, which can represent additional characters such as accented letters or characters from non-English alphabets.</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span><span class="w"> </span><span class="n">c1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="p">;</span><span class="w">   </span><span class="c1">// Stores the character &#39;A&#39;</span>
+<span class="kt">char</span><span class="w"> </span><span class="n">c2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">65</span><span class="p">;</span><span class="w">    </span><span class="c1">// Also stores the character &#39;A&#39;, because 65 is the ASCII value for &#39;A&#39;</span>
+</pre></div>
+</div>
+<p><strong>Mathematical Operations with Chars</strong></p>
+<p>Although char is mainly used to store characters, since it is essentially a small integer, you can perform arithmetic operations with char variables. For example, you can add or subtract integers from a char to get another char:</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="p">;</span>
+<span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">   </span><span class="c1">// Now c is &#39;B&#39;</span>
+<span class="n">c</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">      </span><span class="c1">// Now c is &#39;C&#39;</span>
+<span class="n">c</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">      </span><span class="c1">// Now c is &#39;A&#39; again</span>
+</pre></div>
+</div>
+<p>Note that you need to be careful when performing arithmetic operations with <code class="docutils literal notranslate"><span class="pre">char</span></code>. If you go beyond the range of the character set (either below 0 or above 127 for signed <code class="docutils literal notranslate"><span class="pre">char</span></code>, or above 255 for unsigned <code class="docutils literal notranslate"><span class="pre">char</span></code>), you’ll get unexpected results due to overflow or underflow.</p>
+<p>In the next section, we’ll discuss the <code class="docutils literal notranslate"><span class="pre">string</span></code> type in C++, which is used for representing sequences of characters.</p>
+</div>
+<div class="section" id="string">
+<h3><a class="toc-backref" href="#id19"><span class="section-number">3.3.5. </span>String</a><a class="headerlink" href="#string" title="Permalink to this headline">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">string</span></code> type in C++ is used to represent sequences of characters. It is a part of the C++ Standard Library.</p>
+<p><strong>String Representation</strong></p>
+<p>A <code class="docutils literal notranslate"><span class="pre">string</span></code> in C++ is essentially a collection of <code class="docutils literal notranslate"><span class="pre">char</span></code> values stored sequentially in memory. The length of a <code class="docutils literal notranslate"><span class="pre">string</span></code> is not fixed and can change during the execution of the program.</p>
+<p>In C++, you can <code class="docutils literal notranslate"><span class="pre">declare</span></code> a string and initialize it with a sequence of characters enclosed in double quotes:</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello, World!&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p><strong>String Operations</strong></p>
+<p>C++ provides a rich set of operations for manipulating strings:</p>
+<ul class="simple">
+<li><p>Concatenation: You can concatenate, or join, two strings using the + operator:</p></li>
+</ul>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="n">string</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello, &quot;</span><span class="p">;</span>
+<span class="n">string</span><span class="w"> </span><span class="n">s2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;World!&quot;</span><span class="p">;</span>
+<span class="n">string</span><span class="w"> </span><span class="n">s3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">s2</span><span class="p">;</span><span class="w">  </span><span class="c1">// &quot;Hello, World!&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Length: You can get the length (number of characters) of a string using the length() method:</p></li>
+</ul>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello, World!&quot;</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">();</span><span class="w">  </span><span class="c1">// 13</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Substring: You can get a substring (part of the string) using the substr() method:</p></li>
+</ul>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello, World!&quot;</span><span class="p">;</span>
+<span class="n">string</span><span class="w"> </span><span class="n">sub</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span><span class="w">  </span><span class="c1">// &quot;World&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Find: You can find the position of a substring within a string using the find() method:</p></li>
+</ul>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello, World!&quot;</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s">&quot;World&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// 7</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Accessing Characters: You can access individual characters within a string with square brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code> and the position of the letter you would like :</p></li>
+</ul>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello, World!&quot;</span><span class="p">;</span>
+<span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span><span class="w">  </span><span class="c1">// &#39;H&#39;</span>
+</pre></div>
+</div>
+<p><em>Note that the first character is at position 0.</em></p>
+<p>These are just some of the basic operations provided by the C++ string class. There are many more methods for comparing strings, replacing parts of strings, and other string manipulations.</p>
+<p>In the next section, we’ll discuss the bool type in C++, which is used for representing boolean values.</p>
+</div>
+<div class="section" id="boolean">
+<h3><a class="toc-backref" href="#id20"><span class="section-number">3.3.6. </span>Boolean</a><a class="headerlink" href="#boolean" title="Permalink to this headline">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">bool</span></code> type in C++ is used to represent boolean logical values.</p>
+<div class="section" id="boolean-representation">
+<h4><a class="toc-backref" href="#id21"><span class="section-number">3.3.6.1. </span>Boolean Representation</a><a class="headerlink" href="#boolean-representation" title="Permalink to this headline">#</a></h4>
+<p>A <code class="docutils literal notranslate"><span class="pre">bool</span></code> value in C++ can only take one of two values: <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>. These keywords are built into the language and are used to represent logical truth values. For example, you can declare a <code class="docutils literal notranslate"><span class="pre">bool</span></code> variable and initialize it to <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code> as follows:</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span><span class="w"> </span><span class="n">isRaining</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">isSunny</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Internally, <code class="docutils literal notranslate"><span class="pre">bool</span></code> values are represented in memory as integers, with <code class="docutils literal notranslate"><span class="pre">false</span></code> being 0 and <code class="docutils literal notranslate"><span class="pre">true</span></code> being 1.</p>
+</div>
+<div class="section" id="boolean-operations">
+<h4><a class="toc-backref" href="#id22"><span class="section-number">3.3.6.2. </span>Boolean Operations</a><a class="headerlink" href="#boolean-operations" title="Permalink to this headline">#</a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">bool</span></code> type supports the logical operations AND, OR, and NOT, which in C++ are represented by the operators <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>, <code class="docutils literal notranslate"><span class="pre">||</span></code>, and <code class="docutils literal notranslate"><span class="pre">!</span></code>, respectively.</p>
+<ul class="simple">
+<li><p><strong>AND (&amp;&amp;)</strong>: The AND operator returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if both operands are <code class="docutils literal notranslate"><span class="pre">true</span></code>, and <code class="docutils literal notranslate"><span class="pre">false</span> </code>otherwise:</p></li>
+</ul>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">  </span><span class="c1">// false</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>OR (||)</strong>: The OR operator returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if at least one of the operands is <code class="docutils literal notranslate"><span class="pre">true</span></code>, and <code class="docutils literal notranslate"><span class="pre">false</span></code> otherwise:</p></li>
+</ul>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">  </span><span class="c1">// true</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>NOT (!)</strong>: The NOT operator returns the inverse of the operand. If the operand is <code class="docutils literal notranslate"><span class="pre">true</span></code>, it returns <code class="docutils literal notranslate"><span class="pre">false</span></code>, and vice versa:</p></li>
+</ul>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="n">a</span><span class="p">;</span><span class="w">  </span><span class="c1">// false</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">bool</span></code> type is also the type returned by relational operators (<code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">==</span></code>, <code class="docutils literal notranslate"><span class="pre">!=</span></code>), which compare two values and return a bool result:</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">y</span><span class="p">;</span><span class="w">  </span><span class="c1">// true</span>
+</pre></div>
+</div>
+<p>In this example, the <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> operator checks if <code class="docutils literal notranslate"><span class="pre">x</span></code> is less than <code class="docutils literal notranslate"><span class="pre">y</span></code>. Since 5 is indeed less than 10, the result is <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
+<p>In the next section, we’ll cover the important topic of type conversions in C++, which allow us to change the type of a value under certain circumstances.</p>
+</div>
+</div>
+<div class="section" id="type-conversions">
+<h3><a class="toc-backref" href="#id23"><span class="section-number">3.3.7. </span>Type Conversions</a><a class="headerlink" href="#type-conversions" title="Permalink to this headline">#</a></h3>
+<p>In C++, we often need to convert values from one type to another. This is known as type conversion. There are two main types of conversion in C++: <strong>implicit conversion</strong> and <strong>explicit conversion</strong>.</p>
+<div class="section" id="implicit-conversion">
+<h4><a class="toc-backref" href="#id24"><span class="section-number">3.3.7.1. </span>Implicit Conversion</a><a class="headerlink" href="#implicit-conversion" title="Permalink to this headline">#</a></h4>
+<p>Implicit conversion, also known as automatic or “coercion”, is performed by the compiler without the programmer explicitly requesting it. This happens when the context requires a value of a certain type, but a value of a different, compatible type is provided.</p>
+<p>For instance, consider this example:</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w">  </span>
+</pre></div>
+</div>
+<p>Here, an <code class="docutils literal notranslate"><span class="pre">int</span></code> value is being assigned to a <code class="docutils literal notranslate"><span class="pre">double</span></code> variable. Since the <code class="docutils literal notranslate"><span class="pre">double</span></code> type is capable of representing all <code class="docutils literal notranslate"><span class="pre">int</span></code> values with no loss of information, the compiler automatically converts <code class="docutils literal notranslate"><span class="pre">i</span></code> to <code class="docutils literal notranslate"><span class="pre">double</span></code> and assigns it to <code class="docutils literal notranslate"><span class="pre">d</span></code>.</p>
+</div>
+<div class="section" id="explicit-conversion">
+<h4><a class="toc-backref" href="#id25"><span class="section-number">3.3.7.2. </span>Explicit Conversion</a><a class="headerlink" href="#explicit-conversion" title="Permalink to this headline">#</a></h4>
+<p>Explicit conversion, or type casting, occurs when the programmer explicitly requests a conversion using the cast operator. Here is an example:</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5.7</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">d</span><span class="p">;</span><span class="w">  </span>
+</pre></div>
+</div>
+<p>Here, the <code class="docutils literal notranslate"><span class="pre">double</span></code> value 5.7 is being cast to an <code class="docutils literal notranslate"><span class="pre">int</span></code>. Since <code class="docutils literal notranslate"><span class="pre">int</span></code> values can’t have fractional parts, the decimal portion of the <code class="docutils literal notranslate"><span class="pre">double</span></code> value is truncated (not rounded), and only the whole number part is assigned to <code class="docutils literal notranslate"><span class="pre">i</span></code>.</p>
+<p>It’s important to note that explicit conversions can result in loss of information, such as in the example above where the fractional part of the double value was lost. As such, they should be used with care.</p>
+</div>
+<div class="section" id="conversion-functions">
+<h4><a class="toc-backref" href="#id26"><span class="section-number">3.3.7.3. </span>Conversion Functions</a><a class="headerlink" href="#conversion-functions" title="Permalink to this headline">#</a></h4>
+<p>C++ also provides a few functions for converting values from one type to another. These include static_cast, dynamic_cast, const_cast, and reinterpret_cast. We will discuss these in a future chapter when we delve into more advanced C++ topics.</p>
+</div>
+</div>
+</div>
+<div class="section" id="summary">
+<h2><a class="toc-backref" href="#id27"><span class="section-number">3.4. </span>Summary</a><a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>We learned about different types in C++, including <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">double</span></code>, <code class="docutils literal notranslate"><span class="pre">char</span></code>, <code class="docutils literal notranslate"><span class="pre">string</span></code>, and <code class="docutils literal notranslate"><span class="pre">bool</span></code>.</p></li>
+<li><p>We explored number systems used by computers including binary and decimal systems.</p></li>
+<li><p>We discussed the signed and unsigned variants of <code class="docutils literal notranslate"><span class="pre">int</span></code>, and how integer overflow occurs.</p></li>
+<li><p>We learned about the floating-point representation used by the <code class="docutils literal notranslate"><span class="pre">double</span></code> type and the concept of precision errors.</p></li>
+<li><p>We explored how <code class="docutils literal notranslate"><span class="pre">char</span></code> is used to represent characters and how it relates to ASCII encoding.</p></li>
+<li><p>We covered how <code class="docutils literal notranslate"><span class="pre">string</span></code> is used to manipulate sequences of characters.</p></li>
+<li><p>We examined how <code class="docutils literal notranslate"><span class="pre">bool</span></code> is used to represent boolean values <code class="docutils literal notranslate"><span class="pre">true</span></code> and <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p></li>
+<li><p>We discussed implicit and explicit type conversions.</p></li>
+</ul>
+<p>In the next chapter, we will delve deeper into the operations in C++ and learn about control structures like loops and conditional statements.</p>
+<p>Absolutely, let’s level up the complexity a bit:</p>
+</div>
+<div class="section" id="practice-questions">
+<h2><a class="toc-backref" href="#id28"><span class="section-number">3.5. </span>Practice Questions</a><a class="headerlink" href="#practice-questions" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
+<li><p>How would you represent the binary number <code class="docutils literal notranslate"><span class="pre">1101</span></code> as a decimal?</p></li>
+<li><p>What value would a <code class="docutils literal notranslate"><span class="pre">double</span></code> variable have if you assign it the result of the integer division of 10 by 3?</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">char</span> <span class="pre">c</span> <span class="pre">=</span> <span class="pre">'z';</span></code>, what will the value of <code class="docutils literal notranslate"><span class="pre">c</span></code> be after the following statement: <code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">c</span> <span class="pre">-</span> <span class="pre">'a'</span> <span class="pre">+</span> <span class="pre">'A';</span></code>?</p></li>
+<li><p>Given the string “Learning C++ is fun!”, write a piece of code that extracts the word “C++” from this string using the substr() function.</p></li>
+<li><p>Given a <code class="docutils literal notranslate"><span class="pre">bool</span></code> variable <code class="docutils literal notranslate"><span class="pre">b</span></code> initialized with <code class="docutils literal notranslate"><span class="pre">false</span></code>, what will be the output of the following expression: <code class="docutils literal notranslate"><span class="pre">cout</span> <span class="pre">&lt;&lt;</span> <span class="pre">!b;</span></code>?</p></li>
+<li><p>Write a piece of code that demonstrates an explicit type conversion from <code class="docutils literal notranslate"><span class="pre">double</span></code> to <code class="docutils literal notranslate"><span class="pre">int</span></code>. What will be the output of this code if the <code class="docutils literal notranslate"><span class="pre">double</span></code> variable was initialized with <code class="docutils literal notranslate"><span class="pre">3.14</span></code>?
+Certainly, here are some programming exercises that the students can use to practice:</p></li>
+<li><p><strong>Variable Swap:</strong> Write a program that declares two integer variables, <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>, and swaps their values without using a third variable. Print the values of <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> before and after the swap.</p></li>
+<li><p><strong>Binary to Decimal Conversion:</strong> Write a program that reads a binary number (as a string) from the user and prints its decimal representation.</p></li>
+<li><p><strong>Case Converter:</strong> Write a program that takes a lowercase letter as input and prints the uppercase version of the letter. Then, modify your program to accept a string and convert all the lowercase letters in the string to uppercase.</p></li>
+</ol>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./cplusplus"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="hello.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Your First Program</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../java/start.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Nothin Here Yet :(</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">3.1. Table of Contents</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables">3.2. Variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-declaration-and-assignment-continued">3.2.1. Variable Declaration and Assignment Continued</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constants">3.2.2. Constants</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#naming-conventions">3.2.3. Naming Conventions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#naming-rules">3.2.4. Naming Rules</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types">3.3. Types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-systems-binary-and-decimal">3.3.1. Counting Systems: Binary, and Decimal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integers">3.3.2. Integers</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#signed-vs-unsigned">3.3.2.1. Signed vs Unsigned</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#max-and-min-integers">3.3.2.2. Max and Min Integers</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-overflow">3.3.2.3. Integer Overflow</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-operations-with-integers">3.3.2.4. Mathematical Operations with Integers</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#double">3.3.3. Double</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#floating-point-representation">3.3.3.1. Floating-Point Representation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-operations-with-doubles">3.3.3.2. Mathematical Operations with Doubles</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#char">3.3.4. Char</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string">3.3.5. String</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean">3.3.6. Boolean</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-representation">3.3.6.1. Boolean Representation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-operations">3.3.6.2. Boolean Operations</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#type-conversions">3.3.7. Type Conversions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#implicit-conversion">3.3.7.1. Implicit Conversion</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#explicit-conversion">3.3.7.2. Explicit Conversion</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-functions">3.3.7.3. Conversion Functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">3.4. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-questions">3.5. Practice Questions</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Iddo Sadeh
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

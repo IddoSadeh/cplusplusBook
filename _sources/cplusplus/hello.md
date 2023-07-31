@@ -134,7 +134,7 @@ int main()
 { 
     cout << "This program will divide 5 by any number you'd like" << endl; 
     int i = 5;
-    cout << "Inpute a number to divide:" << endl;
+    cout << "Input a number to divide:" << endl;
     int j;
     cin >> j;
     cout << "the result is " << i/j;
@@ -155,7 +155,7 @@ int main()
 { 
     cout << "This program will multiple 5 by any number you'd like" << endl; 
     int i = 5;
-    cout << "Inpute a number to multiply:" << endl;
+    cout << "Input a number to multiply:" << endl;
     int j;
     cin >> j;
     cout << "the result is " << i*j;
@@ -178,18 +178,38 @@ If this seems a bit complex picture our computer as a warehouse filled with stor
 Formally, when ever we store new data we will write a line of code like this:
 
 ```C++
-Type name = newData;
+type name = newData;
 ```
+### Variable Declaration
 
-The common types and their constraints you will see in the next few lessons are:
+The above example can actually be split up in to two parts.  Essentialy, as you may have noticed in the logic error example, sometimes we may want to predefine a variable for later use. In the warehouse example you can think of it as securing a storage unit for later use. If we only want to define a variable we may write code of the form:
+
+```C++
+type name;
+```
+**Note**: In many textbooks you may find that defining a variable is also termed **variable declaration**.
+
+### Variable Assignment
+In the logic error example, we saved data into the variable using the `cin` stream operator. Another way to save data is by using the **assignment operator** `=`:
+
+```C++
+name = data;
+```
+Notice that the equals sign in programming is not like the equals sign in math. In programming, whenever you see the assignmnet operator `=` you can read "I am saving what is to thr right of the `=` sign in to the variable on the left of the `=` sign.
+
+Variables, as there name suggest, can change values through out our program. So the assignment operator is actually also useful if we want to to change values midway through a program. Just make sure you only save data with in the constraints of the type your variable is!
+
+### Types
+
+The common types and their basic constraints you will see in the next few lessons are:
 - `int` - Short for integers, stores a whole number value.
 - `double`- Stores floating-point numbers (i.e. decimals)
 - `char` - Short for character, stores individual characters.
 - `string` - A "string" of characters, stores text.
 - `bool` - Short for boolean, a logic type (`true` or `false`).
 
-So to circle back to what is `int` and why we saw an error. When we defined a variable as `int`, our computer expected we only store whole numbers in it. If you tried to enter a decimal in the program with the logic error, the computer will ignore any decimal input. To fix our logic error it, we should have used the `double` type to insure our code will work for all inputs.
-
+### Circling Back
+So why did we see a logic error in the example from  section 2.3.3? The problem lies in the type we used along with the promises we made to our user. When we defined a variable as `int`, our computer expected we only store whole numbers in it. If you tried to enter a decimal in the program with the logic error, the computer will ignore any decimal input. To fix our logic error, we should have used the `double` type to insure our code will work for all inputs. 
 
 
 ## Bibliography

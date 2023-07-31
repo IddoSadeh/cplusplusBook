@@ -1,6 +1,6 @@
 
 # Introduction
-This Chapter will introduce you to C++ and go over the requirments for setting up your C++ environemnt. By the end of the chpter you will:
+This Chapter will introduce you to C++ and go over the requirments for setting up your C++ environemnt. By the end of the chapter you will:
 - Have some background about C++.
 - Familiriaze yourself with the command line and version control systems.
 - Setup your C++ working environment.
@@ -219,6 +219,9 @@ Last but not least, lets make sure everything worked. Go back to the repository 
 
 ## Closing Thoughts
 You are now ready to learn some C++! You may already have a lot of questions, but don't worry, it'll all make sense as we move along. This is going to be a common them in this textbook. If you have questions, are confused or see a piece of code you don't understand, stay calm! You can always search your way through the internet to answer the burning questions, but typically I will answer your questions in later chapters when you have the necessary context to understand the answers. 
+
+
+
 
 ## Bibliography
 ```{bibliography}
