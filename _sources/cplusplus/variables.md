@@ -7,6 +7,7 @@ In the previous chapter I introduced you to variables and data types. In this ch
 - See the diifferent types in their constraints.
 
 ## Table of Contents
+
 ```{contents}
 ```
 
