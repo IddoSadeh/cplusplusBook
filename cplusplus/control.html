@@ -62,7 +62,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'cplusplus/control';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Nothin Here Yet :(" href="../java/start.html" />
+    <link rel="next" title="6. Functions" href="functions.html" />
     <link rel="prev" title="3. More on Variables and Types" href="variables.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
@@ -154,6 +154,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="hello.html">2. Your First Program</a></li>
 <li class="toctree-l1"><a class="reference internal" href="variables.html">3. More on Variables and Types</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Control Structres</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="functions.html">6. Functions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">AP CSA - Java</span></p>
 <ul class="nav bd-sidenav">
@@ -355,16 +357,29 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">4.1. Table of Contents</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selection">4.1.1. Selection</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#if-statement">4.1.1.1. If Statement</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#if-else-statement">4.1.1.2. If-Else Statement</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#switch-statement">4.1.1.3. Switch Statement</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">4. Control Structres</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">4.1. Table of Contents</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#control-structures">5. Control Structures</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-statements-if-and-else">5.1. Conditional Statements: <code class="docutils literal notranslate"><span class="pre">if</span></code> and <code class="docutils literal notranslate"><span class="pre">else</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if">5.1.1. <code class="docutils literal notranslate"><span class="pre">if</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#else">5.1.2. <code class="docutils literal notranslate"><span class="pre">else</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loops-while-and-for">5.2. Loops: <code class="docutils literal notranslate"><span class="pre">while</span></code> and <code class="docutils literal notranslate"><span class="pre">for</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while">5.2.1. <code class="docutils literal notranslate"><span class="pre">while</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#do-while">5.2.2. <code class="docutils literal notranslate"><span class="pre">do-while</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for">5.2.3. <code class="docutils literal notranslate"><span class="pre">for</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#switch-statement">5.3. Switch Statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">5.4. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-questions">5.5. Practice Questions</a></li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
+
             </nav>
         </div>
     </div>
@@ -377,7 +392,7 @@ document.write(`
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="control-structres">
 <h1><a class="toc-backref" href="#id1"><span class="section-number">4. </span>Control Structres</a><a class="headerlink" href="#control-structres" title="Permalink to this headline">#</a></h1>
-<p>In the last chpater we got technical and learned about Variables and Data types. In this chapter we will tone it down a notch and learn how to write more functional programs using control structures. Control structures dictate the order in which lines of code are executed in a program. In C++, as with most other programming languages, the basic control structures are selection (making decisions) and repetition (loops). By the end of this chapter you should know how to use:</p>
+<p>In the last chapter we got technical and learned about Variables and Data types. In this chapter we will tone it down a notch and learn how to write more functional programs using control structures. Control structures dictate the order in which lines of code are executed in a program. In C++, as with most other programming languages, the basic control structures are selection (making decisions) and repetition (loops). By the end of this chapter you should know how to use:</p>
 <ul class="simple">
 <li><p>If statments.</p></li>
 <li><p>Switch statements.</p></li>
@@ -392,101 +407,155 @@ document.write(`
 <ul class="simple">
 <li><p><a class="reference internal" href="#control-structres" id="id1">Control Structres</a></p>
 <ul>
-<li><p><a class="reference internal" href="#table-of-contents" id="id2">Table of Contents</a></p>
-<ul>
-<li><p><a class="reference internal" href="#selection" id="id3">Selection</a></p>
-<ul>
-<li><p><a class="reference internal" href="#if-statement" id="id4">If Statement</a></p></li>
-<li><p><a class="reference internal" href="#if-else-statement" id="id5">If-Else Statement</a></p></li>
-<li><p><a class="reference internal" href="#switch-statement" id="id6">Switch Statement</a></p></li>
+<li><p><a class="reference internal" href="#table-of-contents" id="id2">Table of Contents</a></p></li>
 </ul>
 </li>
+<li><p><a class="reference internal" href="#control-structures" id="id3">Control Structures</a></p>
+<ul>
+<li><p><a class="reference internal" href="#conditional-statements-if-and-else" id="id4">Conditional Statements: <code class="docutils literal notranslate"><span class="pre">if</span></code> and <code class="docutils literal notranslate"><span class="pre">else</span></code></a></p>
+<ul>
+<li><p><a class="reference internal" href="#if" id="id5"><code class="docutils literal notranslate"><span class="pre">if</span></code></a></p></li>
+<li><p><a class="reference internal" href="#else" id="id6"><code class="docutils literal notranslate"><span class="pre">else</span></code></a></p></li>
 </ul>
 </li>
+<li><p><a class="reference internal" href="#loops-while-and-for" id="id7">Loops: <code class="docutils literal notranslate"><span class="pre">while</span></code> and <code class="docutils literal notranslate"><span class="pre">for</span></code></a></p>
+<ul>
+<li><p><a class="reference internal" href="#while" id="id8"><code class="docutils literal notranslate"><span class="pre">while</span></code></a></p></li>
+<li><p><a class="reference internal" href="#do-while" id="id9"><code class="docutils literal notranslate"><span class="pre">do-while</span></code></a></p></li>
+<li><p><a class="reference internal" href="#for" id="id10"><code class="docutils literal notranslate"><span class="pre">for</span></code></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#switch-statement" id="id11">Switch Statement</a></p></li>
+<li><p><a class="reference internal" href="#summary" id="id12">Summary</a></p></li>
+<li><p><a class="reference internal" href="#practice-questions" id="id13">Practice Questions</a></p></li>
 </ul>
 </li>
 </ul>
 </div>
-<div class="section" id="selection">
-<h3><a class="toc-backref" href="#id3"><span class="section-number">4.1.1. </span>Selection</a><a class="headerlink" href="#selection" title="Permalink to this headline">#</a></h3>
-<p>Selection control structures allow your program to make decisions based on conditions. The primary selection control structures in C++ are the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement, <code class="docutils literal notranslate"><span class="pre">if-else</span></code> statement, and <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement.</p>
-<div class="section" id="if-statement">
-<h4><a class="toc-backref" href="#id4"><span class="section-number">4.1.1.1. </span>If Statement</a><a class="headerlink" href="#if-statement" title="Permalink to this headline">#</a></h4>
-<p>An <code class="docutils literal notranslate"><span class="pre">if</span></code> statement allows the program to execute a block of code only if a certain condition is met.</p>
-<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;x is greater than 5.&quot;</span><span class="p">;</span>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="control-structures">
+<h1><a class="toc-backref" href="#id3"><span class="section-number">5. </span>Control Structures</a><a class="headerlink" href="#control-structures" title="Permalink to this headline">#</a></h1>
+<p>Control structures manage the execution flow of your program. They allow your code to make decisions based on conditions or repeat an operation multiple times. C++ has several control structures, which we will cover in this chapter: <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code>, <code class="docutils literal notranslate"><span class="pre">while</span></code>, <code class="docutils literal notranslate"><span class="pre">for</span></code>, and <code class="docutils literal notranslate"><span class="pre">switch</span></code>.</p>
+<div class="section" id="conditional-statements-if-and-else">
+<h2><a class="toc-backref" href="#id4"><span class="section-number">5.1. </span>Conditional Statements: <code class="docutils literal notranslate"><span class="pre">if</span></code> and <code class="docutils literal notranslate"><span class="pre">else</span></code></a><a class="headerlink" href="#conditional-statements-if-and-else" title="Permalink to this headline">#</a></h2>
+<p>Conditional statements are used to perform different actions based on different conditions. In C++, <code class="docutils literal notranslate"><span class="pre">if</span></code> and <code class="docutils literal notranslate"><span class="pre">else</span></code> are used for this purpose.</p>
+<div class="section" id="if">
+<h3><a class="toc-backref" href="#id5"><span class="section-number">5.1.1. </span><code class="docutils literal notranslate"><span class="pre">if</span></code></a><a class="headerlink" href="#if" title="Permalink to this headline">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">if</span></code> statement is used to specify a block of code to be executed if a specified condition is true.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;a is greater than 5&quot;</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>In this example, because <code class="docutils literal notranslate"><span class="pre">x</span></code> is indeed greater than 5, “x is greater than 5.” will be printed to the console.</p>
+<p>In this case, the condition is <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&gt;</span> <span class="pre">5</span></code>. If the condition is true, the code within the curly braces <code class="docutils literal notranslate"><span class="pre">{}</span></code> is executed.</p>
 </div>
-<div class="section" id="if-else-statement">
-<h4><a class="toc-backref" href="#id5"><span class="section-number">4.1.1.2. </span>If-Else Statement</a><a class="headerlink" href="#if-else-statement" title="Permalink to this headline">#</a></h4>
-<p>An <code class="docutils literal notranslate"><span class="pre">if-else</span></code> statement allows the program to execute one block of code if a condition is true and another block if the condition is false.</p>
-<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;x is greater than 5.&quot;</span><span class="p">;</span>
+<div class="section" id="else">
+<h3><a class="toc-backref" href="#id6"><span class="section-number">5.1.2. </span><code class="docutils literal notranslate"><span class="pre">else</span></code></a><a class="headerlink" href="#else" title="Permalink to this headline">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">else</span></code> statement is used to specify a block of code to be executed if the condition in the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement is false.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;a is greater than 5&quot;</span><span class="p">;</span>
 <span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;x is not greater than 5.&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;a is not greater than 5&quot;</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>In this case, “x is not greater than 5.” will be printed because <code class="docutils literal notranslate"><span class="pre">x</span></code> is not greater than 5.</p>
+<p>In this case, since <code class="docutils literal notranslate"><span class="pre">a</span></code> is not greater than 5, the condition <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&gt;</span> <span class="pre">5</span></code> is false, so the code within the <code class="docutils literal notranslate"><span class="pre">else</span></code> statement is executed.</p>
+</div>
+</div>
+<div class="section" id="loops-while-and-for">
+<h2><a class="toc-backref" href="#id7"><span class="section-number">5.2. </span>Loops: <code class="docutils literal notranslate"><span class="pre">while</span></code> and <code class="docutils literal notranslate"><span class="pre">for</span></code></a><a class="headerlink" href="#loops-while-and-for" title="Permalink to this headline">#</a></h2>
+<p>Loops are used when you want a section of code to be repeated several times. In C++, <code class="docutils literal notranslate"><span class="pre">while</span></code> and <code class="docutils literal notranslate"><span class="pre">for</span></code> loops are used for this purpose.</p>
+<div class="section" id="while">
+<h3><a class="toc-backref" href="#id8"><span class="section-number">5.2.1. </span><code class="docutils literal notranslate"><span class="pre">while</span></code></a><a class="headerlink" href="#while" title="Permalink to this headline">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">while</span></code> loop is used when you want to loop through a block of code an unknown number of times until a specified condition is met.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">6</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="w">    </span><span class="n">a</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In this case, the condition is <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">6</span></code>. The code within the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop is executed until <code class="docutils literal notranslate"><span class="pre">a</span></code> is no longer less than 6.</p>
+</div>
+<div class="section" id="do-while">
+<h3><a class="toc-backref" href="#id9"><span class="section-number">5.2.2. </span><code class="docutils literal notranslate"><span class="pre">do-while</span></code></a><a class="headerlink" href="#do-while" title="Permalink to this headline">#</a></h3>
+<p>A <code class="docutils literal notranslate"><span class="pre">do-while</span></code> loop is similar to a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop but with one key difference: the condition is checked at the end of the loop, so the loop is guaranteed to run at least once.</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;i is: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">i</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">6</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>In this case, the condition is also <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">6</span></code>, but the output will be slightly different because our condition is at the end of the loop. Please run this code and see for yourself.</p>
+</div>
+<div class="section" id="for">
+<h3><a class="toc-backref" href="#id10"><span class="section-number">5.2.3. </span><code class="docutils literal notranslate"><span class="pre">for</span></code></a><a class="headerlink" href="#for" title="Permalink to this headline">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">for</span></code> loop is used when you want to loop through a block of code a known number of times.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span><span class="w"> </span><span class="n">a</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In this case, the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop is set up with three statements: the initialization (<code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">a</span> <span class="pre">=</span> <span class="pre">1</span></code>), the condition (<code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">6</span></code>), and the increment (<code class="docutils literal notranslate"><span class="pre">a++</span></code>). The code within the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop is executed until <code class="docutils literal notranslate"><span class="pre">a</span></code> is no longer less than 6.</p>
+</div>
 </div>
 <div class="section" id="switch-statement">
-<h4><a class="toc-backref" href="#id6"><span class="section-number">4.1.1.3. </span>Switch Statement</a><a class="headerlink" href="#switch-statement" title="Permalink to this headline">#</a></h4>
-<p>A <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement allows a program to choose between multiple blocks of code based on the value of an expression.</p>
-<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">day</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<h2><a class="toc-backref" href="#id11"><span class="section-number">5.3. </span>Switch Statement</a><a class="headerlink" href="#switch-statement" title="Permalink to this headline">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement is used to select one of many blocks of code to be executed.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">day</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
 <span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">day</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span>
-<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Monday&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Monday&quot;</span><span class="p">;</span>
 <span class="w">        </span><span class="k">break</span><span class="p">;</span>
 <span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span>
-<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Tuesday&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Tuesday&quot;</span><span class="p">;</span>
 <span class="w">        </span><span class="k">break</span><span class="p">;</span>
 <span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mi">3</span><span class="p">:</span>
-<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Wednesday&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Wednesday&quot;</span><span class="p">;</span>
 <span class="w">        </span><span class="k">break</span><span class="p">;</span>
-<span class="w">    </span><span class="c1">// Cases for other days would go here...</span>
-<span class="w">    </span><span class="k">default</span><span class="o">:</span>
-<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Invalid day&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// You can have any number of case statements.</span>
+<span class="w">    </span><span class="k">default</span><span class="o">:</span><span class="w"> </span>
+<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Invalid day&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="c1">// Optional</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>This program will print “Wednesday” because <code class="docutils literal notranslate"><span class="pre">day</span></code> equals 3. If <code class="docutils literal notranslate"><span class="pre">day</span></code> did not match any of the cases, the <code class="docutils literal notranslate"><span class="pre">default</span></code> case would be executed, and “Invalid day” would be printed.</p>
-<p>Repetition
-Repetition control structures allow your program to execute a block of code multiple times. The primary repetition control structures in C++ are the for loop, while loop, and do-while loop.</p>
-<p>For Loop</p>
-<p>A for loop is useful when you know exactly how many times you want to repeat a block of code.</p>
-<p>C++
-Copy code
-for (int i = 0; i &lt; 5; i++) {
-std::cout &lt;&lt; “i is: ” &lt;&lt; i &lt;&lt; “\n”;
-}
-This will print the numbers 0 through 4, each on a new line.</p>
-<p>While Loop</p>
-<p>A while loop is useful when you want to repeat a block of code an unknown number of times until a certain condition is met.</p>
-<p>C++
-Copy code
-int i = 0;
-while (i &lt; 5) {
-std::cout &lt;&lt; “i is: ” &lt;&lt; i &lt;&lt; “\n”;
-i++;
-}
-This will print the same output as the previous for loop example.</p>
-<p>Do-While Loop</p>
-<p>A do-while loop is similar to a while loop but with one key difference: the condition is checked at the end of the loop, so the loop is guaranteed to run at least once.</p>
-<p>C++
-Copy code
-int i = 0;
-do {
-std::cout &lt;&lt; “i is: ” &lt;&lt; i &lt;&lt; “\n”;
-i++;
-} while (i &lt; 5);
-Once again, this will print the same output as the for loop and while loop examples.</p>
+<p>In this case, the <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement checks the value of <code class="docutils literal notranslate"><span class="pre">day</span></code>. If <code class="docutils literal notranslate"><span class="pre">day</span></code> equals 1, it prints “Monday”, if <code class="docutils literal notranslate"><span class="pre">day</span></code> equals 2, it prints “Tuesday”, and so on. The <code class="docutils literal notranslate"><span class="pre">default</span></code> case is executed if none of the <code class="docutils literal notranslate"><span class="pre">case</span></code> conditions are met.</p>
+<p>Each <code class="docutils literal notranslate"><span class="pre">case</span></code> ends with a <code class="docutils literal notranslate"><span class="pre">break</span></code> statement, which is used to exit the <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement. If the <code class="docutils literal notranslate"><span class="pre">break</span></code> is not included, the next <code class="docutils literal notranslate"><span class="pre">case</span></code> will be executed even if the condition is not met. This behavior is called fallthrough. If you want to intentionally use the fallthrough behavior, you can omit the <code class="docutils literal notranslate"><span class="pre">break</span></code>.</p>
 </div>
+<div class="section" id="summary">
+<h2><a class="toc-backref" href="#id12"><span class="section-number">5.4. </span>Summary</a><a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><strong>Conditional Statements (<code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code>):</strong> Enables program to make decisions based on conditions.</p></li>
+<li><p><strong>Looping Structures (<code class="docutils literal notranslate"><span class="pre">for</span></code>, <code class="docutils literal notranslate"><span class="pre">while</span></code>, <code class="docutils literal notranslate"><span class="pre">do-while</span></code>):</strong> Executes code repeatedly as long as a certain condition is true.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">for</span></code>: Ideal when the number of iterations is known.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">while</span></code> and <code class="docutils literal notranslate"><span class="pre">do-while</span></code>: Useful when continuation depends on a condition that changes during loop execution.</p></li>
+</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">switch</span></code> Statement:</strong> Provides cleaner, more readable way to handle multiple conditions based on a single variable.</p></li>
+<li><p>Control structures form the logical backbone of coding, from simple scripts to complex applications.</p></li>
+<li><p>Practice exercises provided for hands-on learning experience.</p></li>
+</ul>
+<p>In the next chapter, we will talk about functions in C++, which are a way of packaging code into reusable modules.</p>
 </div>
+<div class="section" id="practice-questions">
+<h2><a class="toc-backref" href="#id13"><span class="section-number">5.5. </span>Practice Questions</a><a class="headerlink" href="#practice-questions" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Question:</strong> Write a program that reads a single character from the user. If the character is a lowercase letter, print “Lowercase”. If it’s an uppercase letter, print “Uppercase”. If it’s a digit, print “Digit”. Otherwise, print “Other”.</p></li>
+<li><p><strong>Question:</strong> Write a program that uses a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to print numbers from 1 to 10.</p></li>
+<li><p><strong>Question:</strong> Write a program that uses a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop to print numbers from 10 to 1 in descending order.</p></li>
+<li><p><strong>Question:</strong> Write a program that asks the user to input a number. If the number is less than 10, print “This number is too small”. If the number is exactly 10, print “Perfect number”. If the number is greater than 10, print “This number is too large”.</p></li>
+<li><p><strong>Question:</strong> Write a program using a <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement that simulates a simple calculator. The program should take an operator (<code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>) and two numbers from the user and then perform the appropriate operation.</p></li>
+<li><p><strong>Hard Question:</strong> Write a program that reads a binary number (as a string) from the user and prints its decimal representation.</p></li>
+<li><p><strong>Hard Question:</strong> Write a program that accepts a string and convert all the lowercase letters in the string to uppercase.</p></li>
+</ol>
+<p>Remember to solve these exercises yourself and compare your solutions to the expected output. The key to learning programming is practice. You’ll get comfortable with the syntax and logic as you write more code.</p>
 </div>
 </div>
 
@@ -531,11 +600,11 @@ Once again, this will print the same output as the for loop and while loop examp
       </div>
     </a>
     <a class="right-next"
-       href="../java/start.html"
+       href="functions.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Nothin Here Yet :(</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Functions</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -557,16 +626,29 @@ Once again, this will print the same output as the for loop and while loop examp
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">4.1. Table of Contents</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selection">4.1.1. Selection</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#if-statement">4.1.1.1. If Statement</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#if-else-statement">4.1.1.2. If-Else Statement</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#switch-statement">4.1.1.3. Switch Statement</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">4. Control Structres</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">4.1. Table of Contents</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#control-structures">5. Control Structures</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-statements-if-and-else">5.1. Conditional Statements: <code class="docutils literal notranslate"><span class="pre">if</span></code> and <code class="docutils literal notranslate"><span class="pre">else</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if">5.1.1. <code class="docutils literal notranslate"><span class="pre">if</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#else">5.1.2. <code class="docutils literal notranslate"><span class="pre">else</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loops-while-and-for">5.2. Loops: <code class="docutils literal notranslate"><span class="pre">while</span></code> and <code class="docutils literal notranslate"><span class="pre">for</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while">5.2.1. <code class="docutils literal notranslate"><span class="pre">while</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#do-while">5.2.2. <code class="docutils literal notranslate"><span class="pre">do-while</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for">5.2.3. <code class="docutils literal notranslate"><span class="pre">for</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#switch-statement">5.3. Switch Statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">5.4. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-questions">5.5. Practice Questions</a></li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
+
   </nav></div>
 
 </div></div>

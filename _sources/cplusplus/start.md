@@ -9,6 +9,7 @@ This Chapter will introduce you to C++ and go over the requirments for setting u
 ```{contents}
 ```
 
+
 ## Why learn C++?
 
 C++ is a fast language and it's used everywhere, you can find C++ applications everywhere 
