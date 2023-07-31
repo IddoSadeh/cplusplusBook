@@ -8,6 +8,8 @@ parts:
   numbered: True
   chapters:
   - file: cplusplus/start.md
+  - file: cplusplus/hello.md
+  - file: cplusplus/variables.md
 - caption: AP CSA - Java
   chapters:
   - file: java/start.md
