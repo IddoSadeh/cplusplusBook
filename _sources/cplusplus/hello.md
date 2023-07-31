@@ -22,7 +22,7 @@ int main() //line 2
 } //line 5
 ```
 
-Lets make some sense of the different components of this code before we move on to new topics.
+Let's make some sense of the different components of this code before we move on to new topics.
 
 ### Comments
 

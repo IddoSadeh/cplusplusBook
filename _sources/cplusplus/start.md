@@ -153,6 +153,7 @@ And open up your VS code with the `code .` command:
 ```
 Your VS code should have opened. You should know you are working on the correct project by looking to the left of your screen. Press the Explorer icon (circled in red below) and you should see the name of your hello world project and the README file you created earlier:
 
+
 ```{image} ../cplusplus/startImages/hello3.png
 :alt: Knowing you are working on the correct folder VScode.
 :width: 50%

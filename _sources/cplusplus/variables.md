@@ -566,7 +566,6 @@ C++ also provides a few functions for converting values from one type to another
 
 In the next chapter, we will delve deeper into the operations in C++ and learn about control structures like loops and conditional statements.
 
-Absolutely, let's level up the complexity a bit:
 
 ## Practice Questions
 
@@ -576,12 +575,9 @@ Absolutely, let's level up the complexity a bit:
 4. Given the string "Learning C++ is fun!", write a piece of code that extracts the word "C++" from this string using the substr() function.
 5. Given a `bool` variable `b` initialized with `false`, what will be the output of the following expression: `cout << !b;`?
 6. Write a piece of code that demonstrates an explicit type conversion from `double` to `int`. What will be the output of this code if the `double` variable was initialized with `3.14`?
-Certainly, here are some programming exercises that the students can use to practice:
 
 7. **Variable Swap:** Write a program that declares two integer variables, `a` and `b`, and swaps their values without using a third variable. Print the values of `a` and `b` before and after the swap.
 
-8. **Binary to Decimal Conversion:** Write a program that reads a binary number (as a string) from the user and prints its decimal representation.
-
-9. **Case Converter:** Write a program that takes a lowercase letter as input and prints the uppercase version of the letter. Then, modify your program to accept a string and convert all the lowercase letters in the string to uppercase.
+8. **Case Converter:** Write a program that takes a lowercase letter as input and prints the uppercase version of the letter.
 
 
