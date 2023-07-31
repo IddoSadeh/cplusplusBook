@@ -9,6 +9,7 @@ This Chapter will introduce you to C++ and go over the requirments for setting u
 ```{contents}
 ```
 
+
 ## Why learn C++?
 
 C++ is a fast language and it's used everywhere, you can find C++ applications everywhere 
@@ -152,6 +153,7 @@ And open up your VS code with the `code .` command:
 :align: center
 ```
 Your VS code should have opened. You should know you are working on the correct project by looking to the left of your screen. Press the Explorer icon (circled in red below) and you should see the name of your hello world project and the README file you created earlier:
+
 
 ```{image} ../cplusplus/startImages/hello3.png
 :alt: Knowing you are working on the correct folder VScode.

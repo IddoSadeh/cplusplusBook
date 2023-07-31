@@ -22,7 +22,7 @@ int main() //line 2
 } //line 5
 ```
 
-Lets make some sense of the different components of this code before we move on to new topics.
+Let's make some sense of the different components of this code before we move on to new topics.
 
 ### Comments
 
@@ -36,6 +36,7 @@ There are two ways to write comments in C++. For single line comments we use two
 ```
 
 And for Multi line comments we use a sequence of the form slash, asterisk, text, asterik, slash as follows:
+
 
 ```C++ 
 /* 

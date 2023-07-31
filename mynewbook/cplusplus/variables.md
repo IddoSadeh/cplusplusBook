@@ -7,6 +7,7 @@ In the previous chapter I introduced you to variables and data types. In this ch
 - See the diifferent types in their constraints.
 
 ## Table of Contents
+
 ```{contents}
 ```
 
@@ -18,6 +19,7 @@ type name = newData;
 ```
 
 However, there is a bit more to learn about variables before we can get started on writing more complex programming.
+
 
 ### Variable Declaration and Assignment Continued
 So far we saw that variables can be declared in the following ways:
@@ -474,51 +476,90 @@ These are just some of the basic operations provided by the C++ string class. Th
 In the next section, we'll discuss the bool type in C++, which is used for representing boolean values.
 
 ### Boolean
-The `bool` type in C++ is used to represent boolean logical values.
+
+The `bool` type in C++ is used to represent boolean values: `true` and `false`.
 
 #### Boolean Representation
 
-A `bool` value in C++ can only take one of two values: `true` or `false`. These keywords are built into the language and are used to represent logical truth values. For example, you can declare a `bool` variable and initialize it to `true` or `false` as follows:
+In C++, `bool` values are represented as `true` and `false`. Behind the scenes, `true` corresponds to an integer value of `1`, and `false` corresponds to `0`.
+
+To declare a boolean variable and assign a value to it:
 
 ```C++
-bool isRaining = false;
-bool isSunny = true;
+bool isReady = true;
 ```
-Internally, `bool` values are represented in memory as integers, with `false` being 0 and `true` being 1.
 
 #### Boolean Operations
 
-The `bool` type supports the logical operations AND, OR, and NOT, which in C++ are represented by the operators `&&`, `||`, and `!`, respectively.
+C++ provides several operators to work with boolean values:
 
-- **AND (&&)**: The AND operator returns `true` if both operands are `true`, and `false `otherwise:
+- Logical AND (&&): Returns `true` if both operands are `true`.
+- Logical OR (||): Returns `true` if at least one operand is `true`.
+- Logical NOT (!): Returns the inverse of the operand.
 
-```C++
-bool a = true;
-bool b = false;
-bool result = a && b;  // false
-```
-
-
-- **OR (||)**: The OR operator returns `true` if at least one of the operands is `true`, and `false` otherwise:
+Here's an example of how these can be used:
 
 ```C++
-bool a = true;
-bool b = false;
-bool result = a || b;  // true
+bool isReady = true;
+bool isSet = false;
+bool result;
+
+result = isReady && isSet;  // result will be false
+result = isReady || isSet;  // result will be true
+result = !isReady;  // result will be false
 ```
-- **NOT (!)**: The NOT operator returns the inverse of the operand. If the operand is `true`, it returns `false`, and vice versa:
-```C++
-bool a = true;
-bool result = !a;  // false
-```
-The `bool` type is also the type returned by relational operators (`<`, `<=`, `>`, `>=`, `==`, `!=`), which compare two values and return a bool result:
+
+The bool type is also the type returned by relational operators (`<`, `<=`, `>`, `>=`, `==`, `!=`), which compare two values and return a bool result:
+
 
 ```C++
 int x = 5;
 int y = 10;
 bool result = x < y;  // true
 ```
+
 In this example, the `<` operator checks if `x` is less than `y`. Since 5 is indeed less than 10, the result is `true`.
+
+#### Truth Tables
+
+A truth table is a mathematical table used in logic to compute the result of a logical expression for each possible values of its variables. For the boolean operations AND, OR, and NOT, the truth tables are as follows:
+
+##### AND (`&&`)
+
+| Operand A | Operand B | Result |
+|-----------|-----------|--------|
+| true      | true      | true   |
+| true      | false     | false  |
+| false     | true      | false  |
+| false     | false     | false  |
+
+##### OR (`||`)
+
+| Operand A | Operand B | Result |
+|-----------|-----------|--------|
+| true      | true      | true   |
+| true      | false     | true   |
+| false     | true      | true   |
+| false     | false     | false  |
+
+##### NOT (`!`)
+
+| Operand | Result |
+|---------|--------|
+| true    | false  |
+| false   | true   |
+
+#### De Morgan's Laws
+
+In boolean logic, De Morgan's Laws define how the three basic operations (AND, OR, NOT) can be interchanged without changing the truth of the statement. They are as follows:
+
+1. The negation of a conjunction is the disjunction of the negations.
+    - NOT (A AND B) is the same as (NOT A) OR (NOT B)
+
+2. The negation of a disjunction is the conjunction of the negations.
+    - NOT (A OR B) is the same as (NOT A) AND (NOT B)
+
+De Morgan's Laws can be applied in programming to simplify complex logical expressions.
 
 In the next section, we'll cover the important topic of type conversions in C++, which allow us to change the type of a value under certain circumstances.
 
@@ -565,9 +606,23 @@ C++ also provides a few functions for converting values from one type to another
 
 In the next chapter, we will delve deeper into the operations in C++ and learn about control structures like loops and conditional statements.
 
-Absolutely, let's level up the complexity a bit:
+## Practice Questions - Booleans
 
-## Practice Questions
+1. Create a truth table for the expression A OR NOT B.
+2. Using De Morgan's Laws, write the equivalent expression for NOT (A AND B).
+3. Using De Morgan's Laws, write the equivalent expression for NOT (A OR (B AND C)).
+4. Given the boolean variables `a = true`, `b = false`, and `c = true`, compute the values of the following expressions:
+    - a OR b
+    - NOT a AND c
+    - NOT (a AND (b OR c))
+    - a AND b OR NOT c
+5. Rewrite the following expressions using De Morgan's Laws:
+    - NOT (a OR b)
+    - NOT (a AND b OR c)
+    - NOT (a OR (b AND NOT c) OR (NOT a AND c))
+
+
+## Practice Questions - General
 
 1. How would you represent the binary number `1101` as a decimal?
 2. What value would a `double` variable have if you assign it the result of the integer division of 10 by 3?
@@ -575,12 +630,10 @@ Absolutely, let's level up the complexity a bit:
 4. Given the string "Learning C++ is fun!", write a piece of code that extracts the word "C++" from this string using the substr() function.
 5. Given a `bool` variable `b` initialized with `false`, what will be the output of the following expression: `cout << !b;`?
 6. Write a piece of code that demonstrates an explicit type conversion from `double` to `int`. What will be the output of this code if the `double` variable was initialized with `3.14`?
-Certainly, here are some programming exercises that the students can use to practice:
 
 7. **Variable Swap:** Write a program that declares two integer variables, `a` and `b`, and swaps their values without using a third variable. Print the values of `a` and `b` before and after the swap.
 
-8. **Binary to Decimal Conversion:** Write a program that reads a binary number (as a string) from the user and prints its decimal representation.
-
-9. **Case Converter:** Write a program that takes a lowercase letter as input and prints the uppercase version of the letter. Then, modify your program to accept a string and convert all the lowercase letters in the string to uppercase.
+8. **Case Converter:** Write a program that takes a lowercase letter as input and prints the uppercase version of the letter.
 
 
+Remember to solve these exercises yourself and compare your solutions to the expected output. The key to learning programming is practice. You'll get comfortable with the syntax and logic as you write more code.

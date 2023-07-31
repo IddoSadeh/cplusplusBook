@@ -10,6 +10,8 @@ parts:
   - file: cplusplus/start.md
   - file: cplusplus/hello.md
   - file: cplusplus/variables.md
+  - file: cplusplus/control.md
+  - file: cplusplus/functions.md
 - caption: AP CSA - Java
   chapters:
   - file: java/start.md
