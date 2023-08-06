@@ -1,5 +1,5 @@
 # Functions
-In the last chapter we learned about control structures. Now that are code is getting bigger and more complicated we need to get to know about functions. By the end of this chapter you will know:
+In the last chapter we learned about conditional statements as control structures. Now that are code is getting bigger and more complicated we need to get to know about functions. By the end of this chapter you will know:
 - What makes up a function.
 - How to create your own function.
 - Encapsulation and why functions are important.
@@ -122,8 +122,37 @@ int main() {
 
 In this example, the `add()` function returns the sum of `a` and `b`, which is stored in the `result` variable in the `main()` function.
 
+
+## Function Overloading
+
+After exploring the fundamentals of functions, let's delve into a more advanced concept that can increase the flexibility of our code: function overloading.
+
+Function overloading is a feature in C++ that allows multiple functions to have the same name, but with different parameters (either a different number of parameters or different types). The compiler selects the correct function based on the arguments passed during the function call.
+
+Here's an example:
+
+```C++
+void print(int i) {
+  cout << "Integer: " << i << endl;
+}
+
+void print(double d) {
+  cout << "Double: " << d << endl;
+}
+
+int main() {
+  print(5);    // Calls the function with an integer parameter
+  print(5.5);  // Calls the function with a double parameter
+  return 0;
+}
+```
+
+Function overloading helps in writing flexible code, where a function's name succinctly expresses its purpose, while its varying parameters handle different specific cases. It allows programmers to write functions that can handle different data types and numbers of arguments, without needing to create a unique name for each variation.
+
+
 ## Summary
-I apologize for the confusion. Here's a corrected summary:
+
+With our understanding of functions, we've added a transformative tool to our coding arsenal. It's time to review what we've covered in this chapter, highlighting the crucial takeaways before embarking on our next programming adventure.
 
 - **Functions** are fundamental building blocks in C++ programming. They provide a way to structure programs effectively, enabling code reuse, abstraction, and modularity.
 
@@ -141,7 +170,7 @@ I apologize for the confusion. Here's a corrected summary:
 
 - The use of functions encourages the principle of **encapsulation**, allowing for easier debugging and increased readability of code.
 
-
+- **Function Overloading** allows multiple functions to have the same name but with different parameters, enabling the same function name to perform different tasks based on the arguments passed.
 
 ## Practice Problems
 
@@ -155,4 +184,13 @@ I apologize for the confusion. Here's a corrected summary:
 
 5. Write a function named compare that takes two integers. The function should return true if the first integer is greater than the second integer, and false otherwise.
 
+6. Implement a set of overloaded functions named `calculateArea` that return the area of different geometric shapes (e.g., circle, rectangle). Use the appropriate parameters for each shape (e.g., radius for the circle, length, and width for the rectangle).
+
+
 Remember to test your functions thoroughly with different inputs to make sure they work as expected.
+
+
+## Bibliography
+```{bibliography}
+:filter: docname in docnames
+```

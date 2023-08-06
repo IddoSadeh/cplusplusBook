@@ -62,8 +62,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'cplusplus/functions';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Nothin Here Yet :(" href="../java/start.html" />
-    <link rel="prev" title="4. Control Structres" href="control.html" />
+    <link rel="next" title="6. Arrays and Containers" href="arrays.html" />
+    <link rel="prev" title="4. Conditional Statements" href="conditional.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -153,8 +153,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="start.html">1. Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hello.html">2. Your First Program</a></li>
 <li class="toctree-l1"><a class="reference internal" href="variables.html">3. More on Variables and Types</a></li>
-<li class="toctree-l1"><a class="reference internal" href="control.html">4. Control Structres</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conditional.html">4. Conditional Statements</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">5. Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arrays.html">6. Arrays and Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="libraries.html">7. Standard Libraries, Common Libraries, and Useful Functions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">AP CSA - Java</span></p>
 <ul class="nav bd-sidenav">
@@ -364,8 +366,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-functions">5.6. Types of Functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-parameters-and-arguments">5.7. Function Parameters and Arguments</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#return-values">5.8. Return Values</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">5.9. Summary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-problems">5.10. Practice Problems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-overloading">5.9. Function Overloading</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">5.10. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-problems">5.11. Practice Problems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliography">5.12. Bibliography</a></li>
 </ul>
             </nav>
         </div>
@@ -378,37 +382,39 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="functions">
-<h1><a class="toc-backref" href="#id1"><span class="section-number">5. </span>Functions</a><a class="headerlink" href="#functions" title="Permalink to this headline">#</a></h1>
-<p>In the last chapter we learned about control structures. Now that are code is getting bigger and more complicated we need to get to know about functions. By the end of this chapter you will know:</p>
+<h1><a class="toc-backref" href="#id4"><span class="section-number">5. </span>Functions</a><a class="headerlink" href="#functions" title="Permalink to this headline">#</a></h1>
+<p>In the last chapter we learned about conditional statements as control structures. Now that are code is getting bigger and more complicated we need to get to know about functions. By the end of this chapter you will know:</p>
 <ul class="simple">
 <li><p>What makes up a function.</p></li>
 <li><p>How to create your own function.</p></li>
 <li><p>Encapsulation and why functions are important.</p></li>
 </ul>
 <div class="section" id="table-of-contents">
-<h2><a class="toc-backref" href="#id2"><span class="section-number">5.1. </span>Table of Contents</a><a class="headerlink" href="#table-of-contents" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id5"><span class="section-number">5.1. </span>Table of Contents</a><a class="headerlink" href="#table-of-contents" title="Permalink to this headline">#</a></h2>
 <div class="contents topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#functions" id="id1">Functions</a></p>
+<li><p><a class="reference internal" href="#functions" id="id4">Functions</a></p>
 <ul>
-<li><p><a class="reference internal" href="#table-of-contents" id="id2">Table of Contents</a></p></li>
-<li><p><a class="reference internal" href="#functions-in-c" id="id3">Functions in C++</a></p></li>
-<li><p><a class="reference internal" href="#understanding-functions" id="id4">Understanding Functions</a></p></li>
-<li><p><a class="reference internal" href="#function-definition-and-declaration" id="id5">Function Definition and Declaration</a></p></li>
-<li><p><a class="reference internal" href="#function-call" id="id6">Function Call</a></p></li>
-<li><p><a class="reference internal" href="#types-of-functions" id="id7">Types of Functions</a></p></li>
-<li><p><a class="reference internal" href="#function-parameters-and-arguments" id="id8">Function Parameters and Arguments</a></p></li>
-<li><p><a class="reference internal" href="#return-values" id="id9">Return Values</a></p></li>
-<li><p><a class="reference internal" href="#summary" id="id10">Summary</a></p></li>
-<li><p><a class="reference internal" href="#practice-problems" id="id11">Practice Problems</a></p></li>
+<li><p><a class="reference internal" href="#table-of-contents" id="id5">Table of Contents</a></p></li>
+<li><p><a class="reference internal" href="#functions-in-c" id="id6">Functions in C++</a></p></li>
+<li><p><a class="reference internal" href="#understanding-functions" id="id7">Understanding Functions</a></p></li>
+<li><p><a class="reference internal" href="#function-definition-and-declaration" id="id8">Function Definition and Declaration</a></p></li>
+<li><p><a class="reference internal" href="#function-call" id="id9">Function Call</a></p></li>
+<li><p><a class="reference internal" href="#types-of-functions" id="id10">Types of Functions</a></p></li>
+<li><p><a class="reference internal" href="#function-parameters-and-arguments" id="id11">Function Parameters and Arguments</a></p></li>
+<li><p><a class="reference internal" href="#return-values" id="id12">Return Values</a></p></li>
+<li><p><a class="reference internal" href="#function-overloading" id="id13">Function Overloading</a></p></li>
+<li><p><a class="reference internal" href="#summary" id="id14">Summary</a></p></li>
+<li><p><a class="reference internal" href="#practice-problems" id="id15">Practice Problems</a></p></li>
+<li><p><a class="reference internal" href="#bibliography" id="id16">Bibliography</a></p></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 <div class="section" id="functions-in-c">
-<h2><a class="toc-backref" href="#id3"><span class="section-number">5.2. </span>Functions in C++</a><a class="headerlink" href="#functions-in-c" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id6"><span class="section-number">5.2. </span>Functions in C++</a><a class="headerlink" href="#functions-in-c" title="Permalink to this headline">#</a></h2>
 <p>In any programming language, functions serve as an essential tool for structuring and organizing code. In C++, this is no exception. Functions play a vital role in the creation of efficient, manageable, and coherent code.</p>
 <p>Functions offer numerous advantages:</p>
 <ol class="arabic simple">
@@ -419,7 +425,7 @@ document.write(`
 <p>Understanding and effectively utilizing functions is a key step in becoming proficient in C++. In this chapter, we will delve deeper into the nature and usage of functions in C++, exploring different aspects such as function declaration, definition, calls, and more.</p>
 </div>
 <div class="section" id="understanding-functions">
-<h2><a class="toc-backref" href="#id4"><span class="section-number">5.3. </span>Understanding Functions</a><a class="headerlink" href="#understanding-functions" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id7"><span class="section-number">5.3. </span>Understanding Functions</a><a class="headerlink" href="#understanding-functions" title="Permalink to this headline">#</a></h2>
 <p>In C++, a function is a group of statements that is given a name, and which can be called from some point of the program. The main function (<code class="docutils literal notranslate"><span class="pre">main()</span></code>) is the starting point of every C++ program.</p>
 <p>The syntax for declaring a function in C++ is as follows:</p>
 <div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="n">return_type</span><span class="w"> </span><span class="nf">function_name</span><span class="p">(</span><span class="w"> </span><span class="n">parameter</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -436,7 +442,7 @@ document.write(`
 </ul>
 </div>
 <div class="section" id="function-definition-and-declaration">
-<h2><a class="toc-backref" href="#id5"><span class="section-number">5.4. </span>Function Definition and Declaration</a><a class="headerlink" href="#function-definition-and-declaration" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id8"><span class="section-number">5.4. </span>Function Definition and Declaration</a><a class="headerlink" href="#function-definition-and-declaration" title="Permalink to this headline">#</a></h2>
 <p>A function declaration tells the compiler about a function’s name, return type, and parameters, but it doesn’t provide the actual body of the function.</p>
 <p>A function definition, on the other hand, provides the actual body of the function. Here’s an example of a function declaration and definition:</p>
 <div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// function declaration</span>
@@ -450,7 +456,7 @@ document.write(`
 </div>
 </div>
 <div class="section" id="function-call">
-<h2><a class="toc-backref" href="#id6"><span class="section-number">5.5. </span>Function Call</a><a class="headerlink" href="#function-call" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id9"><span class="section-number">5.5. </span>Function Call</a><a class="headerlink" href="#function-call" title="Permalink to this headline">#</a></h2>
 <p>A function call is how we execute a function in C++. We specify the function name and the values (if any) for its parameters. Here’s an example:</p>
 <div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">   </span><span class="c1">// function call</span>
@@ -461,7 +467,7 @@ document.write(`
 </div>
 </div>
 <div class="section" id="types-of-functions">
-<h2><a class="toc-backref" href="#id7"><span class="section-number">5.6. </span>Types of Functions</a><a class="headerlink" href="#types-of-functions" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id10"><span class="section-number">5.6. </span>Types of Functions</a><a class="headerlink" href="#types-of-functions" title="Permalink to this headline">#</a></h2>
 <p>In C++, there are two types of functions:</p>
 <ol class="arabic simple">
 <li><p><strong>Predefined Functions:</strong> These are the functions that are already defined in C++ Library, also known as library functions. For example, <code class="docutils literal notranslate"><span class="pre">main()</span></code>, <code class="docutils literal notranslate"><span class="pre">cout()</span></code>, etc.</p></li>
@@ -469,7 +475,7 @@ document.write(`
 </ol>
 </div>
 <div class="section" id="function-parameters-and-arguments">
-<h2><a class="toc-backref" href="#id8"><span class="section-number">5.7. </span>Function Parameters and Arguments</a><a class="headerlink" href="#function-parameters-and-arguments" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id11"><span class="section-number">5.7. </span>Function Parameters and Arguments</a><a class="headerlink" href="#function-parameters-and-arguments" title="Permalink to this headline">#</a></h2>
 <p>Parameters are the variables listed inside the parentheses in the function declaration. When a function is invoked, you pass a value to the parameter. This value is referred to as an argument. Here’s an example:</p>
 <div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// function declaration and definition</span>
 <span class="kt">void</span><span class="w"> </span><span class="nf">printSum</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -487,7 +493,7 @@ document.write(`
 <p>In this example, <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> are parameters, and <code class="docutils literal notranslate"><span class="pre">5</span></code> and <code class="docutils literal notranslate"><span class="pre">10</span></code> are arguments.</p>
 </div>
 <div class="section" id="return-values">
-<h2><a class="toc-backref" href="#id9"><span class="section-number">5.8. </span>Return Values</a><a class="headerlink" href="#return-values" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id12"><span class="section-number">5.8. </span>Return Values</a><a class="headerlink" href="#return-values" title="Permalink to this headline">#</a></h2>
 <p>A C++ function can return a value using the <code class="docutils literal notranslate"><span class="pre">return</span></code> statement in conjunction with a value or object. This value is considered the “output” of the function. Here’s an example:</p>
 <div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// function declaration and definition</span>
 <span class="kt">int</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -505,9 +511,31 @@ document.write(`
 </div>
 <p>In this example, the <code class="docutils literal notranslate"><span class="pre">add()</span></code> function returns the sum of <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>, which is stored in the <code class="docutils literal notranslate"><span class="pre">result</span></code> variable in the <code class="docutils literal notranslate"><span class="pre">main()</span></code> function.</p>
 </div>
+<div class="section" id="function-overloading">
+<h2><a class="toc-backref" href="#id13"><span class="section-number">5.9. </span>Function Overloading</a><a class="headerlink" href="#function-overloading" title="Permalink to this headline">#</a></h2>
+<p>After exploring the fundamentals of functions, let’s delve into a more advanced concept that can increase the flexibility of our code: function overloading.</p>
+<p>Function overloading is a feature in C++ that allows multiple functions to have the same name, but with different parameters (either a different number of parameters or different types). The compiler selects the correct function based on the arguments passed during the function call.</p>
+<p>Here’s an example:</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">print</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Integer: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">print</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Double: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span><span class="w">    </span><span class="c1">// Calls the function with an integer parameter</span>
+<span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="mf">5.5</span><span class="p">);</span><span class="w">  </span><span class="c1">// Calls the function with a double parameter</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Function overloading helps in writing flexible code, where a function’s name succinctly expresses its purpose, while its varying parameters handle different specific cases. It allows programmers to write functions that can handle different data types and numbers of arguments, without needing to create a unique name for each variation.</p>
+</div>
 <div class="section" id="summary">
-<h2><a class="toc-backref" href="#id10"><span class="section-number">5.9. </span>Summary</a><a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
-<p>I apologize for the confusion. Here’s a corrected summary:</p>
+<h2><a class="toc-backref" href="#id14"><span class="section-number">5.10. </span>Summary</a><a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
+<p>With our understanding of functions, we’ve added a transformative tool to our coding arsenal. It’s time to review what we’ve covered in this chapter, highlighting the crucial takeaways before embarking on our next programming adventure.</p>
 <ul class="simple">
 <li><p><strong>Functions</strong> are fundamental building blocks in C++ programming. They provide a way to structure programs effectively, enabling code reuse, abstraction, and modularity.</p></li>
 <li><p>A <strong>function</strong> in C++ is defined with a return type, a function name, and a list of parameters enclosed in parentheses. The code to be executed is placed within curly braces <code class="docutils literal notranslate"><span class="pre">{}</span></code>.</p></li>
@@ -517,19 +545,24 @@ document.write(`
 <li><p><strong>Function calls</strong> are used to invoke functions. The function name is written followed by parentheses, with any required arguments placed inside the parentheses.</p></li>
 <li><p>The <strong>main()</strong> function is a special function that serves as the entry point of the C++ program. Execution of the program begins and ends with the main function.</p></li>
 <li><p>The use of functions encourages the principle of <strong>encapsulation</strong>, allowing for easier debugging and increased readability of code.</p></li>
+<li><p><strong>Function Overloading</strong> allows multiple functions to have the same name but with different parameters, enabling the same function name to perform different tasks based on the arguments passed.</p></li>
 </ul>
 </div>
 <div class="section" id="practice-problems">
-<h2><a class="toc-backref" href="#id11"><span class="section-number">5.10. </span>Practice Problems</a><a class="headerlink" href="#practice-problems" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id15"><span class="section-number">5.11. </span>Practice Problems</a><a class="headerlink" href="#practice-problems" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Write a function named add that takes two integers as input parameters and returns their sum.</p></li>
 <li><p>Write a function named multiply that takes two integers as input parameters and returns their product.</p></li>
 <li><p>Write a function named greet that takes no parameters and doesn’t return a value. The function should just print a predefined message to the screen, such as “Hello, World!”</p></li>
 <li><p>Write a function named divide that takes two doubles as input parameters. The function should return the result of the first number divided by the second number.</p></li>
 <li><p>Write a function named compare that takes two integers. The function should return true if the first integer is greater than the second integer, and false otherwise.</p></li>
+<li><p>Implement a set of overloaded functions named <code class="docutils literal notranslate"><span class="pre">calculateArea</span></code> that return the area of different geometric shapes (e.g., circle, rectangle). Use the appropriate parameters for each shape (e.g., radius for the circle, length, and width for the rectangle).</p></li>
 </ol>
 <p>Remember to test your functions thoroughly with different inputs to make sure they work as expected.</p>
 </div>
+<div class="section" id="bibliography">
+<h2><a class="toc-backref" href="#id16"><span class="section-number">5.12. </span>Bibliography</a><a class="headerlink" href="#bibliography" title="Permalink to this headline">#</a></h2>
+<span class="target" id="id1"></span></div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -564,20 +597,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="control.html"
+       href="conditional.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>Control Structres</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Conditional Statements</p>
       </div>
     </a>
     <a class="right-next"
-       href="../java/start.html"
+       href="arrays.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Nothin Here Yet :(</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Arrays and Containers</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -607,8 +640,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-functions">5.6. Types of Functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-parameters-and-arguments">5.7. Function Parameters and Arguments</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#return-values">5.8. Return Values</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">5.9. Summary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-problems">5.10. Practice Problems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-overloading">5.9. Function Overloading</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">5.10. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-problems">5.11. Practice Problems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliography">5.12. Bibliography</a></li>
 </ul>
   </nav></div>
 

@@ -1,0 +1,753 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>7. Standard Libraries, Common Libraries, and Useful Functions &#8212; Programmado</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'cplusplus/libraries';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Nothin Here Yet :(" href="../java/start.html" />
+    <link rel="prev" title="6. Arrays and Containers" href="arrays.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Programmado</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome!
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="start.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hello.html">2. Your First Program</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variables.html">3. More on Variables and Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conditional.html">4. Conditional Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions.html">5. Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arrays.html">6. Arrays and Containers</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">7. Standard Libraries, Common Libraries, and Useful Functions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">AP CSA - Java</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../java/start.html">Nothin Here Yet :(</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Intro to Programming with Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../py/start.html">Nothin Here Yet :(</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/IddoSadeh/programado" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/IddoSadeh/programado/issues/new?title=Issue%20on%20page%20%2Fcplusplus/libraries.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/cplusplus/libraries.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Standard Libraries, Common Libraries, and Useful Functions</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">7.1. Table of Contents:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-libraries">7.2. Introduction to Libraries</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-libraries">7.2.1. Standard Libraries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#including-libraries">7.2.2. Including Libraries</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-libraries-and-functions">7.3. Common Libraries and Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-and-output-iostream">7.3.1. Input and Output - <code class="docutils literal notranslate"><span class="pre">&lt;iostream&gt;</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example">7.3.1.1. Example:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-functions-cmath">7.3.2. Mathematical Functions - <code class="docutils literal notranslate"><span class="pre">&lt;cmath&gt;</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.3.2.1. Example:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-time-ctime">7.3.3. Working with Time - <code class="docutils literal notranslate"><span class="pre">&lt;ctime&gt;</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.3.3.1. Example:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-random-numbers-cstdlib">7.3.4. Generating Random Numbers - <code class="docutils literal notranslate"><span class="pre">&lt;cstdlib&gt;</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#seeding-the-random-number-generator">7.3.4.1. Seeding the Random Number Generator</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#random-number-range">7.3.4.2. Random Number Range</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file-handling-fstream">7.3.5. File Handling - <code class="docutils literal notranslate"><span class="pre">&lt;fstream&gt;</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">7.3.5.1. Examples:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">7.4. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-problems">7.5. Practice Problems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliography">7.6. Bibliography</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="standard-libraries-common-libraries-and-useful-functions">
+<h1><a class="toc-backref" href="#id6"><span class="section-number">7. </span>Standard Libraries, Common Libraries, and Useful Functions</a><a class="headerlink" href="#standard-libraries-common-libraries-and-useful-functions" title="Permalink to this headline">#</a></h1>
+<p>In previous chapters, we ventured into some essential programming concepts, such as variables, types, arrays, and containers. We even encountered examples of C++ libraries, such as <code class="docutils literal notranslate"><span class="pre">&lt;iostream&gt;</span></code> for input-output operations and <code class="docutils literal notranslate"><span class="pre">&lt;vector&gt;</span></code> for working with dynamic arrays. Now, let’s dive deeper into the world of C++ libraries, exploring standard libraries, some common libraries, and the useful functions they offer.</p>
+<div class="section" id="table-of-contents">
+<h2><a class="toc-backref" href="#id7"><span class="section-number">7.1. </span>Table of Contents:</a><a class="headerlink" href="#table-of-contents" title="Permalink to this headline">#</a></h2>
+<div class="contents topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#standard-libraries-common-libraries-and-useful-functions" id="id6">Standard Libraries, Common Libraries, and Useful Functions</a></p>
+<ul>
+<li><p><a class="reference internal" href="#table-of-contents" id="id7">Table of Contents:</a></p></li>
+<li><p><a class="reference internal" href="#introduction-to-libraries" id="id8">Introduction to Libraries</a></p>
+<ul>
+<li><p><a class="reference internal" href="#standard-libraries" id="id9">Standard Libraries</a></p></li>
+<li><p><a class="reference internal" href="#including-libraries" id="id10">Including Libraries</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#common-libraries-and-functions" id="id11">Common Libraries and Functions</a></p>
+<ul>
+<li><p><a class="reference internal" href="#input-and-output-iostream" id="id12">Input and Output - <code class="docutils literal notranslate"><span class="pre">&lt;iostream&gt;</span></code></a></p>
+<ul>
+<li><p><a class="reference internal" href="#example" id="id13">Example:</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#mathematical-functions-cmath" id="id14">Mathematical Functions - <code class="docutils literal notranslate"><span class="pre">&lt;cmath&gt;</span></code></a></p>
+<ul>
+<li><p><a class="reference internal" href="#id1" id="id15">Example:</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#working-with-time-ctime" id="id16">Working with Time - <code class="docutils literal notranslate"><span class="pre">&lt;ctime&gt;</span></code></a></p>
+<ul>
+<li><p><a class="reference internal" href="#id2" id="id17">Example:</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#generating-random-numbers-cstdlib" id="id18">Generating Random Numbers - <code class="docutils literal notranslate"><span class="pre">&lt;cstdlib&gt;</span></code></a></p>
+<ul>
+<li><p><a class="reference internal" href="#seeding-the-random-number-generator" id="id19">Seeding the Random Number Generator</a></p></li>
+<li><p><a class="reference internal" href="#random-number-range" id="id20">Random Number Range</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#file-handling-fstream" id="id21">File Handling - <code class="docutils literal notranslate"><span class="pre">&lt;fstream&gt;</span></code></a></p>
+<ul>
+<li><p><a class="reference internal" href="#examples" id="id22">Examples:</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#summary" id="id23">Summary</a></p></li>
+<li><p><a class="reference internal" href="#practice-problems" id="id24">Practice Problems</a></p></li>
+<li><p><a class="reference internal" href="#bibliography" id="id25">Bibliography</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="introduction-to-libraries">
+<h2><a class="toc-backref" href="#id8"><span class="section-number">7.2. </span>Introduction to Libraries</a><a class="headerlink" href="#introduction-to-libraries" title="Permalink to this headline">#</a></h2>
+<p>A library in C++ is a collection of precompiled code that you can use in your program. It contains functions, classes, and variables that allow you to perform common tasks without having to write the code yourself. By using libraries, you can save time, reduce errors, and make your code more readable and maintainable.</p>
+<div class="section" id="standard-libraries">
+<h3><a class="toc-backref" href="#id9"><span class="section-number">7.2.1. </span>Standard Libraries</a><a class="headerlink" href="#standard-libraries" title="Permalink to this headline">#</a></h3>
+<p>C++ comes with a rich set of standard libraries that provide essential functionalities. Some examples that you’ve already seen include:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;iostream&gt;</span></code>: Used for input and output operations.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;vector&gt;</span></code>: Provides a dynamic array (vector) data structure.</p></li>
+</ul>
+</div>
+<div class="section" id="including-libraries">
+<h3><a class="toc-backref" href="#id10"><span class="section-number">7.2.2. </span>Including Libraries</a><a class="headerlink" href="#including-libraries" title="Permalink to this headline">#</a></h3>
+<p>To use a library in your code, you must include its header file using the <code class="docutils literal notranslate"><span class="pre">#include</span></code> directive. For example:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="common-libraries-and-functions">
+<h2><a class="toc-backref" href="#id11"><span class="section-number">7.3. </span>Common Libraries and Functions</a><a class="headerlink" href="#common-libraries-and-functions" title="Permalink to this headline">#</a></h2>
+<div class="section" id="input-and-output-iostream">
+<h3><a class="toc-backref" href="#id12"><span class="section-number">7.3.1. </span>Input and Output - <code class="docutils literal notranslate"><span class="pre">&lt;iostream&gt;</span></code></a><a class="headerlink" href="#input-and-output-iostream" title="Permalink to this headline">#</a></h3>
+<p>We’ve been using this library to perform input and output operations with the <code class="docutils literal notranslate"><span class="pre">cin</span></code> and <code class="docutils literal notranslate"><span class="pre">cout</span></code> objects.</p>
+<div class="section" id="example">
+<h4><a class="toc-backref" href="#id13"><span class="section-number">7.3.1.1. </span>Example:</a><a class="headerlink" href="#example" title="Permalink to this headline">#</a></h4>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="p">;</span>
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Enter a number: &quot;</span><span class="p">;</span>
+<span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">number</span><span class="p">;</span>
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;You entered: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="mathematical-functions-cmath">
+<h3><a class="toc-backref" href="#id14"><span class="section-number">7.3.2. </span>Mathematical Functions - <code class="docutils literal notranslate"><span class="pre">&lt;cmath&gt;</span></code></a><a class="headerlink" href="#mathematical-functions-cmath" title="Permalink to this headline">#</a></h3>
+<p>This library offers functions to perform mathematical operations like square root, power, trigonometric functions, and more. Here are some examples:</p>
+<div class="section" id="id1">
+<h4><a class="toc-backref" href="#id15"><span class="section-number">7.3.2.1. </span>Example:</a><a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h4>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cmath&gt;</span>
+
+<span class="kt">double</span><span class="w"> </span><span class="n">squareRoot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sqrt</span><span class="p">(</span><span class="mi">25</span><span class="p">);</span><span class="w"> </span><span class="c1">// 5.0</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">power</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w"> </span><span class="c1">// 8.0</span>
+</pre></div>
+</div>
+<p>You can explore more functions in the <a class="reference external" href="https://cplusplus.com/reference/cmath/">C++ documentation</a>.</p>
+</div>
+</div>
+<div class="section" id="working-with-time-ctime">
+<h3><a class="toc-backref" href="#id16"><span class="section-number">7.3.3. </span>Working with Time - <code class="docutils literal notranslate"><span class="pre">&lt;ctime&gt;</span></code></a><a class="headerlink" href="#working-with-time-ctime" title="Permalink to this headline">#</a></h3>
+<p>In many applications, including logging, scheduling, and real-time monitoring, handling time is vital. The <ctime> library allows you to manipulate and format time.</p>
+<div class="section" id="id2">
+<h4><a class="toc-backref" href="#id17"><span class="section-number">7.3.3.1. </span>Example:</a><a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h4>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;ctime&gt;</span>
+
+<span class="kt">time_t</span><span class="w"> </span><span class="n">now</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">time</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// Get the current time</span>
+</pre></div>
+</div>
+<p>You can explore more functions in the <a class="reference external" href="https://cplusplus.com/reference/cmath/">C++ documentation</a>.</p>
+</div>
+</div>
+<div class="section" id="generating-random-numbers-cstdlib">
+<h3><a class="toc-backref" href="#id18"><span class="section-number">7.3.4. </span>Generating Random Numbers - <code class="docutils literal notranslate"><span class="pre">&lt;cstdlib&gt;</span></code></a><a class="headerlink" href="#generating-random-numbers-cstdlib" title="Permalink to this headline">#</a></h3>
+<p>Random numbers are used in various applications, such as games, simulations, and cryptography. You can generate random numbers using the <code class="docutils literal notranslate"><span class="pre">&lt;cstdlib&gt;</span></code> libraries <code class="docutils literal notranslate"><span class="pre">rand()</span></code> function. There are two steps to doing so:</p>
+<ul class="simple">
+<li><p>seed the random number</p></li>
+<li><p>define a range for the random number</p></li>
+</ul>
+<div class="section" id="seeding-the-random-number-generator">
+<h4><a class="toc-backref" href="#id19"><span class="section-number">7.3.4.1. </span>Seeding the Random Number Generator</a><a class="headerlink" href="#seeding-the-random-number-generator" title="Permalink to this headline">#</a></h4>
+<p>Seeding is the process of initializing the random number generator. By providing a seed value (usually the current time), you ensure that the sequence of random numbers generated is different each time the program runs. Without seeding, the sequence would be the same every time. Essentialy, a “seed” is the starting point for a sequence of pseudo-random numbers.</p>
+</div>
+<div class="section" id="random-number-range">
+<h4><a class="toc-backref" href="#id20"><span class="section-number">7.3.4.2. </span>Random Number Range</a><a class="headerlink" href="#random-number-range" title="Permalink to this headline">#</a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">rand()</span></code> function by itself generates a random integer within a range that depends on the implementation, often between 0 and a large constant like <code class="docutils literal notranslate"><span class="pre">RAND_MAX</span></code>. To define a specific range for the random number, you can use the modulus operator (<code class="docutils literal notranslate"><span class="pre">%</span></code>) and addition. For example, <code class="docutils literal notranslate"><span class="pre">rand()</span> <span class="pre">%</span> <span class="pre">(maxValue</span> <span class="pre">-</span> <span class="pre">minValue</span> <span class="pre">+</span> <span class="pre">1)</span> <span class="pre">+</span> <span class="pre">minValue</span></code> will generate a random number between <code class="docutils literal notranslate"><span class="pre">minValue</span></code> and <code class="docutils literal notranslate"><span class="pre">maxValue</span></code>, inclusive. This expression takes the remainder of dividing the random number by the size of the range and then offsets it by the minimum value, ensuring that the result falls within the desired bounds.</p>
+<p>The two steps combined in code would like like this:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstdlib&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;ctime&gt;</span>
+
+<span class="n">srand</span><span class="p">(</span><span class="n">time</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span><span class="w"> </span><span class="c1">// seed the random number generator with current time</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">randomValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rand</span><span class="p">()</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w"> </span><span class="c1">// generates a random number between 0 and 99</span>
+
+<span class="c1">// Another function - Generating a random number within a range</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">minValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">maxValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">randomInRange</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rand</span><span class="p">()</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="p">(</span><span class="n">maxValue</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">minValue</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">minValue</span><span class="p">;</span><span class="w"> </span><span class="c1">// generates a random number between 10 and 20</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">&lt;cstdlib&gt;</span></code> library has some more functions that may be useful in your coding journey.
+You can explore more functions in the <a class="reference external" href="https://cplusplus.com/reference/cstdlib/">C++ documentation</a>.</p>
+</div>
+</div>
+<div class="section" id="file-handling-fstream">
+<h3><a class="toc-backref" href="#id21"><span class="section-number">7.3.5. </span>File Handling - <code class="docutils literal notranslate"><span class="pre">&lt;fstream&gt;</span></code></a><a class="headerlink" href="#file-handling-fstream" title="Permalink to this headline">#</a></h3>
+<p>File handling is essential for data storage and retrieval. With <code class="docutils literal notranslate"><span class="pre">&lt;fstream&gt;</span></code>, you can read and write files, enabling persistent storage of data across program executions.</p>
+<div class="section" id="examples">
+<h4><a class="toc-backref" href="#id22"><span class="section-number">7.3.5.1. </span>Examples:</a><a class="headerlink" href="#examples" title="Permalink to this headline">#</a></h4>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;fstream&gt;</span>
+
+<span class="c1">// Writing to a file</span>
+<span class="n">ofstream</span><span class="w"> </span><span class="n">outFile</span><span class="p">(</span><span class="s">&quot;example.txt&quot;</span><span class="p">);</span>
+<span class="n">outFile</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Writing to a file.&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="n">outFile</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+
+<span class="c1">// Reading from a file</span>
+<span class="n">ifstream</span><span class="w"> </span><span class="n">inFile</span><span class="p">(</span><span class="s">&quot;example.txt&quot;</span><span class="p">);</span>
+<span class="n">string</span><span class="w"> </span><span class="n">line</span><span class="p">;</span>
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">getline</span><span class="p">(</span><span class="n">inFile</span><span class="p">,</span><span class="w"> </span><span class="n">line</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">inFile</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="summary">
+<h2><a class="toc-backref" href="#id23"><span class="section-number">7.4. </span>Summary</a><a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
+<p>In this chapter, we explored the concept of libraries in C++, focusing on standard libraries that provide a wide range of functionalities. We saw how libraries simplify development by offering prebuilt functions and classes.</p>
+<p>By understanding and using these libraries, you’re equipping yourself with powerful tools that can significantly enhance your programming capabilities. Whether it’s mathematical calculations, string manipulation, or working with time, these libraries offer robust solutions.</p>
+<p>In the next chapter, we’ll look at functions, a key concept that enables you to write modular and reusable code.</p>
+</div>
+<div class="section" id="practice-problems">
+<h2><a class="toc-backref" href="#id24"><span class="section-number">7.5. </span>Practice Problems</a><a class="headerlink" href="#practice-problems" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Random Number Game</strong>: Write a program that generates a random number between 1 and 100 and allows the user to guess the number. The program should provide feedback like “Too high!” or “Too low!” and continue until the user guesses the number.</p></li>
+<li><p><strong>Simple File Writing and Reading</strong>: Using the <code class="docutils literal notranslate"><span class="pre">&lt;fstream&gt;</span></code> library, write a program that asks the user for their name and saves it to a text file. Then, write a separate program that reads the name from the file and prints a greeting message.</p></li>
+<li><p><strong>Mathematical Calculations</strong>: Create a calculator program that takes two numbers and an operator (addition, subtraction, multiplication, division, or square root) as input. Use the <code class="docutils literal notranslate"><span class="pre">&lt;cmath&gt;</span></code> library to perform the selected operation and print the result.</p></li>
+<li><p><strong>Working with Files - Word Count</strong>: Write a program that reads a text file and counts the number of words in the file. You may consider any sequence of non-space characters separated by spaces as a word.</p></li>
+<li><p><strong>Challenge Problem - Random Maze Generator</strong>: Create a random maze generator using the <code class="docutils literal notranslate"><span class="pre">&lt;cstdlib&gt;</span></code> library to generate random paths. You can represent the maze as a grid, where 0 represents an open path and 1 represents a wall. Print the maze to the console.</p></li>
+</ol>
+<p>These practice problems will help you strengthen your understanding of various standard libraries in C++ and provide hands-on experience working with random numbers, file operations, mathematical functions, and time management.</p>
+<p>Happy coding!</p>
+</div>
+<div class="section" id="bibliography">
+<h2><a class="toc-backref" href="#id25"><span class="section-number">7.6. </span>Bibliography</a><a class="headerlink" href="#bibliography" title="Permalink to this headline">#</a></h2>
+<span class="target" id="id3"></span></div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./cplusplus"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="arrays.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Arrays and Containers</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../java/start.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Nothin Here Yet :(</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">7.1. Table of Contents:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-libraries">7.2. Introduction to Libraries</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-libraries">7.2.1. Standard Libraries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#including-libraries">7.2.2. Including Libraries</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-libraries-and-functions">7.3. Common Libraries and Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-and-output-iostream">7.3.1. Input and Output - <code class="docutils literal notranslate"><span class="pre">&lt;iostream&gt;</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example">7.3.1.1. Example:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-functions-cmath">7.3.2. Mathematical Functions - <code class="docutils literal notranslate"><span class="pre">&lt;cmath&gt;</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.3.2.1. Example:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-time-ctime">7.3.3. Working with Time - <code class="docutils literal notranslate"><span class="pre">&lt;ctime&gt;</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.3.3.1. Example:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-random-numbers-cstdlib">7.3.4. Generating Random Numbers - <code class="docutils literal notranslate"><span class="pre">&lt;cstdlib&gt;</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#seeding-the-random-number-generator">7.3.4.1. Seeding the Random Number Generator</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#random-number-range">7.3.4.2. Random Number Range</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file-handling-fstream">7.3.5. File Handling - <code class="docutils literal notranslate"><span class="pre">&lt;fstream&gt;</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">7.3.5.1. Examples:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">7.4. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-problems">7.5. Practice Problems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliography">7.6. Bibliography</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Iddo Sadeh
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

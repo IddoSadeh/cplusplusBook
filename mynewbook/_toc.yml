@@ -10,8 +10,10 @@ parts:
   - file: cplusplus/start.md
   - file: cplusplus/hello.md
   - file: cplusplus/variables.md
-  - file: cplusplus/control.md
+  - file: cplusplus/conditional.md
   - file: cplusplus/functions.md
+  - file: cplusplus/arrays.md
+  - file: cplusplus/libraries.md
 - caption: AP CSA - Java
   chapters:
   - file: java/start.md

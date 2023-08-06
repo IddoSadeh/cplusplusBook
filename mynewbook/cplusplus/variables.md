@@ -637,3 +637,9 @@ In the next chapter, we will delve deeper into the operations in C++ and learn a
 
 
 Remember to solve these exercises yourself and compare your solutions to the expected output. The key to learning programming is practice. You'll get comfortable with the syntax and logic as you write more code.
+
+
+## Bibliography
+```{bibliography}
+:filter: docname in docnames
+```
