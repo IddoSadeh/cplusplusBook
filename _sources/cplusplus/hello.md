@@ -215,4 +215,5 @@ So why did we see a logic error in the example from  section 2.3.3? The problem 
 
 ## Bibliography
 ```{bibliography}
+:filter: docname in docnames
 ```

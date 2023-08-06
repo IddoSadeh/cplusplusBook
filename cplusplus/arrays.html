@@ -1,0 +1,702 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>6. Arrays and Containers &#8212; Programmado</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'cplusplus/arrays';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="7. Standard Libraries, Common Libraries, and Useful Functions" href="libraries.html" />
+    <link rel="prev" title="5. Functions" href="functions.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Programmado</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome!
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="start.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hello.html">2. Your First Program</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variables.html">3. More on Variables and Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conditional.html">4. Conditional Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions.html">5. Functions</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Arrays and Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="libraries.html">7. Standard Libraries, Common Libraries, and Useful Functions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">AP CSA - Java</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../java/start.html">Nothin Here Yet :(</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Intro to Programming with Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../py/start.html">Nothin Here Yet :(</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/IddoSadeh/programado" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/IddoSadeh/programado/issues/new?title=Issue%20on%20page%20%2Fcplusplus/arrays.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/cplusplus/arrays.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Arrays and Containers</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">6.1. Table of Contents:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arrays">6.2. Arrays</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#declaring-an-array">6.2.1. Declaring an Array</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initializing-an-array">6.2.2. Initializing an Array</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-elements">6.2.3. Accessing Elements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-dimensional-arrays">6.2.4. Multi-Dimensional Arrays</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strings-as-arrays-of-characters">6.2.5. Strings as Arrays of Characters</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#containers">6.3. Containers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#declaring-and-initializing-a-vector">6.3.1. Declaring and Initializing a Vector</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.3.2. Accessing Elements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-functions-with-vectors">6.3.3. Useful Functions with Vectors</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-each-loops">6.4. For-Each Loops</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">6.5. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-problems">6.6. Practice Problems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliography">6.7. Bibliography</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="arrays-and-containers">
+<h1><a class="toc-backref" href="#id5"><span class="section-number">6. </span>Arrays and Containers</a><a class="headerlink" href="#arrays-and-containers" title="Permalink to this headline">#</a></h1>
+<p>In the previous chapters, we explored the basic building blocks of programming in C++, from writing your first program to understanding types and variables. Now, we’ll extend our knowledge to store multiple values efficiently. By the end of this chapter you will be able to:</p>
+<ul class="simple">
+<li><p>Use arrays.</p></li>
+<li><p>Use vectors.</p></li>
+<li><p>use for-each loops.</p></li>
+</ul>
+<div class="section" id="table-of-contents">
+<h2><a class="toc-backref" href="#id6"><span class="section-number">6.1. </span>Table of Contents:</a><a class="headerlink" href="#table-of-contents" title="Permalink to this headline">#</a></h2>
+<div class="contents topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#arrays-and-containers" id="id5">Arrays and Containers</a></p>
+<ul>
+<li><p><a class="reference internal" href="#table-of-contents" id="id6">Table of Contents:</a></p></li>
+<li><p><a class="reference internal" href="#arrays" id="id7">Arrays</a></p>
+<ul>
+<li><p><a class="reference internal" href="#declaring-an-array" id="id8">Declaring an Array</a></p></li>
+<li><p><a class="reference internal" href="#initializing-an-array" id="id9">Initializing an Array</a></p></li>
+<li><p><a class="reference internal" href="#accessing-elements" id="id10">Accessing Elements</a></p></li>
+<li><p><a class="reference internal" href="#multi-dimensional-arrays" id="id11">Multi-Dimensional Arrays</a></p></li>
+<li><p><a class="reference internal" href="#strings-as-arrays-of-characters" id="id12">Strings as Arrays of Characters</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#containers" id="id13">Containers</a></p>
+<ul>
+<li><p><a class="reference internal" href="#declaring-and-initializing-a-vector" id="id14">Declaring and Initializing a Vector</a></p></li>
+<li><p><a class="reference internal" href="#id1" id="id15">Accessing Elements</a></p></li>
+<li><p><a class="reference internal" href="#useful-functions-with-vectors" id="id16">Useful Functions with Vectors</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#for-each-loops" id="id17">For-Each Loops</a></p></li>
+<li><p><a class="reference internal" href="#summary" id="id18">Summary</a></p></li>
+<li><p><a class="reference internal" href="#practice-problems" id="id19">Practice Problems</a></p></li>
+<li><p><a class="reference internal" href="#bibliography" id="id20">Bibliography</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="arrays">
+<h2><a class="toc-backref" href="#id7"><span class="section-number">6.2. </span>Arrays</a><a class="headerlink" href="#arrays" title="Permalink to this headline">#</a></h2>
+<p>An array is a collection of elements (values or variables) that are accessed by indexing. Think of it as a numbered list where you can store multiple values of the same type.</p>
+<div class="section" id="declaring-an-array">
+<h3><a class="toc-backref" href="#id8"><span class="section-number">6.2.1. </span>Declaring an Array</a><a class="headerlink" href="#declaring-an-array" title="Permalink to this headline">#</a></h3>
+<p>You can declare an array in C++ by specifying its type, followed by its name, and the number of elements it can hold inside square brackets:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">numbers</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span><span class="w"> </span><span class="c1">// declares an array of 5 integers</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="initializing-an-array">
+<h3><a class="toc-backref" href="#id9"><span class="section-number">6.2.2. </span>Initializing an Array</a><a class="headerlink" href="#initializing-an-array" title="Permalink to this headline">#</a></h3>
+<p>You can also initialize an array at the time of declaration:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">numbers</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">40</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">};</span><span class="w"> </span>
+</pre></div>
+</div>
+<p>If you choose to initialize an array at the time of declaration, you are allowed to declare it without defining its size:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">numbers</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">40</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">};</span><span class="w"> </span><span class="c1">// size will be 5</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="accessing-elements">
+<h3><a class="toc-backref" href="#id10"><span class="section-number">6.2.3. </span>Accessing Elements</a><a class="headerlink" href="#accessing-elements" title="Permalink to this headline">#</a></h3>
+<p>You can access the elements of an array using their index, starting from 0:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">firstNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span><span class="w"> </span><span class="c1">// accesses the first element</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="multi-dimensional-arrays">
+<h3><a class="toc-backref" href="#id11"><span class="section-number">6.2.4. </span>Multi-Dimensional Arrays</a><a class="headerlink" href="#multi-dimensional-arrays" title="Permalink to this headline">#</a></h3>
+<p>Arrays can be multi-dimensional, allowing you to create structures like matrices, which can be found in applications ranging from mathematical computations to image processing. Essentially, a multi-dimensional array is an array of arrays. In a 2-dimensional array, for example, each element of the main array is itself an array. This concept can be extended to create 3-dimensional arrays and beyond.</p>
+<p>Here’s how you might declare and initialize a 2-dimensional array in C++:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Copy</span><span class="w"> </span><span class="n">code</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">matrix</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>In the above example, <code class="docutils literal notranslate"><span class="pre">matrix</span></code> is a 2D array consisting of 2 rows and 3 columns. Notice the structure created by the curly brackets; it represents one large array that contains two elements, and each of these elements is itself an array containing 3 elements. This nested arrangement allows for the efficient storage and manipulation of complex data structures, opening up a wide range of possibilities in programming.</p>
+</div>
+<div class="section" id="strings-as-arrays-of-characters">
+<h3><a class="toc-backref" href="#id12"><span class="section-number">6.2.5. </span>Strings as Arrays of Characters</a><a class="headerlink" href="#strings-as-arrays-of-characters" title="Permalink to this headline">#</a></h3>
+<p>You may recall from the variables chapter that we used similar syntaxe for accesing characters in a string to that we use for awways. Essentialy, in C++, strings can be treated like arrays of characters. You can access each character of a string using its index:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">string</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Alice&quot;</span><span class="p">;</span>
+<span class="kt">char</span><span class="w"> </span><span class="n">firstLetter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span><span class="w"> </span><span class="c1">// &#39;A&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="containers">
+<h2><a class="toc-backref" href="#id13"><span class="section-number">6.3. </span>Containers</a><a class="headerlink" href="#containers" title="Permalink to this headline">#</a></h2>
+<p>While arrays are powerful and simple to use, they have a limitation: their size is fixed at the time of declaration. What if we need a collection that can grow or shrink in size as needed? That’s where containers come into play.</p>
+<p>Containers are dynamic data structures that can expand or contract as required. C++ provides several container classes, and one of the most commonly used is <code class="docutils literal notranslate"><span class="pre">vector</span></code>. A vector is similar to an array but can change in size, providing greater flexibility.</p>
+<div class="section" id="declaring-and-initializing-a-vector">
+<h3><a class="toc-backref" href="#id14"><span class="section-number">6.3.1. </span>Declaring and Initializing a Vector</a><a class="headerlink" href="#declaring-and-initializing-a-vector" title="Permalink to this headline">#</a></h3>
+<p>Declaring a vector is similar to declaring an array, but you need to include the <code class="docutils literal notranslate"><span class="pre">&lt;vector&gt;</span></code> header. Here’s how you can declare and initialize a vector:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">40</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h3><a class="toc-backref" href="#id15"><span class="section-number">6.3.2. </span>Accessing Elements</a><a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<p>Like arrays, you can access elements of a vector using an index:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">firstNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span><span class="w"> </span><span class="c1">// accesses the first element</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="useful-functions-with-vectors">
+<h3><a class="toc-backref" href="#id16"><span class="section-number">6.3.3. </span>Useful Functions with Vectors</a><a class="headerlink" href="#useful-functions-with-vectors" title="Permalink to this headline">#</a></h3>
+<p>Vectors come with some handy functions that allow you to manage the elements within them:</p>
+<ul class="simple">
+<li><p><strong>Adding Elements</strong>: You can add elements to the end of a vector using the <code class="docutils literal notranslate"><span class="pre">push_back</span></code> method.</p></li>
+</ul>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">60</span><span class="p">);</span><span class="w"> </span><span class="c1">// adds 60 to the end of the vector</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Removing Elements</strong>: You can remove elements from the end of a vector using the <code class="docutils literal notranslate"><span class="pre">pop_back</span></code> method.</p></li>
+</ul>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span><span class="w"> </span><span class="c1">// removes the last element</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Size of Vector</strong>: You can get the number of elements in a vector using the <code class="docutils literal notranslate"><span class="pre">size</span></code> method.</p></li>
+</ul>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">numbers</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="c1">// gets the size of the vector</span>
+</pre></div>
+</div>
+<p>These functions enhance the usability of vectors, making them a versatile choice for storing collections of data that might need to change in size. With vectors, you gain more control and flexibility compared to fixed-size arrays.</p>
+</div>
+</div>
+<div class="section" id="for-each-loops">
+<h2><a class="toc-backref" href="#id17"><span class="section-number">6.4. </span>For-Each Loops</a><a class="headerlink" href="#for-each-loops" title="Permalink to this headline">#</a></h2>
+<p>Iterating over arrays or containers can be simplified using a for-each loop. It allows you to traverse the entire collection without dealing with the index.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">numbers</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">40</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">};</span><span class="w"> </span>
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">numbers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39; &#39;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// Output: 10 20 30 40 50</span>
+</pre></div>
+</div>
+<p>Please explore for each loops in your IDE.</p>
+</div>
+<div class="section" id="summary">
+<h2><a class="toc-backref" href="#id18"><span class="section-number">6.5. </span>Summary</a><a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
+<p>In this chapter, we have expanded our understanding of C++ by learning how to store multiple values using arrays and containers like vectors. We also learned a new way to iterate over these collections using for-each loops.</p>
+<p>By getting familiar with these concepts, you are equipping yourself with essential tools that will come in handy as you delve further into programming. Practice using arrays and containers in different scenarios to deepen your understanding.</p>
+<p>In the next chapter, we’ll talk more about C++ standard libraries.</p>
+</div>
+<div class="section" id="practice-problems">
+<h2><a class="toc-backref" href="#id19"><span class="section-number">6.6. </span>Practice Problems</a><a class="headerlink" href="#practice-problems" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Basic Array Manipulation</strong>: Declare an array of integers with 5 elements. Initialize it with the values 1, 2, 3, 4, 5. Write a program to reverse the array and print the reversed array.</p></li>
+<li><p><strong>Vector Operations</strong>: Create a vector of <code class="docutils literal notranslate"><span class="pre">double</span></code> and use a loop to add the first ten even numbers to it. Then, use a for-each loop to print the contents.</p></li>
+<li><p><strong>String Characters</strong>: Write a program that takes a string as input and prints the characters at all the odd indices. (Hint: Remember, strings can be treated as arrays of characters!)</p></li>
+<li><p><strong>Self Learning Required - Size of an Array</strong>: Declare an array of float with 10 elements. Write a code snippet to print the size of the array using the <code class="docutils literal notranslate"><span class="pre">sizeof</span></code> function, and explain the result.</p></li>
+<li><p><strong>Self Learning Required - Multi-Dimensional Arrays</strong>: Create a 3x3 matrix (2-dimensional array) and initialize it with values of your choice. Write a program that prints the transpose of the matrix.</p></li>
+<li><p><strong>Multi-Dimensional Vectors</strong>: Write a program that defines a 2D vector with 3 rows and 4 columns. Initialize the vector and print its contents.</p></li>
+<li><p><strong>Challenging - Simulation of Tic-Tac-Toe Board</strong>: Use a 2-dimensional array to simulate a Tic-Tac-Toe board. Initialize the board with empty characters and write functions to display the board, place a mark, and check for a win. You may use ‘X’ and ‘O’ to represent the players.</p></li>
+<li><p><strong>Challenging - Dynamic Resizing with Vectors:</strong> Write a program that starts with an empty vector of integers. Allow the user to continuously add numbers to the vector until they enter a specific sentinel value (such as -1). After that, print the entire vector and its size. Then, allow the user to remove numbers from the end until they enter the sentinel value again.</p></li>
+</ol>
+<p>Remember to refer back to the concepts and examples in this chapter as you work on these problems. Happy coding!</p>
+</div>
+<div class="section" id="bibliography">
+<h2><a class="toc-backref" href="#id20"><span class="section-number">6.7. </span>Bibliography</a><a class="headerlink" href="#bibliography" title="Permalink to this headline">#</a></h2>
+<span class="target" id="id2"></span></div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./cplusplus"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="functions.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Functions</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="libraries.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Standard Libraries, Common Libraries, and Useful Functions</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">6.1. Table of Contents:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arrays">6.2. Arrays</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#declaring-an-array">6.2.1. Declaring an Array</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initializing-an-array">6.2.2. Initializing an Array</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-elements">6.2.3. Accessing Elements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-dimensional-arrays">6.2.4. Multi-Dimensional Arrays</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strings-as-arrays-of-characters">6.2.5. Strings as Arrays of Characters</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#containers">6.3. Containers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#declaring-and-initializing-a-vector">6.3.1. Declaring and Initializing a Vector</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.3.2. Accessing Elements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-functions-with-vectors">6.3.3. Useful Functions with Vectors</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-each-loops">6.4. For-Each Loops</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">6.5. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-problems">6.6. Practice Problems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliography">6.7. Bibliography</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Iddo Sadeh
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

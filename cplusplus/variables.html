@@ -62,7 +62,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'cplusplus/variables';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4. Control Structres" href="control.html" />
+    <link rel="next" title="4. Conditional Statements" href="conditional.html" />
     <link rel="prev" title="2. Your First Program" href="hello.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
@@ -153,9 +153,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="start.html">1. Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hello.html">2. Your First Program</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">3. More on Variables and Types</a></li>
-<li class="toctree-l1"><a class="reference internal" href="control.html">4. Control Structres</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="functions.html">6. Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conditional.html">4. Conditional Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions.html">5. Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arrays.html">6. Arrays and Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="libraries.html">7. Standard Libraries, Common Libraries, and Useful Functions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">AP CSA - Java</span></p>
 <ul class="nav bd-sidenav">
@@ -404,6 +405,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">3.4. Summary</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-questions-booleans">3.5. Practice Questions - Booleans</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-questions-general">3.6. Practice Questions - General</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliography">3.7. Bibliography</a></li>
 </ul>
             </nav>
         </div>
@@ -416,7 +418,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="more-on-variables-and-types">
-<h1><a class="toc-backref" href="#id1"><span class="section-number">3. </span>More on Variables and Types</a><a class="headerlink" href="#more-on-variables-and-types" title="Permalink to this headline">#</a></h1>
+<h1><a class="toc-backref" href="#id4"><span class="section-number">3. </span>More on Variables and Types</a><a class="headerlink" href="#more-on-variables-and-types" title="Permalink to this headline">#</a></h1>
 <p>In the previous chapter I introduced you to variables and data types. In this chapter we will dive deeper into these topics. By the end of the chapter you will:</p>
 <ul class="simple">
 <li><p>Familiarize yourself with some more vocabulary and ways to use variables.</p></li>
@@ -426,80 +428,81 @@ document.write(`
 <li><p>See the diifferent types in their constraints.</p></li>
 </ul>
 <div class="section" id="table-of-contents">
-<h2><a class="toc-backref" href="#id2"><span class="section-number">3.1. </span>Table of Contents</a><a class="headerlink" href="#table-of-contents" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id5"><span class="section-number">3.1. </span>Table of Contents</a><a class="headerlink" href="#table-of-contents" title="Permalink to this headline">#</a></h2>
 <div class="contents topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#more-on-variables-and-types" id="id1">More on Variables and Types</a></p>
+<li><p><a class="reference internal" href="#more-on-variables-and-types" id="id4">More on Variables and Types</a></p>
 <ul>
-<li><p><a class="reference internal" href="#table-of-contents" id="id2">Table of Contents</a></p></li>
-<li><p><a class="reference internal" href="#variables" id="id3">Variables</a></p>
+<li><p><a class="reference internal" href="#table-of-contents" id="id5">Table of Contents</a></p></li>
+<li><p><a class="reference internal" href="#variables" id="id6">Variables</a></p>
 <ul>
-<li><p><a class="reference internal" href="#variable-declaration-and-assignment-continued" id="id4">Variable Declaration and Assignment Continued</a></p></li>
-<li><p><a class="reference internal" href="#constants" id="id5">Constants</a></p></li>
-<li><p><a class="reference internal" href="#naming-conventions" id="id6">Naming Conventions</a></p></li>
-<li><p><a class="reference internal" href="#naming-rules" id="id7">Naming Rules</a></p></li>
+<li><p><a class="reference internal" href="#variable-declaration-and-assignment-continued" id="id7">Variable Declaration and Assignment Continued</a></p></li>
+<li><p><a class="reference internal" href="#constants" id="id8">Constants</a></p></li>
+<li><p><a class="reference internal" href="#naming-conventions" id="id9">Naming Conventions</a></p></li>
+<li><p><a class="reference internal" href="#naming-rules" id="id10">Naming Rules</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#types" id="id8">Types</a></p>
+<li><p><a class="reference internal" href="#types" id="id11">Types</a></p>
 <ul>
-<li><p><a class="reference internal" href="#counting-systems-binary-and-decimal" id="id9">Counting Systems: Binary, and Decimal</a></p></li>
-<li><p><a class="reference internal" href="#integers" id="id10">Integers</a></p>
+<li><p><a class="reference internal" href="#counting-systems-binary-and-decimal" id="id12">Counting Systems: Binary, and Decimal</a></p></li>
+<li><p><a class="reference internal" href="#integers" id="id13">Integers</a></p>
 <ul>
-<li><p><a class="reference internal" href="#signed-vs-unsigned" id="id11">Signed vs Unsigned</a></p></li>
-<li><p><a class="reference internal" href="#max-and-min-integers" id="id12">Max and Min Integers</a></p></li>
-<li><p><a class="reference internal" href="#integer-overflow" id="id13">Integer Overflow</a></p></li>
-<li><p><a class="reference internal" href="#mathematical-operations-with-integers" id="id14">Mathematical Operations with Integers</a></p></li>
+<li><p><a class="reference internal" href="#signed-vs-unsigned" id="id14">Signed vs Unsigned</a></p></li>
+<li><p><a class="reference internal" href="#max-and-min-integers" id="id15">Max and Min Integers</a></p></li>
+<li><p><a class="reference internal" href="#integer-overflow" id="id16">Integer Overflow</a></p></li>
+<li><p><a class="reference internal" href="#mathematical-operations-with-integers" id="id17">Mathematical Operations with Integers</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#double" id="id15">Double</a></p>
+<li><p><a class="reference internal" href="#double" id="id18">Double</a></p>
 <ul>
-<li><p><a class="reference internal" href="#floating-point-representation" id="id16">Floating-Point Representation</a></p></li>
-<li><p><a class="reference internal" href="#mathematical-operations-with-doubles" id="id17">Mathematical Operations with Doubles</a></p></li>
+<li><p><a class="reference internal" href="#floating-point-representation" id="id19">Floating-Point Representation</a></p></li>
+<li><p><a class="reference internal" href="#mathematical-operations-with-doubles" id="id20">Mathematical Operations with Doubles</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#char" id="id18">Char</a></p></li>
-<li><p><a class="reference internal" href="#string" id="id19">String</a></p></li>
-<li><p><a class="reference internal" href="#boolean" id="id20">Boolean</a></p>
+<li><p><a class="reference internal" href="#char" id="id21">Char</a></p></li>
+<li><p><a class="reference internal" href="#string" id="id22">String</a></p></li>
+<li><p><a class="reference internal" href="#boolean" id="id23">Boolean</a></p>
 <ul>
-<li><p><a class="reference internal" href="#boolean-representation" id="id21">Boolean Representation</a></p></li>
-<li><p><a class="reference internal" href="#boolean-operations" id="id22">Boolean Operations</a></p></li>
-<li><p><a class="reference internal" href="#truth-tables" id="id23">Truth Tables</a></p>
+<li><p><a class="reference internal" href="#boolean-representation" id="id24">Boolean Representation</a></p></li>
+<li><p><a class="reference internal" href="#boolean-operations" id="id25">Boolean Operations</a></p></li>
+<li><p><a class="reference internal" href="#truth-tables" id="id26">Truth Tables</a></p>
 <ul>
-<li><p><a class="reference internal" href="#and" id="id24">AND (<code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>)</a></p></li>
-<li><p><a class="reference internal" href="#or" id="id25">OR (<code class="docutils literal notranslate"><span class="pre">||</span></code>)</a></p></li>
-<li><p><a class="reference internal" href="#not" id="id26">NOT (<code class="docutils literal notranslate"><span class="pre">!</span></code>)</a></p></li>
+<li><p><a class="reference internal" href="#and" id="id27">AND (<code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>)</a></p></li>
+<li><p><a class="reference internal" href="#or" id="id28">OR (<code class="docutils literal notranslate"><span class="pre">||</span></code>)</a></p></li>
+<li><p><a class="reference internal" href="#not" id="id29">NOT (<code class="docutils literal notranslate"><span class="pre">!</span></code>)</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#de-morgan-s-laws" id="id27">De Morgan’s Laws</a></p></li>
+<li><p><a class="reference internal" href="#de-morgan-s-laws" id="id30">De Morgan’s Laws</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#type-conversions" id="id28">Type Conversions</a></p>
+<li><p><a class="reference internal" href="#type-conversions" id="id31">Type Conversions</a></p>
 <ul>
-<li><p><a class="reference internal" href="#implicit-conversion" id="id29">Implicit Conversion</a></p></li>
-<li><p><a class="reference internal" href="#explicit-conversion" id="id30">Explicit Conversion</a></p></li>
-<li><p><a class="reference internal" href="#conversion-functions" id="id31">Conversion Functions</a></p></li>
+<li><p><a class="reference internal" href="#implicit-conversion" id="id32">Implicit Conversion</a></p></li>
+<li><p><a class="reference internal" href="#explicit-conversion" id="id33">Explicit Conversion</a></p></li>
+<li><p><a class="reference internal" href="#conversion-functions" id="id34">Conversion Functions</a></p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#summary" id="id32">Summary</a></p></li>
-<li><p><a class="reference internal" href="#practice-questions-booleans" id="id33">Practice Questions - Booleans</a></p></li>
-<li><p><a class="reference internal" href="#practice-questions-general" id="id34">Practice Questions - General</a></p></li>
+<li><p><a class="reference internal" href="#summary" id="id35">Summary</a></p></li>
+<li><p><a class="reference internal" href="#practice-questions-booleans" id="id36">Practice Questions - Booleans</a></p></li>
+<li><p><a class="reference internal" href="#practice-questions-general" id="id37">Practice Questions - General</a></p></li>
+<li><p><a class="reference internal" href="#bibliography" id="id38">Bibliography</a></p></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 <div class="section" id="variables">
-<h2><a class="toc-backref" href="#id3"><span class="section-number">3.2. </span>Variables</a><a class="headerlink" href="#variables" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id6"><span class="section-number">3.2. </span>Variables</a><a class="headerlink" href="#variables" title="Permalink to this headline">#</a></h2>
 <p>We learned a bit about variables in the previous chapter. You may recall that if we want to store new data we will use the notation:</p>
 <div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="n">type</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newData</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>However, there is a bit more to learn about variables before we can get started on writing more complex programming.</p>
 <div class="section" id="variable-declaration-and-assignment-continued">
-<h3><a class="toc-backref" href="#id4"><span class="section-number">3.2.1. </span>Variable Declaration and Assignment Continued</a><a class="headerlink" href="#variable-declaration-and-assignment-continued" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id7"><span class="section-number">3.2.1. </span>Variable Declaration and Assignment Continued</a><a class="headerlink" href="#variable-declaration-and-assignment-continued" title="Permalink to this headline">#</a></h3>
 <p>So far we saw that variables can be declared in the following ways:</p>
 <div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="n">type</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newData</span><span class="p">;</span><span class="w"> </span><span class="cm">/* Declare and assign anew variable at the same type */</span>
 
@@ -540,7 +543,7 @@ document.write(`
 </div>
 </div>
 <div class="section" id="constants">
-<h3><a class="toc-backref" href="#id5"><span class="section-number">3.2.2. </span>Constants</a><a class="headerlink" href="#constants" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id8"><span class="section-number">3.2.2. </span>Constants</a><a class="headerlink" href="#constants" title="Permalink to this headline">#</a></h3>
 <p>I your still reading, there is one more variable concept that is very useful. In this stage of the coding journey it may not seem so, but in the future, it will ensure your code is secure when you write projects with thousands of lines.</p>
 <p>You may recall that I mentioned that variables can be changed throughout the program. However, some variables <em>should not</em> be changed. For example, pi is a constant that mostly hasn’t changed in a few hundred years. In such cases <code class="docutils literal notranslate"><span class="pre">C++</span></code> has a keywoard that ensures a variable can never be changed. If you wish to create such a variable use the keyword <code class="docutils literal notranslate"><span class="pre">const</span></code>, for example:</p>
 <div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">PI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14</span><span class="p">;</span>
@@ -560,7 +563,7 @@ document.write(`
 </div>
 </div>
 <div class="section" id="naming-conventions">
-<h3><a class="toc-backref" href="#id6"><span class="section-number">3.2.3. </span>Naming Conventions</a><a class="headerlink" href="#naming-conventions" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id9"><span class="section-number">3.2.3. </span>Naming Conventions</a><a class="headerlink" href="#naming-conventions" title="Permalink to this headline">#</a></h3>
 <p>You probably noticed something odd when I declared the constant variable in the previous example. I opted to use uppercase letters for the variable name, but why?</p>
 <p>In programming, the way you name your variables, functions, classes, and other entities is known as a naming convention. The convention adopted can vary between programming languages, projects, or even between different programmers on the same team. However, they all serve the same goal: to make the code more readable and understandable, not just for others, but also for your future self.</p>
 <p>One such, widely accepted, convention is to use uppercase letters for the names of constant variables. This practice is a convention that comes from an older language called C, in which constants were often defined using a preprocessor directive #define, which by convention was always written in uppercase.</p>
@@ -580,7 +583,7 @@ document.write(`
 <p>Remember, code is more often read than written, so clarity should always be a priority. Good naming conventions, well-applied, are a significant step in that direction.</p>
 </div>
 <div class="section" id="naming-rules">
-<h3><a class="toc-backref" href="#id7"><span class="section-number">3.2.4. </span>Naming Rules</a><a class="headerlink" href="#naming-rules" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id10"><span class="section-number">3.2.4. </span>Naming Rules</a><a class="headerlink" href="#naming-rules" title="Permalink to this headline">#</a></h3>
 <p>Aside from naming conventions, there are also naming rules that <strong>must</strong> be followed. The general rules are:</p>
 <ul class="simple">
 <li><p>Names contain letters, digits and underscores. Nothing else.</p></li>
@@ -591,10 +594,10 @@ document.write(`
 </div>
 </div>
 <div class="section" id="types">
-<h2><a class="toc-backref" href="#id8"><span class="section-number">3.3. </span>Types</a><a class="headerlink" href="#types" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id11"><span class="section-number">3.3. </span>Types</a><a class="headerlink" href="#types" title="Permalink to this headline">#</a></h2>
 <p>In the previous chapter, we discussed some of the basic types in C++ such as <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">double</span></code>, <code class="docutils literal notranslate"><span class="pre">char</span></code>, <code class="docutils literal notranslate"><span class="pre">string</span></code>, and <code class="docutils literal notranslate"><span class="pre">bool</span></code>. In this chapter, we will delve deeper into these types, introduce some concepts related to how data is represented in computers, and understand the implications of these representations.</p>
 <div class="section" id="counting-systems-binary-and-decimal">
-<h3><a class="toc-backref" href="#id9"><span class="section-number">3.3.1. </span>Counting Systems: Binary, and Decimal</a><a class="headerlink" href="#counting-systems-binary-and-decimal" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id12"><span class="section-number">3.3.1. </span>Counting Systems: Binary, and Decimal</a><a class="headerlink" href="#counting-systems-binary-and-decimal" title="Permalink to this headline">#</a></h3>
 <p>Before diving into specific types, it’s important to understand the number systems that computers use to store and manipulate data: binary, decimal, and hexadecimal.</p>
 <p><strong>Decimal</strong></p>
 <p>The decimal system is the base-10 system we use in everyday life, comprises ten digits, from 0 to 9. This is the system we are most familiar with.</p>
@@ -653,15 +656,15 @@ document.write(`
 <p>16 + 8 + 0 + 2 + 1 = 27</p>
 </div>
 <div class="section" id="integers">
-<h3><a class="toc-backref" href="#id10"><span class="section-number">3.3.2. </span>Integers</a><a class="headerlink" href="#integers" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id13"><span class="section-number">3.3.2. </span>Integers</a><a class="headerlink" href="#integers" title="Permalink to this headline">#</a></h3>
 <p>In C++, integers are stored in binary. Depending on the system and the compiler, an <code class="docutils literal notranslate"><span class="pre">int</span></code> in C++ is typically 32 bits, or 4 bytes. That means it can represent 2^32 unique values.</p>
 <div class="section" id="signed-vs-unsigned">
-<h4><a class="toc-backref" href="#id11"><span class="section-number">3.3.2.1. </span>Signed vs Unsigned</a><a class="headerlink" href="#signed-vs-unsigned" title="Permalink to this headline">#</a></h4>
+<h4><a class="toc-backref" href="#id14"><span class="section-number">3.3.2.1. </span>Signed vs Unsigned</a><a class="headerlink" href="#signed-vs-unsigned" title="Permalink to this headline">#</a></h4>
 <p>By default, an <code class="docutils literal notranslate"><span class="pre">int</span></code> in <code class="docutils literal notranslate"><span class="pre">C++</span></code> is <strong>signed</strong>, meaning it can represent both positive and negative numbers. Half of the 2^32 unique values represent negative numbers, and the other half represent positive numbers.</p>
 <p>If only positive values are needed, the <strong>unsigned</strong> keyword can be used. An <code class="docutils literal notranslate"><span class="pre">unsigned</span> <span class="pre">int</span></code> can represent twice as many positive numbers because all 2^32 values are used for positive numbers.</p>
 </div>
 <div class="section" id="max-and-min-integers">
-<h4><a class="toc-backref" href="#id12"><span class="section-number">3.3.2.2. </span>Max and Min Integers</a><a class="headerlink" href="#max-and-min-integers" title="Permalink to this headline">#</a></h4>
+<h4><a class="toc-backref" href="#id15"><span class="section-number">3.3.2.2. </span>Max and Min Integers</a><a class="headerlink" href="#max-and-min-integers" title="Permalink to this headline">#</a></h4>
 <p>in a 32-bit integer in C++, one of those 32 bits is used for the sign. This representation is known as two’s complement, which is widely used for integer representation in computers.</p>
 <p>Here is a breakdown:</p>
 <ul class="simple">
@@ -708,7 +711,7 @@ document.write(`
 <p>This method may seem counter-intuitive at first, but it has several advantages, including making the addition and subtraction of positive and negative numbers more straightforward for computers. For example, if you add 0000 0101 (5) and 1111 1011 (-5) together, you get 1 0000 0000 (256 in unsigned 8-bit, but due to overflow in signed 8-bit, the leftmost 1 is discarded), resulting in 0000 0000, which is zero, as expected.</p>
 </div>
 <div class="section" id="integer-overflow">
-<h4><a class="toc-backref" href="#id13"><span class="section-number">3.3.2.3. </span>Integer Overflow</a><a class="headerlink" href="#integer-overflow" title="Permalink to this headline">#</a></h4>
+<h4><a class="toc-backref" href="#id16"><span class="section-number">3.3.2.3. </span>Integer Overflow</a><a class="headerlink" href="#integer-overflow" title="Permalink to this headline">#</a></h4>
 <p>Integer overflow happens when an integer value is computed that is outside the permissible range of the integer type. This can lead to unexpected behavior, as the integer value will wrap around.</p>
 <p><strong>Wrap Around</strong></p>
 <p>Consider an unsigned 32-bit integer. It can hold values from 0 to 4,294,967,295 (2^32 - 1). If we have a maximum unsigned 32-bit integer, 4,294,967,295, and add 1 to it, the result would logically be 4,294,967,296, which is outside the range of an unsigned 32-bit integer. This situation is what causes an overflow.</p>
@@ -728,7 +731,7 @@ document.write(`
 <p>Therefore, as a developer, you should always be cautious when performing integer arithmetic. Ensure you consider the boundaries and accurately predict the behavior of the code in these edge cases. Check for potential overflows, especially when dealing with user input or any data that could potentially be crafted to exploit an overflow vulnerability.</p>
 </div>
 <div class="section" id="mathematical-operations-with-integers">
-<h4><a class="toc-backref" href="#id14"><span class="section-number">3.3.2.4. </span>Mathematical Operations with Integers</a><a class="headerlink" href="#mathematical-operations-with-integers" title="Permalink to this headline">#</a></h4>
+<h4><a class="toc-backref" href="#id17"><span class="section-number">3.3.2.4. </span>Mathematical Operations with Integers</a><a class="headerlink" href="#mathematical-operations-with-integers" title="Permalink to this headline">#</a></h4>
 <p>In C++, we can perform various mathematical operations with integers using operators. These include addition, subtraction, multiplication, division, and modulus operations.</p>
 <p>Basic Operators
 Here are the basic arithmetic operators in C++:</p>
@@ -774,10 +777,10 @@ In addition to the basic operators, C++ also provides combined assignment operat
 </div>
 </div>
 <div class="section" id="double">
-<h3><a class="toc-backref" href="#id15"><span class="section-number">3.3.3. </span>Double</a><a class="headerlink" href="#double" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id18"><span class="section-number">3.3.3. </span>Double</a><a class="headerlink" href="#double" title="Permalink to this headline">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">double</span></code> type in C++ is used to represent floating-point numbers, i.e., numbers with a fractional part. These could be very large numbers, very small numbers, or numbers between integers.</p>
 <div class="section" id="floating-point-representation">
-<h4><a class="toc-backref" href="#id16"><span class="section-number">3.3.3.1. </span>Floating-Point Representation</a><a class="headerlink" href="#floating-point-representation" title="Permalink to this headline">#</a></h4>
+<h4><a class="toc-backref" href="#id19"><span class="section-number">3.3.3.1. </span>Floating-Point Representation</a><a class="headerlink" href="#floating-point-representation" title="Permalink to this headline">#</a></h4>
 <p>double in C++ typically occupies 64 bits, or 8 bytes, of memory. It is based on the IEEE 754 standard for floating-point arithmetic. This standard represents floating-point numbers in three parts:</p>
 <ul class="simple">
 <li><p><strong>Sign bit</strong>: This bit indicates whether the number is positive or negative. 0 indicates a positive number and 1 indicates a negative number.</p></li>
@@ -791,7 +794,7 @@ While double can represent a wide range of values, it can’t always represent t
 <p>For example, the decimal number 0.1 can’t be exactly represented in binary. As a result, operations involving such numbers may lead to tiny rounding errors. In most cases, these errors are insignificant and can be ignored, but in cases where high precision is required, they can lead to problems. This is sometimes referred to as floating-point error or round-off error.</p>
 </div>
 <div class="section" id="mathematical-operations-with-doubles">
-<h4><a class="toc-backref" href="#id17"><span class="section-number">3.3.3.2. </span>Mathematical Operations with Doubles</a><a class="headerlink" href="#mathematical-operations-with-doubles" title="Permalink to this headline">#</a></h4>
+<h4><a class="toc-backref" href="#id20"><span class="section-number">3.3.3.2. </span>Mathematical Operations with Doubles</a><a class="headerlink" href="#mathematical-operations-with-doubles" title="Permalink to this headline">#</a></h4>
 <p>Similar to <code class="docutils literal notranslate"><span class="pre">int</span></code>, the <code class="docutils literal notranslate"><span class="pre">double</span></code> type supports all basic arithmetic operations:</p>
 <div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">d1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10.5</span><span class="p">;</span>
 <span class="kt">double</span><span class="w"> </span><span class="n">d2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.2</span><span class="p">;</span>
@@ -815,7 +818,7 @@ While double can represent a wide range of values, it can’t always represent t
 </div>
 </div>
 <div class="section" id="char">
-<h3><a class="toc-backref" href="#id18"><span class="section-number">3.3.4. </span>Char</a><a class="headerlink" href="#char" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id21"><span class="section-number">3.3.4. </span>Char</a><a class="headerlink" href="#char" title="Permalink to this headline">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">char</span></code> type in C++ is used to represent individual characters. This can include anything that can be typed on a keyboard, such as letters, numbers, punctuation marks, and control characters like \n (newline) or \t (tab).</p>
 <p><strong>Character Representation</strong></p>
 <p>A <code class="docutils literal notranslate"><span class="pre">char</span></code> in C++ occupies 8 bits, or 1 byte, of memory, which means it can represent 2^8 (or 256) unique values. These values are used to represent different characters according to a character set. The most commonly used character set is ASCII (American Standard Code for Information Interchange).</p>
@@ -873,7 +876,7 @@ While double can represent a wide range of values, it can’t always represent t
 <p>In the next section, we’ll discuss the <code class="docutils literal notranslate"><span class="pre">string</span></code> type in C++, which is used for representing sequences of characters.</p>
 </div>
 <div class="section" id="string">
-<h3><a class="toc-backref" href="#id19"><span class="section-number">3.3.5. </span>String</a><a class="headerlink" href="#string" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id22"><span class="section-number">3.3.5. </span>String</a><a class="headerlink" href="#string" title="Permalink to this headline">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">string</span></code> type in C++ is used to represent sequences of characters. It is a part of the C++ Standard Library.</p>
 <p><strong>String Representation</strong></p>
 <p>A <code class="docutils literal notranslate"><span class="pre">string</span></code> in C++ is essentially a collection of <code class="docutils literal notranslate"><span class="pre">char</span></code> values stored sequentially in memory. The length of a <code class="docutils literal notranslate"><span class="pre">string</span></code> is not fixed and can change during the execution of the program.</p>
@@ -924,10 +927,10 @@ While double can represent a wide range of values, it can’t always represent t
 <p>In the next section, we’ll discuss the bool type in C++, which is used for representing boolean values.</p>
 </div>
 <div class="section" id="boolean">
-<h3><a class="toc-backref" href="#id20"><span class="section-number">3.3.6. </span>Boolean</a><a class="headerlink" href="#boolean" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id23"><span class="section-number">3.3.6. </span>Boolean</a><a class="headerlink" href="#boolean" title="Permalink to this headline">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">bool</span></code> type in C++ is used to represent boolean values: <code class="docutils literal notranslate"><span class="pre">true</span></code> and <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
 <div class="section" id="boolean-representation">
-<h4><a class="toc-backref" href="#id21"><span class="section-number">3.3.6.1. </span>Boolean Representation</a><a class="headerlink" href="#boolean-representation" title="Permalink to this headline">#</a></h4>
+<h4><a class="toc-backref" href="#id24"><span class="section-number">3.3.6.1. </span>Boolean Representation</a><a class="headerlink" href="#boolean-representation" title="Permalink to this headline">#</a></h4>
 <p>In C++, <code class="docutils literal notranslate"><span class="pre">bool</span></code> values are represented as <code class="docutils literal notranslate"><span class="pre">true</span></code> and <code class="docutils literal notranslate"><span class="pre">false</span></code>. Behind the scenes, <code class="docutils literal notranslate"><span class="pre">true</span></code> corresponds to an integer value of <code class="docutils literal notranslate"><span class="pre">1</span></code>, and <code class="docutils literal notranslate"><span class="pre">false</span></code> corresponds to <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
 <p>To declare a boolean variable and assign a value to it:</p>
 <div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span><span class="w"> </span><span class="n">isReady</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
@@ -935,7 +938,7 @@ While double can represent a wide range of values, it can’t always represent t
 </div>
 </div>
 <div class="section" id="boolean-operations">
-<h4><a class="toc-backref" href="#id22"><span class="section-number">3.3.6.2. </span>Boolean Operations</a><a class="headerlink" href="#boolean-operations" title="Permalink to this headline">#</a></h4>
+<h4><a class="toc-backref" href="#id25"><span class="section-number">3.3.6.2. </span>Boolean Operations</a><a class="headerlink" href="#boolean-operations" title="Permalink to this headline">#</a></h4>
 <p>C++ provides several operators to work with boolean values:</p>
 <ul class="simple">
 <li><p>Logical AND (&amp;&amp;): Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if both operands are <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p></li>
@@ -961,10 +964,10 @@ While double can represent a wide range of values, it can’t always represent t
 <p>In this example, the <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> operator checks if <code class="docutils literal notranslate"><span class="pre">x</span></code> is less than <code class="docutils literal notranslate"><span class="pre">y</span></code>. Since 5 is indeed less than 10, the result is <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
 </div>
 <div class="section" id="truth-tables">
-<h4><a class="toc-backref" href="#id23"><span class="section-number">3.3.6.3. </span>Truth Tables</a><a class="headerlink" href="#truth-tables" title="Permalink to this headline">#</a></h4>
+<h4><a class="toc-backref" href="#id26"><span class="section-number">3.3.6.3. </span>Truth Tables</a><a class="headerlink" href="#truth-tables" title="Permalink to this headline">#</a></h4>
 <p>A truth table is a mathematical table used in logic to compute the result of a logical expression for each possible values of its variables. For the boolean operations AND, OR, and NOT, the truth tables are as follows:</p>
 <div class="section" id="and">
-<h5><a class="toc-backref" href="#id24"><span class="section-number">3.3.6.3.1. </span>AND (<code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>)</a><a class="headerlink" href="#and" title="Permalink to this headline">#</a></h5>
+<h5><a class="toc-backref" href="#id27"><span class="section-number">3.3.6.3.1. </span>AND (<code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>)</a><a class="headerlink" href="#and" title="Permalink to this headline">#</a></h5>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Operand A</p></th>
@@ -993,7 +996,7 @@ While double can represent a wide range of values, it can’t always represent t
 </table>
 </div>
 <div class="section" id="or">
-<h5><a class="toc-backref" href="#id25"><span class="section-number">3.3.6.3.2. </span>OR (<code class="docutils literal notranslate"><span class="pre">||</span></code>)</a><a class="headerlink" href="#or" title="Permalink to this headline">#</a></h5>
+<h5><a class="toc-backref" href="#id28"><span class="section-number">3.3.6.3.2. </span>OR (<code class="docutils literal notranslate"><span class="pre">||</span></code>)</a><a class="headerlink" href="#or" title="Permalink to this headline">#</a></h5>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Operand A</p></th>
@@ -1022,7 +1025,7 @@ While double can represent a wide range of values, it can’t always represent t
 </table>
 </div>
 <div class="section" id="not">
-<h5><a class="toc-backref" href="#id26"><span class="section-number">3.3.6.3.3. </span>NOT (<code class="docutils literal notranslate"><span class="pre">!</span></code>)</a><a class="headerlink" href="#not" title="Permalink to this headline">#</a></h5>
+<h5><a class="toc-backref" href="#id29"><span class="section-number">3.3.6.3.3. </span>NOT (<code class="docutils literal notranslate"><span class="pre">!</span></code>)</a><a class="headerlink" href="#not" title="Permalink to this headline">#</a></h5>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Operand</p></th>
@@ -1041,7 +1044,7 @@ While double can represent a wide range of values, it can’t always represent t
 </div>
 </div>
 <div class="section" id="de-morgan-s-laws">
-<h4><a class="toc-backref" href="#id27"><span class="section-number">3.3.6.4. </span>De Morgan’s Laws</a><a class="headerlink" href="#de-morgan-s-laws" title="Permalink to this headline">#</a></h4>
+<h4><a class="toc-backref" href="#id30"><span class="section-number">3.3.6.4. </span>De Morgan’s Laws</a><a class="headerlink" href="#de-morgan-s-laws" title="Permalink to this headline">#</a></h4>
 <p>In boolean logic, De Morgan’s Laws define how the three basic operations (AND, OR, NOT) can be interchanged without changing the truth of the statement. They are as follows:</p>
 <ol class="arabic simple">
 <li><p>The negation of a conjunction is the disjunction of the negations.</p>
@@ -1060,10 +1063,10 @@ While double can represent a wide range of values, it can’t always represent t
 </div>
 </div>
 <div class="section" id="type-conversions">
-<h3><a class="toc-backref" href="#id28"><span class="section-number">3.3.7. </span>Type Conversions</a><a class="headerlink" href="#type-conversions" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id31"><span class="section-number">3.3.7. </span>Type Conversions</a><a class="headerlink" href="#type-conversions" title="Permalink to this headline">#</a></h3>
 <p>In C++, we often need to convert values from one type to another. This is known as type conversion. There are two main types of conversion in C++: <strong>implicit conversion</strong> and <strong>explicit conversion</strong>.</p>
 <div class="section" id="implicit-conversion">
-<h4><a class="toc-backref" href="#id29"><span class="section-number">3.3.7.1. </span>Implicit Conversion</a><a class="headerlink" href="#implicit-conversion" title="Permalink to this headline">#</a></h4>
+<h4><a class="toc-backref" href="#id32"><span class="section-number">3.3.7.1. </span>Implicit Conversion</a><a class="headerlink" href="#implicit-conversion" title="Permalink to this headline">#</a></h4>
 <p>Implicit conversion, also known as automatic or “coercion”, is performed by the compiler without the programmer explicitly requesting it. This happens when the context requires a value of a certain type, but a value of a different, compatible type is provided.</p>
 <p>For instance, consider this example:</p>
 <div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
@@ -1073,7 +1076,7 @@ While double can represent a wide range of values, it can’t always represent t
 <p>Here, an <code class="docutils literal notranslate"><span class="pre">int</span></code> value is being assigned to a <code class="docutils literal notranslate"><span class="pre">double</span></code> variable. Since the <code class="docutils literal notranslate"><span class="pre">double</span></code> type is capable of representing all <code class="docutils literal notranslate"><span class="pre">int</span></code> values with no loss of information, the compiler automatically converts <code class="docutils literal notranslate"><span class="pre">i</span></code> to <code class="docutils literal notranslate"><span class="pre">double</span></code> and assigns it to <code class="docutils literal notranslate"><span class="pre">d</span></code>.</p>
 </div>
 <div class="section" id="explicit-conversion">
-<h4><a class="toc-backref" href="#id30"><span class="section-number">3.3.7.2. </span>Explicit Conversion</a><a class="headerlink" href="#explicit-conversion" title="Permalink to this headline">#</a></h4>
+<h4><a class="toc-backref" href="#id33"><span class="section-number">3.3.7.2. </span>Explicit Conversion</a><a class="headerlink" href="#explicit-conversion" title="Permalink to this headline">#</a></h4>
 <p>Explicit conversion, or type casting, occurs when the programmer explicitly requests a conversion using the cast operator. Here is an example:</p>
 <div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5.7</span><span class="p">;</span>
 <span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">d</span><span class="p">;</span><span class="w">  </span>
@@ -1083,13 +1086,13 @@ While double can represent a wide range of values, it can’t always represent t
 <p>It’s important to note that explicit conversions can result in loss of information, such as in the example above where the fractional part of the double value was lost. As such, they should be used with care.</p>
 </div>
 <div class="section" id="conversion-functions">
-<h4><a class="toc-backref" href="#id31"><span class="section-number">3.3.7.3. </span>Conversion Functions</a><a class="headerlink" href="#conversion-functions" title="Permalink to this headline">#</a></h4>
+<h4><a class="toc-backref" href="#id34"><span class="section-number">3.3.7.3. </span>Conversion Functions</a><a class="headerlink" href="#conversion-functions" title="Permalink to this headline">#</a></h4>
 <p>C++ also provides a few functions for converting values from one type to another. These include static_cast, dynamic_cast, const_cast, and reinterpret_cast. We will discuss these in a future chapter when we delve into more advanced C++ topics.</p>
 </div>
 </div>
 </div>
 <div class="section" id="summary">
-<h2><a class="toc-backref" href="#id32"><span class="section-number">3.4. </span>Summary</a><a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id35"><span class="section-number">3.4. </span>Summary</a><a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>We learned about different types in C++, including <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">double</span></code>, <code class="docutils literal notranslate"><span class="pre">char</span></code>, <code class="docutils literal notranslate"><span class="pre">string</span></code>, and <code class="docutils literal notranslate"><span class="pre">bool</span></code>.</p></li>
 <li><p>We explored number systems used by computers including binary and decimal systems.</p></li>
@@ -1103,7 +1106,7 @@ While double can represent a wide range of values, it can’t always represent t
 <p>In the next chapter, we will delve deeper into the operations in C++ and learn about control structures like loops and conditional statements.</p>
 </div>
 <div class="section" id="practice-questions-booleans">
-<h2><a class="toc-backref" href="#id33"><span class="section-number">3.5. </span>Practice Questions - Booleans</a><a class="headerlink" href="#practice-questions-booleans" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id36"><span class="section-number">3.5. </span>Practice Questions - Booleans</a><a class="headerlink" href="#practice-questions-booleans" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Create a truth table for the expression A OR NOT B.</p></li>
 <li><p>Using De Morgan’s Laws, write the equivalent expression for NOT (A AND B).</p></li>
@@ -1126,7 +1129,7 @@ While double can represent a wide range of values, it can’t always represent t
 </ol>
 </div>
 <div class="section" id="practice-questions-general">
-<h2><a class="toc-backref" href="#id34"><span class="section-number">3.6. </span>Practice Questions - General</a><a class="headerlink" href="#practice-questions-general" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id37"><span class="section-number">3.6. </span>Practice Questions - General</a><a class="headerlink" href="#practice-questions-general" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>How would you represent the binary number <code class="docutils literal notranslate"><span class="pre">1101</span></code> as a decimal?</p></li>
 <li><p>What value would a <code class="docutils literal notranslate"><span class="pre">double</span></code> variable have if you assign it the result of the integer division of 10 by 3?</p></li>
@@ -1139,6 +1142,9 @@ While double can represent a wide range of values, it can’t always represent t
 </ol>
 <p>Remember to solve these exercises yourself and compare your solutions to the expected output. The key to learning programming is practice. You’ll get comfortable with the syntax and logic as you write more code.</p>
 </div>
+<div class="section" id="bibliography">
+<h2><a class="toc-backref" href="#id38"><span class="section-number">3.7. </span>Bibliography</a><a class="headerlink" href="#bibliography" title="Permalink to this headline">#</a></h2>
+<span class="target" id="id1"></span></div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -1182,11 +1188,11 @@ While double can represent a wide range of values, it can’t always represent t
       </div>
     </a>
     <a class="right-next"
-       href="control.html"
+       href="conditional.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>Control Structres</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Conditional Statements</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1255,6 +1261,7 @@ While double can represent a wide range of values, it can’t always represent t
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">3.4. Summary</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-questions-booleans">3.5. Practice Questions - Booleans</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-questions-general">3.6. Practice Questions - General</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliography">3.7. Bibliography</a></li>
 </ul>
   </nav></div>
 
