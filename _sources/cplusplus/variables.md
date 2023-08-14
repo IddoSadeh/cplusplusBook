@@ -642,4 +642,4 @@ Remember to solve these exercises yourself and compare your solutions to the exp
 ## Bibliography
 ```{bibliography}
 :filter: docname in docnames
-```
+``` 

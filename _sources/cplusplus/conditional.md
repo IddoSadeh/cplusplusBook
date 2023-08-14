@@ -206,7 +206,7 @@ In the next chapter, we will talk about functions in C++, which are a way of pac
 8. **Hard Question:** Write a program that reads a binary number (as an integer) from the user and prints its decimal representation. *Hint: use % and / operators*
 
 Remember to solve these exercises yourself and compare your solutions to the expected output. The key to learning programming is practice. You'll get comfortable with the syntax and logic as you write more code.
-
+ 
 ## Bibliography
 ```{bibliography}
 :filter: docname in docnames

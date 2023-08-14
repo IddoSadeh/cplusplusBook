@@ -189,7 +189,7 @@ With our understanding of functions, we've added a transformative tool to our co
 
 Remember to test your functions thoroughly with different inputs to make sure they work as expected.
 
-
+ 
 ## Bibliography
 ```{bibliography}
 :filter: docname in docnames

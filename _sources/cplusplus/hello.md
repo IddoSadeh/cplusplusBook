@@ -199,7 +199,7 @@ name = data;
 Notice that the equals sign in programming is not like the equals sign in math. In programming, whenever you see the assignmnet operator `=` you can read "I am saving what is to thr right of the `=` sign in to the variable on the left of the `=` sign.
 
 Variables, as there name suggest, can change values through out our program. So the assignment operator is actually also useful if we want to to change values midway through a program. Just make sure you only save data with in the constraints of the type your variable is!
-
+ 
 ### Types
 
 The common types and their basic constraints you will see in the next few lessons are:

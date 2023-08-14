@@ -227,4 +227,4 @@ You are now ready to learn some C++! You may already have a lot of questions, bu
 ## Bibliography
 ```{bibliography}
 :filter: docname in docnames
-```
+``` 
