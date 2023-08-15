@@ -360,33 +360,31 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">8.1. Table of Contents:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-pointers">8.2. Introduction to Pointers</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-pointers">8.3. Understanding Pointers</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pointer-types">8.3.1. Pointer Types</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pointers-are-not-integers">8.3.2. Pointers Are Not Integers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#different-pointer-types-are-incompatible">8.3.3. Different Pointer Types Are Incompatible</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-values-through-pointers">8.3.4. Accessing Values Through Pointers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modifying-values-through-pointers">8.3.5. Modifying Values Through Pointers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#low-level-programming">8.3.6. Low-Level Programming</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pointers">8.2. Pointers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pointer-declaration-and-assigment">8.3. Pointer Declaration and Assigment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-deep-dive-into-pointers">8.4. A Deep Dive into Pointers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pass-by-reference-vs-pass-by-value">8.4.1. Pass by Reference vs. Pass by Value</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derefrencing">8.4.2. Derefrencing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pointers-are-distinct-from-variables">8.4.3. Pointers Are Distinct From Variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-management">8.4.4. Memory Management</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#free-store-allocation">8.4.4.1. Free Store Allocation</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1">8.4.4.1.1. Example 1:</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2">8.4.4.1.2. Example 2:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-management-and-pointers">8.4. Memory Management and Pointers</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-layout-and-free-store">8.4.1. Memory Layout and Free Store</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#free-store-allocation">8.4.2. Free Store Allocation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#range-issues-with-pointers">8.4.3. Range Issues with Pointers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initialization-and-the-null-pointer">8.4.4. Initialization and the Null Pointer</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#stay-calm">8.4.4.2. Stay Calm</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#freeing-memory-with-delete">8.4.5. Freeing Memory with Delete</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#automatic-garbage-collection">8.4.6. Automatic Garbage Collection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#automatic-deletion-garbage-collection">8.4.6. Automatic Deletion -  Garbage Collection</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references-a-deeper-look">8.5. References: A Deeper Look</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">8.5. References</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-references">8.5.1. Creating References</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#range-based-for-loops-and-passing-vectors-to-functions">8.5.2. Range-Based For Loops and Passing Vectors to Functions</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pass-by-reference-vs-pass-by-value">8.6. Pass by Reference vs. Pass by Value</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#range-based-for-loops-and-auto">8.6.1. Range-Based For Loops and <code class="docutils literal notranslate"><span class="pre">auto&amp;</span></code></a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">8.6. Summary</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-problems">8.7. Practice Problems</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliography">8.8. Bibliography</a></li>
 </ul>
@@ -402,7 +400,7 @@ document.write(`
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="pointers-and-references">
 <h1><a class="toc-backref" href="#id4"><span class="section-number">8. </span>Pointers and References</a><a class="headerlink" href="#pointers-and-references" title="Permalink to this headline">#</a></h1>
-<p>In this chapter, we will delve into the world of memory management in C++, focusing on pointers and references. These concepts are fundamental to understanding how data is stored and accessed in memory, and they enable powerful programming techniques.</p>
+<p>In this chapter, we will delve into the world of memory management in C++, focusing on pointers and references. These concepts are fundamental to understanding how data is stored and accessed in memory, and they enable powerful programming techniques. Many students find this topic extra difficult. See the resources section at the end of this chapter for more help.</p>
 <p>By the end of this chapter, you should be able to:</p>
 <ul class="simple">
 <li><p>Understand what pointers and references are and how they work.</p></li>
@@ -418,47 +416,45 @@ document.write(`
 <li><p><a class="reference internal" href="#pointers-and-references" id="id4">Pointers and References</a></p>
 <ul>
 <li><p><a class="reference internal" href="#table-of-contents" id="id5">Table of Contents:</a></p></li>
-<li><p><a class="reference internal" href="#introduction-to-pointers" id="id6">Introduction to Pointers</a></p></li>
-<li><p><a class="reference internal" href="#understanding-pointers" id="id7">Understanding Pointers</a></p>
+<li><p><a class="reference internal" href="#pointers" id="id6">Pointers</a></p></li>
+<li><p><a class="reference internal" href="#pointer-declaration-and-assigment" id="id7">Pointer Declaration and Assigment</a></p></li>
+<li><p><a class="reference internal" href="#a-deep-dive-into-pointers" id="id8">A Deep Dive into Pointers</a></p>
 <ul>
-<li><p><a class="reference internal" href="#pointer-types" id="id8">Pointer Types</a></p></li>
-<li><p><a class="reference internal" href="#pointers-are-not-integers" id="id9">Pointers Are Not Integers</a></p></li>
-<li><p><a class="reference internal" href="#different-pointer-types-are-incompatible" id="id10">Different Pointer Types Are Incompatible</a></p></li>
-<li><p><a class="reference internal" href="#accessing-values-through-pointers" id="id11">Accessing Values Through Pointers</a></p></li>
-<li><p><a class="reference internal" href="#modifying-values-through-pointers" id="id12">Modifying Values Through Pointers</a></p></li>
-<li><p><a class="reference internal" href="#low-level-programming" id="id13">Low-Level Programming</a></p></li>
+<li><p><a class="reference internal" href="#pass-by-reference-vs-pass-by-value" id="id9">Pass by Reference vs. Pass by Value</a></p></li>
+<li><p><a class="reference internal" href="#derefrencing" id="id10">Derefrencing</a></p></li>
+<li><p><a class="reference internal" href="#pointers-are-distinct-from-variables" id="id11">Pointers Are Distinct From Variables</a></p></li>
+<li><p><a class="reference internal" href="#memory-management" id="id12">Memory Management</a></p>
+<ul>
+<li><p><a class="reference internal" href="#free-store-allocation" id="id13">Free Store Allocation</a></p>
+<ul>
+<li><p><a class="reference internal" href="#example-1" id="id14">Example 1:</a></p></li>
+<li><p><a class="reference internal" href="#example-2" id="id15">Example 2:</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#memory-management-and-pointers" id="id14">Memory Management and Pointers</a></p>
-<ul>
-<li><p><a class="reference internal" href="#memory-layout-and-free-store" id="id15">Memory Layout and Free Store</a></p></li>
-<li><p><a class="reference internal" href="#free-store-allocation" id="id16">Free Store Allocation</a></p></li>
-<li><p><a class="reference internal" href="#range-issues-with-pointers" id="id17">Range Issues with Pointers</a></p></li>
-<li><p><a class="reference internal" href="#initialization-and-the-null-pointer" id="id18">Initialization and the Null Pointer</a></p></li>
-<li><p><a class="reference internal" href="#freeing-memory-with-delete" id="id19">Freeing Memory with Delete</a></p></li>
-<li><p><a class="reference internal" href="#automatic-garbage-collection" id="id20">Automatic Garbage Collection</a></p></li>
+<li><p><a class="reference internal" href="#stay-calm" id="id16">Stay Calm</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#references-a-deeper-look" id="id21">References: A Deeper Look</a></p>
-<ul>
-<li><p><a class="reference internal" href="#creating-references" id="id22">Creating References</a></p></li>
+<li><p><a class="reference internal" href="#freeing-memory-with-delete" id="id17">Freeing Memory with Delete</a></p></li>
+<li><p><a class="reference internal" href="#automatic-deletion-garbage-collection" id="id18">Automatic Deletion -  Garbage Collection</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#pass-by-reference-vs-pass-by-value" id="id23">Pass by Reference vs. Pass by Value</a></p>
+<li><p><a class="reference internal" href="#references" id="id19">References</a></p>
 <ul>
-<li><p><a class="reference internal" href="#range-based-for-loops-and-auto" id="id24">Range-Based For Loops and <code class="docutils literal notranslate"><span class="pre">auto&amp;</span></code></a></p></li>
+<li><p><a class="reference internal" href="#creating-references" id="id20">Creating References</a></p></li>
+<li><p><a class="reference internal" href="#range-based-for-loops-and-passing-vectors-to-functions" id="id21">Range-Based For Loops and Passing Vectors to Functions</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#practice-problems" id="id25">Practice Problems</a></p></li>
-<li><p><a class="reference internal" href="#bibliography" id="id26">Bibliography</a></p></li>
+<li><p><a class="reference internal" href="#summary" id="id22">Summary</a></p></li>
+<li><p><a class="reference internal" href="#practice-problems" id="id23">Practice Problems</a></p></li>
+<li><p><a class="reference internal" href="#bibliography" id="id24">Bibliography</a></p></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div class="section" id="introduction-to-pointers">
-<h2><a class="toc-backref" href="#id6"><span class="section-number">8.2. </span>Introduction to Pointers</a><a class="headerlink" href="#introduction-to-pointers" title="Permalink to this headline">#</a></h2>
-<p>Previously, we imagined your computer’s memory as a vast sequence of tiny compartments, each capable of holding a small piece of data. Recall, that these compartments are known as bytes, and they are arranged in a linear fashion, starting from address 0 and going up to the maximum available memory.</p>
+<div class="section" id="pointers">
+<h2><a class="toc-backref" href="#id6"><span class="section-number">8.2. </span>Pointers</a><a class="headerlink" href="#pointers" title="Permalink to this headline">#</a></h2>
+<p>Previously, we imagined your computer’s memory as a vast sequence of tiny compartments, each capable of holding a small piece of data.</p>
 <p>You can visualize this arrangement as a long shelf with numbered compartments:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">...</span> <span class="p">[</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
@@ -468,119 +464,202 @@ document.write(`
 </pre></div>
 </div>
 <p>The computer reserves a specific compartment (or a series of compartments, depending on the data type) to store the value 3.14. The unique number of that compartment is the address of the variable <code class="docutils literal notranslate"><span class="pre">myValue</span></code>.</p>
-<p>Now, what if you wanted to keep track of this address? In C++, you can use a special variable called a pointer. A pointer holds the address of another variable. If you want to create a pointer to an integer, you would declare it like this:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="o">*</span><span class="w"> </span><span class="n">pValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">myValue</span><span class="p">;</span><span class="w"> </span><span class="c1">// Pointer to a double</span>
+<p>Now, what if you wanted to keep track of this address? In C++, you can use a special variable called a pointer. <strong>A pointer holds the address of another variable.</strong></p>
+</div>
+<div class="section" id="pointer-declaration-and-assigment">
+<h2><a class="toc-backref" href="#id7"><span class="section-number">8.3. </span>Pointer Declaration and Assigment</a><a class="headerlink" href="#pointer-declaration-and-assigment" title="Permalink to this headline">#</a></h2>
+<p>A pointer variable can be declared the same way as a regular variable with a slight change, we put an asterix (<code class="docutils literal notranslate"><span class="pre">*</span></code>) symbol after the type declaration as follows:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="o">*</span><span class="w"> </span><span class="n">pValue</span><span class="p">;</span><span class="w"> </span><span class="c1">// Reads in english as &quot;a double pointer named pValue&quot;</span>
 </pre></div>
 </div>
-<p>Here, <code class="docutils literal notranslate"><span class="pre">pValue</span></code> is a pointer that holds the address of the variable <code class="docutils literal notranslate"><span class="pre">myValue</span></code>. The ampersand (<code class="docutils literal notranslate"><span class="pre">&amp;</span></code>) symbol is used to retrieve the address of <code class="docutils literal notranslate"><span class="pre">myValue</span></code>.:</p>
+<p>But how do we assign values to a pointer variable? In other words, how do we get the address of a variable? To do so we place the ampersand (<code class="docutils literal notranslate"><span class="pre">&amp;</span></code>) symbol before the variable we want the address to in the following manner:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">pValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">myValue</span><span class="p">;</span><span class="w"> </span><span class="c1">// Reads in english as &quot;assign the address of myValue to pValue&quot;</span>
+</pre></div>
 </div>
-<div class="section" id="understanding-pointers">
-<h2><a class="toc-backref" href="#id7"><span class="section-number">8.3. </span>Understanding Pointers</a><a class="headerlink" href="#understanding-pointers" title="Permalink to this headline">#</a></h2>
-<p>Pointers are a fundamental concept in C++ that enable direct interaction with memory. Let’s explore various aspects of pointers to understand their significance and usage.</p>
-<div class="section" id="pointer-types">
-<h3><a class="toc-backref" href="#id8"><span class="section-number">8.3.1. </span>Pointer Types</a><a class="headerlink" href="#pointer-types" title="Permalink to this headline">#</a></h3>
-<p>In C++, every data type has a corresponding pointer type that can hold the address of that data type. This correspondence ensures that the pointer knows the size and structure of the data it’s pointing to. Here’s an example:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">long</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span><span class="p">;</span>
-<span class="kt">long</span><span class="o">*</span><span class="w"> </span><span class="n">pAge</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">age</span><span class="p">;</span><span class="w"> </span><span class="c1">// Pointer to long</span>
+<p>At this point you may still be confused, or you understand what a pointer is but not why we need it. Before we continue and build on what we learned, take a minute to explore pointers in your IDE. Use <code class="docutils literal notranslate"><span class="pre">cout</span></code> statements to print variables (i.e. <code class="docutils literal notranslate"><span class="pre">myValue</span></code>), the address of variables (i.e. <code class="docutils literal notranslate"><span class="pre">&amp;myValue</span></code>), and pointers to those variables (i.e. <code class="docutils literal notranslate"><span class="pre">pValue</span></code>).</p>
+</div>
+<div class="section" id="a-deep-dive-into-pointers">
+<h2><a class="toc-backref" href="#id8"><span class="section-number">8.4. </span>A Deep Dive into Pointers</a><a class="headerlink" href="#a-deep-dive-into-pointers" title="Permalink to this headline">#</a></h2>
+<p>Let’s explore the different functionalities of pointers to understand their significance and use cases.</p>
+<div class="section" id="pass-by-reference-vs-pass-by-value">
+<h3><a class="toc-backref" href="#id9"><span class="section-number">8.4.1. </span>Pass by Reference vs. Pass by Value</a><a class="headerlink" href="#pass-by-reference-vs-pass-by-value" title="Permalink to this headline">#</a></h3>
+<p>To start lets look at one of the most important functionalities pointers unlock for us.
+In C++, you can pass variables to functions either by reference or by value. What does this mean?</p>
+<ul>
+<li><p><strong>Pass by Value</strong>: This is what were used to up until know. The function receives a copy of the variable. Hence, changes inside the function do not affect the original variable.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="w">  </span><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
 
-<span class="kt">bool</span><span class="w"> </span><span class="n">flag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
-<span class="kt">bool</span><span class="o">*</span><span class="w"> </span><span class="n">pFlag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">flag</span><span class="p">;</span><span class="w"> </span><span class="c1">// Pointer to bool</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">modifyValue</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">);</span>
+
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">;</span>
+<span class="w">      </span><span class="n">modifyValue</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+<span class="w">      </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"> </span><span class="c1">// will print 5</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">modifyValue</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">99</span><span class="p">;</span><span class="w"> </span><span class="c1">// Does not affect the original variable</span>
+<span class="w">  </span><span class="p">}</span>
 </pre></div>
 </div>
-<p>These declarations create pointers that hold the addresses of a <code class="docutils literal notranslate"><span class="pre">long</span></code> variable and a <code class="docutils literal notranslate"><span class="pre">bool</span></code> variable, respectively.</p>
+<p>In the example above, you can see that even though the value of <code class="docutils literal notranslate"><span class="pre">a</span></code> gets passed and save to <code class="docutils literal notranslate"><span class="pre">value</span></code>, any operation done one <code class="docutils literal notranslate"><span class="pre">value</span></code> will not happen to <code class="docutils literal notranslate"><span class="pre">a</span></code>.</p>
+</li>
+<li><p><strong>Pass by Reference</strong>: The function receives a reference to the original variable. As shown below, changes inside the function affect the original variable.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="w">  </span><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">modifyValue</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">value</span><span class="p">);</span>
+
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">;</span>
+<span class="w">      </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">pa</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">;</span>
+<span class="w">      </span><span class="n">modifyValue</span><span class="p">(</span><span class="n">pa</span><span class="p">);</span>
+<span class="w">      </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"> </span><span class="c1">// will print 99</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">modifyValue</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="o">*</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">99</span><span class="p">;</span><span class="w"> </span><span class="c1">// Does affect the original variable</span>
+<span class="w">  </span><span class="p">}</span>
+</pre></div>
 </div>
-<div class="section" id="pointers-are-not-integers">
-<h3><a class="toc-backref" href="#id9"><span class="section-number">8.3.2. </span>Pointers Are Not Integers</a><a class="headerlink" href="#pointers-are-not-integers" title="Permalink to this headline">#</a></h3>
-<p>Pointers may seem similar to integers since they hold numeric addresses, but they are distinct types. Pointers are designed to work with memory addresses, and they understand the size and structure of the data they point to. Integers, on the other hand, are simple numeric values. Mixing them can lead to errors:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pAge</span><span class="p">;</span><span class="w"> </span><span class="c1">// Error: can&#39;t assign a long* to an int</span>
-<span class="n">pAge</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">     </span><span class="c1">// Error: can&#39;t assign an int to a long*</span>
+<p>In the code above we show what passing by reference enables in C++:</p>
+<ul class="simple">
+<li><p>We pass <code class="docutils literal notranslate"><span class="pre">pa</span></code> (the pointer to <code class="docutils literal notranslate"><span class="pre">a</span></code> - the adress of <code class="docutils literal notranslate"><span class="pre">a</span></code>) to the function <code class="docutils literal notranslate"><span class="pre">modifyValue()</span></code>.</p></li>
+<li><p>Then <code class="docutils literal notranslate"><span class="pre">pa</span></code> gets stored in the pointer variable <code class="docutils literal notranslate"><span class="pre">value</span></code>, hence we have access to the location of <code class="docutils literal notranslate"><span class="pre">a</span></code> within the scope of <code class="docutils literal notranslate"><span class="pre">modifyValue</span></code>.</p></li>
+<li><p>Since we have a memory location stored in <code class="docutils literal notranslate"><span class="pre">value</span></code>, we can access and change the data at the location stored in <code class="docutils literal notranslate"><span class="pre">value</span></code> by putting an asterix (<code class="docutils literal notranslate"><span class="pre">*</span></code>) before <code class="docutils literal notranslate"><span class="pre">value</span></code> - this is referred to as the <strong>derefrencing</strong>.</p></li>
+</ul>
+<p>Any changes done in the above manner will persist in the computer memory. You will find this especially useful if you want to write clean code that utilizes functions for encapsulation and procedural abstraction.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="derefrencing">
+<h3><a class="toc-backref" href="#id10"><span class="section-number">8.4.2. </span>Derefrencing</a><a class="headerlink" href="#derefrencing" title="Permalink to this headline">#</a></h3>
+<p>We’ve just seen how derefrencing works, but lets spend a minute to make sure you understand what derefrencing is. Firs, to empahsize what derefrencing means, think of derefrencing a pointer as getting the data stored in the adress saved in the pointer.</p>
+<p>Now, open an IDE, run the code below, and make changes as needed to explore the different behaviours weve learned up until now.:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">;</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;a = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span><span class="w">      </span><span class="c1">// will print 5</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;&amp;a = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span><span class="w">     </span><span class="c1">// will print the location of a</span>
+<span class="w">    </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">pa</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">;</span><span class="w">   </span><span class="c1">// a pointer to the location of a</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;pa = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">pa</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span><span class="w">     </span><span class="c1">// will print the location of a</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">pa</span><span class="p">;</span><span class="w">    </span><span class="c1">// derefrence pa and save the result in b  </span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;*pa = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">pa</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span><span class="w">    </span><span class="c1">// will print 5</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;b = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span><span class="w">     </span><span class="c1">// will print 5</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;*&amp;a = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*&amp;</span><span class="n">a</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span><span class="w">     </span><span class="c1">// will print 5</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="different-pointer-types-are-incompatible">
-<h3><a class="toc-backref" href="#id10"><span class="section-number">8.3.3. </span>Different Pointer Types Are Incompatible</a><a class="headerlink" href="#different-pointer-types-are-incompatible" title="Permalink to this headline">#</a></h3>
-<p>Pointers are specific to the types they point to. A pointer to one type cannot be assigned to a pointer of another type, as this would lead to confusion about the size and structure of the data:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">pChar</span><span class="p">;</span>
+<div class="section" id="pointers-are-distinct-from-variables">
+<h3><a class="toc-backref" href="#id11"><span class="section-number">8.4.3. </span>Pointers Are Distinct From Variables</a><a class="headerlink" href="#pointers-are-distinct-from-variables" title="Permalink to this headline">#</a></h3>
+<p>At this point, it is important to emphasize some key points about pointers:</p>
+<ul>
+<li><p>First recall that pointers are not interchangeable with regular data types, that is an <code class="docutils literal notranslate"><span class="pre">int</span></code> cant be saved into an <code class="docutils literal notranslate"><span class="pre">int*</span></code>. Although the type defintion looks the same, the data stored isn’t.</p></li>
+<li><p>Unlike variables which can be dynamically casted (i.e. a <code class="docutils literal notranslate"><span class="pre">float</span></code> value can be saved into a <code class="docutils literal notranslate"><span class="pre">double</span></code> value), pointers are specific to the types they point to. A pointer to one type cannot be assigned to a pointer of another type, as this would lead to confusion about the size and structure of the data:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">long</span><span class="o">*</span><span class="w"> </span><span class="n">pAge</span><span class="p">;</span>
+<span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">pChar</span><span class="p">;</span>
 <span class="n">pChar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pAge</span><span class="p">;</span><span class="w"> </span><span class="c1">// Error: can&#39;t assign a long* to a char*</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="accessing-values-through-pointers">
-<h3><a class="toc-backref" href="#id11"><span class="section-number">8.3.4. </span>Accessing Values Through Pointers</a><a class="headerlink" href="#accessing-values-through-pointers" title="Permalink to this headline">#</a></h3>
-<p>Pointers provide a way to access the values stored at the addresses they hold. This is done using the dereference operator <code class="docutils literal notranslate"><span class="pre">*</span></code>. For example:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">long</span><span class="w"> </span><span class="n">anotherAge</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">pAge</span><span class="p">;</span><span class="w"> </span><span class="c1">// anotherAge now holds the value 30</span>
-<span class="kt">bool</span><span class="w"> </span><span class="n">anotherFlag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">pFlag</span><span class="p">;</span><span class="w"> </span><span class="c1">// anotherFlag now holds the value true</span>
+</li>
+<li><p>Pointers can be reassigned values, and pointers of the same type can be assigned to other pointers. For example:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">pAge</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">age</span><span class="p">;</span>
+<span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">pNum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">num</span><span class="p">;</span>
+<span class="n">pNum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pAge</span><span class="p">;</span><span class="w"> </span><span class="c1">// This is allowed</span>
 </pre></div>
 </div>
+<p>Keep this last point in mind for the next section.</p>
+</li>
+</ul>
 </div>
-<div class="section" id="modifying-values-through-pointers">
-<h3><a class="toc-backref" href="#id12"><span class="section-number">8.3.5. </span>Modifying Values Through Pointers</a><a class="headerlink" href="#modifying-values-through-pointers" title="Permalink to this headline">#</a></h3>
-<p>You can also modify the values at the addresses pointers are pointing to. This allows for dynamic changes to variables through their pointers:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="o">*</span><span class="n">pAge</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">40</span><span class="p">;</span><span class="w"> </span><span class="c1">// Changes the value of age to 40</span>
-<span class="o">*</span><span class="n">pFlag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"> </span><span class="c1">// Changes the value of flag to false</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="low-level-programming">
-<h3><a class="toc-backref" href="#id13"><span class="section-number">8.3.6. </span>Low-Level Programming</a><a class="headerlink" href="#low-level-programming" title="Permalink to this headline">#</a></h3>
-<p>Working with pointers brings us closer to the hardware, where we have only a few primitive operations and minimal protection from the language or standard library. While this level of programming can be challenging, it’s essential for understanding how higher-level facilities are implemented and for writing specialized code.</p>
-<p>Our goal is to work at the highest level of abstraction possible for a given problem, appreciating the convenience and safety of higher-level software. In subsequent sections, we’ll explore how to achieve a more comfortable level of abstraction by understanding and implementing more advanced features.</p>
-<p>Certainly! Here’s a paraphrased version of the provided text, focusing on the key concepts and details:</p>
-</div>
-</div>
-<div class="section" id="memory-management-and-pointers">
-<h2><a class="toc-backref" href="#id14"><span class="section-number">8.4. </span>Memory Management and Pointers</a><a class="headerlink" href="#memory-management-and-pointers" title="Permalink to this headline">#</a></h2>
-<div class="section" id="memory-layout-and-free-store">
-<h3><a class="toc-backref" href="#id15"><span class="section-number">8.4.1. </span>Memory Layout and Free Store</a><a class="headerlink" href="#memory-layout-and-free-store" title="Permalink to this headline">#</a></h3>
+<div class="section" id="memory-management">
+<h3><a class="toc-backref" href="#id12"><span class="section-number">8.4.4. </span>Memory Management</a><a class="headerlink" href="#memory-management" title="Permalink to this headline">#</a></h3>
 <p>When a C++ program is initiated, the compiler divides memory into different sections. These include areas for the code itself, global variables, and function calls. The remaining memory, often referred to as the “free store” or “heap,” is available for dynamic allocation.</p>
 <p>The free store can be accessed using the <code class="docutils literal notranslate"><span class="pre">new</span></code> operator. For instance, you can allocate space for four doubles with:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">double</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
 </pre></div>
 </div>
-<p>This command requests four doubles from the free store and returns a pointer to the first one.</p>
-</div>
+<p>This command requests room for an array of four doubles from the free store and returns a pointer to the first one. This is the first time we use a poitner to point to an array. You may be wondering what happens when we derefrence an array, and how we can access data from the array. It’s pretty simple:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">*p</span></code> returns the first value of the array.</p></li>
+<li><p>Surprisingly, <code class="docutils literal notranslate"><span class="pre">p[0]</span></code> also returns the first value of the array.</p></li>
+<li><p>The rest of the array can be accessed like a regular array i.e. <code class="docutils literal notranslate"><span class="pre">p[1]</span></code>, <code class="docutils literal notranslate"><span class="pre">p[3]</span></code></p></li>
+</ul>
+<p>The above syntax is a tad problemtic though. Lets explore why.</p>
 <div class="section" id="free-store-allocation">
-<h3><a class="toc-backref" href="#id16"><span class="section-number">8.4.2. </span>Free Store Allocation</a><a class="headerlink" href="#free-store-allocation" title="Permalink to this headline">#</a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">new</span></code> operator is used to request memory from the free store, returning a pointer to the allocated space. This pointer points to an object of a specified type, but it doesn’t know how many elements it points to.</p>
-<p>You can allocate individual elements or arrays:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">singleInt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">;</span>
-<span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">arrayOfInts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
+<h4><a class="toc-backref" href="#id13"><span class="section-number">8.4.4.1. </span>Free Store Allocation</a><a class="headerlink" href="#free-store-allocation" title="Permalink to this headline">#</a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">new</span></code> operator is used to request memory from the free store, returning a pointer to the allocated space. This pointer points to an object of a specified type, <strong>but it doesn’t know how many elements it points to</strong>.</p>
+<p>Why did I highlight the previous sentence?</p>
+<p>Lets look at two dangeourous examples. Frist some code:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="c1">// allocate memory for a new int, save the location at singleInt</span>
+<span class="w"> </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">singleInt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">;</span>
+<span class="c1">// allocate memory for a new int array, save the location of the first element</span>
+<span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">arrayOfInts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span><span class="w"> </span>
 </pre></div>
 </div>
-<p>The number of objects allocated can be variable, allowing flexibility in memory allocation.</p>
-</div>
-<div class="section" id="range-issues-with-pointers">
-<h3><a class="toc-backref" href="#id17"><span class="section-number">8.4.3. </span>Range Issues with Pointers</a><a class="headerlink" href="#range-issues-with-pointers" title="Permalink to this headline">#</a></h3>
-<p>Pointers present a challenge because they don’t inherently know the number of elements they point to. For example, consider the following code:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="o">*</span><span class="w"> </span><span class="n">pd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">double</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
-<span class="n">pd</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.1</span><span class="p">;</span>
-<span class="n">pd</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5.5</span><span class="p">;</span><span class="w"> </span><span class="c1">// Undefined behavior</span>
+<p>And lets bring back our depiction of how are computers memory is made up of a bunch of memory compartments:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">...</span> <span class="p">[</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>The compiler doesn’t know the size of the allocated memory, so accessing out-of-range elements like <code class="docutils literal notranslate"><span class="pre">pd[5]</span></code> can lead to unpredictable behavior and serious errors. These locations might be parts of other objects, and writing to them can cause program crashes or incorrect output. Ensuring that such access doesn’t occur is crucial, and using higher-level abstractions like vectors, which know their size, can help prevent these issues.</p>
-</div>
-<div class="section" id="initialization-and-the-null-pointer">
-<h3><a class="toc-backref" href="#id18"><span class="section-number">8.4.4. </span>Initialization and the Null Pointer</a><a class="headerlink" href="#initialization-and-the-null-pointer" title="Permalink to this headline">#</a></h3>
-<p>Proper initialization is essential for both pointers and the objects they point to. If a type has a constructor (we will talk about constructors in the next chapter), it should be used for initialization. For example:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">MyClass</span><span class="w"> </span><span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-<span class="w">    </span><span class="n">MyClass</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">value</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
-<span class="k">private</span><span class="o">:</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
-<span class="p">};</span>
-
-<span class="n">MyClass</span><span class="o">*</span><span class="w"> </span><span class="n">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MyClass</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span><span class="w"> </span><span class="c1">// Initialized with appropriate constructor</span>
+<p>Now, lets imagine that in the depiction above we have the following allocations:</p>
+<ul class="simple">
+<li><p>Compartment [0] is the C++ program minus the “free store” memory.</p></li>
+<li><p>Compartment [1] is the location saved in arrayOfInts at time of declaration.</p></li>
+<li><p>Compartments [1], [2], [3], [4]  are allocated for an array that will start at Compartment [1].</p></li>
+<li><p>Compartment [5] is the location saved in singleInt at time of declaration.</p></li>
+<li><p>Compartment [6] has very important information you dont want to lose.</p></li>
+</ul>
+<div class="section" id="example-1">
+<h5><a class="toc-backref" href="#id14"><span class="section-number">8.4.4.1.1. </span>Example 1:</a><a class="headerlink" href="#example-1" title="Permalink to this headline">#</a></h5>
+<p>Recall that we learned earlier that pointers can be reassigned values, and pointers of the same type can be assigned to other pointers. That means that the following code is allowed in C++ and will compile without issues:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">arrayOfInts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">singleInt</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>If you don’t have an object to point to, you can use the null pointer <code class="docutils literal notranslate"><span class="pre">nullptr</span></code>:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="o">*</span><span class="w"> </span><span class="n">p0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+<p>If we decide to run the code above, what will happen is that are memory organization will change as follows:</p>
+<ul class="simple">
+<li><p>Compartment [0] is the C++ program minus the “free store” memory.</p></li>
+<li><p>Compartment [1] will no longer have any pointer pointing to it.</p></li>
+<li><p>Compartment [5] is now the location saved in the pointer arrayOfInts.</p></li>
+<li><p>Compartments [5], [6], [7], [8]  are the locations we will be accessing if we use the notation for accesing array data (i.e. <code class="docutils literal notranslate"><span class="pre">arrayOfInts[0]</span></code> will access compatment [5], <code class="docutils literal notranslate"><span class="pre">arrayOfInts[1]</span></code> will access compartment [6] etc.)</p></li>
+<li><p>Compartment [6] still has very important information you dont want to lose (we have onlayed iwth pointers up until now, no data was changed).</p></li>
+</ul>
+<p>In this case, as you may see, we are in big trouble. If you naively write code like this:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">arrayOfInts</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>This value can be used to check whether a pointer is valid.</p>
+<p>The important data you had saved in compartment [6] of your computer is now gone!</p>
+</div>
+<div class="section" id="example-2">
+<h5><a class="toc-backref" href="#id15"><span class="section-number">8.4.4.1.2. </span>Example 2:</a><a class="headerlink" href="#example-2" title="Permalink to this headline">#</a></h5>
+<p>Since pointers don’t know how many addresses they actually occupy, we can theoretically do something like this:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">arrayOfInts</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>This is called out-of-range access. Again, if we only allocated 4 compartments to <code class="docutils literal notranslate"><span class="pre">arrayOfInts</span></code> and we try to access a 5th, we may end up dealing with data we have no business in dealing with.</p>
+</div>
+</div>
+<div class="section" id="stay-calm">
+<h4><a class="toc-backref" href="#id16"><span class="section-number">8.4.4.2. </span>Stay Calm</a><a class="headerlink" href="#stay-calm" title="Permalink to this headline">#</a></h4>
+<p>Modern operating systems will protect you from corrupting important files on your computer with pointers. If you do accidently access the wrong memory address, one of two things will happen:</p>
+<ul class="simple">
+<li><p>your program will crash.</p></li>
+<li><p>unexpected behaviours and outputs.</p></li>
+</ul>
+<p>You may be asking why even use pointers if they are so dangerous. There are f ew simple reasons:</p>
+<ul class="simple">
+<li><p>You run out of memory on the non “free-store” memory for your program.</p></li>
+<li><p>You want the memory you allocated to be accesible across different scopes (for example, return a pointer from a function)</p></li>
+</ul>
+<p>The next question you might be asking is how to stay safe? Generally speaking try to limit the use of making pointers with the <code class="docutils literal notranslate"><span class="pre">new</span></code> keyword. And if you must use the “free-store” memory, don’t forget to delete your pointers :)</p>
+</div>
 </div>
 <div class="section" id="freeing-memory-with-delete">
-<h3><a class="toc-backref" href="#id19"><span class="section-number">8.4.5. </span>Freeing Memory with Delete</a><a class="headerlink" href="#freeing-memory-with-delete" title="Permalink to this headline">#</a></h3>
-<p>Memory allocated with <code class="docutils literal notranslate"><span class="pre">new</span></code> should be returned to the free store when no longer needed, using the <code class="docutils literal notranslate"><span class="pre">delete</span></code> operator. This practice prevents memory leaks, which can be critical in long-running or large programs.</p>
+<h3><a class="toc-backref" href="#id17"><span class="section-number">8.4.5. </span>Freeing Memory with Delete</a><a class="headerlink" href="#freeing-memory-with-delete" title="Permalink to this headline">#</a></h3>
+<p>Memory allocated with <code class="docutils literal notranslate"><span class="pre">new</span></code> should be returned to the free-store when no longer needed, using the <code class="docutils literal notranslate"><span class="pre">delete</span></code> operator. This practice prevents memory leaks, which can be critical in long-running or large programs.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">double</span><span class="p">[</span><span class="mi">1000</span><span class="p">];</span>
 <span class="k">delete</span><span class="p">[]</span><span class="w"> </span><span class="n">p</span><span class="p">;</span><span class="w"> </span><span class="c1">// Frees the allocated memory</span>
 
@@ -589,21 +668,41 @@ document.write(`
 <span class="k">delete</span><span class="w"> </span><span class="n">pSingle</span><span class="p">;</span><span class="w"> </span><span class="c1">// Frees the allocated single object</span>
 </pre></div>
 </div>
-<p>Deleting memory twice or deleting uninitialized pointers can lead to errors.</p>
-<p>Deleting the null pointer is harmless but does nothing.</p>
+<p>Some notes:</p>
+<ul>
+<li><p>Deleting memory twice or deleting uninitialized pointers can lead to errors.</p></li>
+<li><p>When deleting an array, dont forget to use <code class="docutils literal notranslate"><span class="pre">[]</span></code>.</p></li>
+<li><p>Attempt to delete pointers as early as possible to prevent memory leaks.
+Here is what not to do:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">double</span><span class="p">[</span><span class="mi">1000</span><span class="p">];</span>
+<span class="c1">// good code here</span>
+<span class="c1">// code with error here</span>
+<span class="k">delete</span><span class="p">[]</span><span class="w"> </span><span class="n">p</span><span class="p">;</span><span class="w"> </span><span class="c1">// oops didnt delete in time - memory leak</span>
+</pre></div>
 </div>
-<div class="section" id="automatic-garbage-collection">
-<h3><a class="toc-backref" href="#id20"><span class="section-number">8.4.6. </span>Automatic Garbage Collection</a><a class="headerlink" href="#automatic-garbage-collection" title="Permalink to this headline">#</a></h3>
+<p>Here is an alternative:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">double</span><span class="p">[</span><span class="mi">1000</span><span class="p">];</span>
+<span class="c1">// good code here </span>
+<span class="k">delete</span><span class="p">[]</span><span class="w"> </span><span class="n">p</span><span class="p">;</span><span class="w"> </span><span class="c1">// phew, we deleted the code before the error.</span>
+<span class="c1">// code with error here</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>And what is a memory leak you ask? In short, say the data you forgot to delete is your SIN, and say you were writing code on a computer at the public library. If a memory leak occurs (say your program crashes before you are able to delete memory), than your SIN will be left unprotected somewhere in the depth of the memory of the computer you were using. This is not only a privacy issue, but the you will also take up space that the computer needs for other programs. Again, stay calm, modern operating systems will make sure this doesn’t actually happen - at this point in your learning if you forget to deletem your code will just be “sloppy” and may behave unexpected.</p>
+</div>
+<div class="section" id="automatic-deletion-garbage-collection">
+<h3><a class="toc-backref" href="#id18"><span class="section-number">8.4.6. </span>Automatic Deletion -  Garbage Collection</a><a class="headerlink" href="#automatic-deletion-garbage-collection" title="Permalink to this headline">#</a></h3>
 <p>In C++, memory management is typically manual, but the concept of automatic garbage collection does exist in some contexts. This method allows the system to reclaim memory automatically when it’s no longer in use. However, implementing automatic garbage collection in C++ is not straightforward and may not be suitable for all applications.</p>
 </div>
 </div>
-<div class="section" id="references-a-deeper-look">
-<h2><a class="toc-backref" href="#id21"><span class="section-number">8.5. </span>References: A Deeper Look</a><a class="headerlink" href="#references-a-deeper-look" title="Permalink to this headline">#</a></h2>
-<p>We’ve previously touched on references in C++, but it’s worth delving a bit deeper, especially in the context of pointers and memory management.</p>
+<div class="section" id="references">
+<h2><a class="toc-backref" href="#id19"><span class="section-number">8.5. </span>References</a><a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+<p>We’ve use the word “reference” alot and now it’s time to learn about references. Don’t worry, this will be a lot shorter than the pointers section.</p>
 <p>References in C++ provide a way to create an alias, or another name for a variable. Unlike pointers, references must be initialized when declared and cannot be null. They provide a more convenient and safer way to work with data.</p>
 <div class="section" id="creating-references">
-<h3><a class="toc-backref" href="#id22"><span class="section-number">8.5.1. </span>Creating References</a><a class="headerlink" href="#creating-references" title="Permalink to this headline">#</a></h3>
-<p>A reference variable is created with the <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> operator and must be initialized with an existing variable. Here’s an example:</p>
+<h3><a class="toc-backref" href="#id20"><span class="section-number">8.5.1. </span>Creating References</a><a class="headerlink" href="#creating-references" title="Permalink to this headline">#</a></h3>
+<p>A reference variable is created with the <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> operator and must be initialized with an existing variable. Here’s an example that will cover most of what you need to know:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">originalValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span>
 <span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="n">aliasValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">originalValue</span><span class="p">;</span><span class="w"> </span><span class="c1">// reference to originalValue</span>
 
@@ -614,65 +713,59 @@ document.write(`
 <span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">originalValue</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Outputs 10</span>
 </pre></div>
 </div>
-<p>Both <code class="docutils literal notranslate"><span class="pre">originalValue</span></code> and <code class="docutils literal notranslate"><span class="pre">aliasValue</span></code> refer to the same underlying data, so changes to one will affect the other
-Certainly! I’ve revised the sections to address your concerns:</p>
+<p>Both <code class="docutils literal notranslate"><span class="pre">originalValue</span></code> and <code class="docutils literal notranslate"><span class="pre">aliasValue</span></code> refer to the same underlying data, so changes to one will affect the other.</p>
 </div>
-</div>
-<div class="section" id="pass-by-reference-vs-pass-by-value">
-<h2><a class="toc-backref" href="#id23"><span class="section-number">8.6. </span>Pass by Reference vs. Pass by Value</a><a class="headerlink" href="#pass-by-reference-vs-pass-by-value" title="Permalink to this headline">#</a></h2>
-<p>In C++, you can pass variables to functions either by reference or by value.</p>
-<ul>
-<li><p><strong>Pass by Value</strong>: The function receives a copy of the variable. Changes inside the function do not affect the original variable.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">modifyValue</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">99</span><span class="p">;</span><span class="w"> </span><span class="c1">// Does not affect the original variable</span>
+<div class="section" id="range-based-for-loops-and-passing-vectors-to-functions">
+<h3><a class="toc-backref" href="#id21"><span class="section-number">8.5.2. </span>Range-Based For Loops and Passing Vectors to Functions</a><a class="headerlink" href="#range-based-for-loops-and-passing-vectors-to-functions" title="Permalink to this headline">#</a></h3>
+<p>In C++, when you pass an array or vector to a function, it gets automatically converted to a pointer to its first element, losing information about the size of the array. This conversion effectively decays the array into a pointer, making constructs like range-based for loops unusable.</p>
+<p>Essentialy, if we were to implement a function like the one below, <code class="docutils literal notranslate"><span class="pre">numbers</span></code> will be treated as a pointer with in the function. As we learned, C++ doesnt know how large an array is that is pointed to be a pointed. That means that a for-each leap like below wouldn’t know when to stop:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">doubleElements</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">numbers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">numbers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">//code</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-</li>
-<li><p><strong>Pass by Reference</strong>: The function receives a reference to the original variable. Changes inside the function affect the original variable.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">modifyReference</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">99</span><span class="p">;</span><span class="w"> </span><span class="c1">// Modifies the original variable</span>
+<p>Similarly, even if we define the parameter to be an array, and specify it’s size the code won’t run and experience the same problem:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">doubleElements</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">numbers</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">numbers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">//code</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-</li>
-</ul>
-<p>When you pass an array to a function, it gets automatically converted to a pointer to its first element, losing information about the size of the array. This conversion effectively decays the array into a pointer, making constructs like range-based for loops unusable.</p>
-<div class="section" id="range-based-for-loops-and-auto">
-<h3><a class="toc-backref" href="#id24"><span class="section-number">8.6.1. </span>Range-Based For Loops and <code class="docutils literal notranslate"><span class="pre">auto&amp;</span></code></a><a class="headerlink" href="#range-based-for-loops-and-auto" title="Permalink to this headline">#</a></h3>
-<p>By passing the array by reference, you preserve the full type information, including the size of the array. This allows the range-based for loop to work correctly:</p>
+<p>The solution is to clarify to the compiler that we want the reference . By passing the array by reference, you preserve the full type information, including the size of the array. This allows the range-based for loop to work correctly:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">doubleElements</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">numbers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">numbers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">numbers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="n">number</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="c1">// Modifies the original elements</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Here, <code class="docutils literal notranslate"><span class="pre">auto&amp;</span></code> infers the type of the elements in the container and creates a reference to each element, allowing you to modify the original elements within the loop.</p>
+<p>Here, <code class="docutils literal notranslate"><span class="pre">doubleElements</span></code> expects a reference to a vector<int>, so it operates directly on the vector passed as an argument. Notice we also use the reference operator (<code class="docutils literal notranslate"><span class="pre">&amp;</span></code>) in the loop itself. This indicates that each <code class="docutils literal notranslate"><span class="pre">number</span></code> is a reference to the actual element in the vector, rather than a copy of it.</p>
 </div>
+</div>
+<div class="section" id="summary">
+<h2><a class="toc-backref" href="#id22"><span class="section-number">8.6. </span>Summary</a><a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
+<p>Working with pointers and references brings us closer to the hardware, where we have only a few primitive operations and minimal protection from the language or standard library. While this level of programming can be challenging, it’s essential for understanding how higher-level facilities are implemented and for writing specialized code.</p>
+<p>There is still more to learn about pointers, references and memory management but for now we have enough new material to work with.</p>
+<p>Make sure to complete the practice problems below before moving on to the next chapter.</p>
 </div>
 <div class="section" id="practice-problems">
-<h2><a class="toc-backref" href="#id25"><span class="section-number">8.7. </span>Practice Problems</a><a class="headerlink" href="#practice-problems" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id23"><span class="section-number">8.7. </span>Practice Problems</a><a class="headerlink" href="#practice-problems" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p><strong>Pointer Basics</strong>: Write a function that takes a pointer to an array and the array’s size, then doubles each element in the array.</p></li>
 <li><p><strong>Reference Swap</strong>: Write a function that swaps the values of two integers using references.</p></li>
 <li><p><strong>Range-Based Loop Modification</strong>: Write a function that takes a vector of integers and uses a range-based for loop with <code class="docutils literal notranslate"><span class="pre">auto&amp;</span></code> to increment each element by a given value.</p></li>
-<li><p><strong>Garbage Collection Research</strong>: Investigate available garbage collection libraries for C++ and write a brief summary of how they work and when they might be used.
-Certainly! Here are some additional practice problems that integrate concepts from previous lessons:</p></li>
 <li><p><strong>Math with Pointers</strong>: Write a function that takes two pointers to integers and returns the result of a mathematical operation (e.g., addition, subtraction, multiplication) performed on the values they point to. Use functions from the <code class="docutils literal notranslate"><span class="pre">cmath</span></code> library to perform more complex operations if desired.</p></li>
 <li><p><strong>File Handling with Pointers</strong>: Write a program that reads numbers from a file and stores them in an array. Then, write a function that takes a pointer to the array and its size, and writes the squared values of the numbers back to a new file. Use the <code class="docutils literal notranslate"><span class="pre">fstream</span></code> library for file handling.</p></li>
 <li><p><strong>Random Array Allocation</strong>: Write a function that takes an integer <code class="docutils literal notranslate"><span class="pre">n</span></code> as input and returns a pointer to a dynamically allocated array of <code class="docutils literal notranslate"><span class="pre">n</span></code> random integers. Use the <code class="docutils literal notranslate"><span class="pre">rand()</span></code> function from the <code class="docutils literal notranslate"><span class="pre">cstdlib</span></code> library to generate the random numbers, and don’t forget to free the memory when done.</p></li>
 <li><p><strong>Conditional Pointer Manipulation</strong>: Write a function that takes a pointer to an array of integers and the array’s size. Use conditional statements to find and replace all even numbers in the array with their half value, and all odd numbers with their double value.</p></li>
-<li><p><strong>Time-Based Array Initialization</strong>: Write a program that dynamically allocates an array of integers and initializes it with values based on the current time (e.g., seconds since the epoch). Use the <code class="docutils literal notranslate"><span class="pre">ctime</span></code> library to get the current time, and don’t forget to free the memory when done.</p></li>
-<li><p><strong>Function Pointers and Operations</strong>: Write a program that takes two integers and a function pointer as parameters. The function pointer should point to a function that performs a mathematical operation (e.g., addition, subtraction) on the two integers. Demonstrate how to call this function within your program.</p></li>
-<li><p><strong>Sorting with References</strong>: Write a function that takes a reference to a vector of integers and sorts it in ascending order. You can implement any sorting algorithm you like, or use functions from the Standard Library.</p></li>
-<li><p><strong>String Manipulation with Pointers</strong>: Write a function that takes a pointer to a string and performs some string manipulation (e.g., reversing the string, converting to uppercase). Demonstrate this with various strings.</p></li>
+<li><p><strong>Are strings palindromes</strong>: Write a function that takes a array of strings and returns an array of all the locations of the palindromes.</p></li>
 </ol>
-<p>These problems cover a wide range of topics and should provide a comprehensive practice experience for the students.</p>
-<p>These sections and practice problems should provide a comprehensive understanding of pointers, references, memory management, and related concepts in C++.</p>
 </div>
 <div class="section" id="bibliography">
-<h2><a class="toc-backref" href="#id26"><span class="section-number">8.8. </span>Bibliography</a><a class="headerlink" href="#bibliography" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id24"><span class="section-number">8.8. </span>Bibliography</a><a class="headerlink" href="#bibliography" title="Permalink to this headline">#</a></h2>
 <span class="target" id="id1"></span></div>
 </div>
 
@@ -744,33 +837,31 @@ Certainly! Here are some additional practice problems that integrate concepts fr
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">8.1. Table of Contents:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-pointers">8.2. Introduction to Pointers</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-pointers">8.3. Understanding Pointers</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pointer-types">8.3.1. Pointer Types</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pointers-are-not-integers">8.3.2. Pointers Are Not Integers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#different-pointer-types-are-incompatible">8.3.3. Different Pointer Types Are Incompatible</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-values-through-pointers">8.3.4. Accessing Values Through Pointers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modifying-values-through-pointers">8.3.5. Modifying Values Through Pointers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#low-level-programming">8.3.6. Low-Level Programming</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pointers">8.2. Pointers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pointer-declaration-and-assigment">8.3. Pointer Declaration and Assigment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-deep-dive-into-pointers">8.4. A Deep Dive into Pointers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pass-by-reference-vs-pass-by-value">8.4.1. Pass by Reference vs. Pass by Value</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derefrencing">8.4.2. Derefrencing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pointers-are-distinct-from-variables">8.4.3. Pointers Are Distinct From Variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-management">8.4.4. Memory Management</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#free-store-allocation">8.4.4.1. Free Store Allocation</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1">8.4.4.1.1. Example 1:</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2">8.4.4.1.2. Example 2:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-management-and-pointers">8.4. Memory Management and Pointers</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-layout-and-free-store">8.4.1. Memory Layout and Free Store</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#free-store-allocation">8.4.2. Free Store Allocation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#range-issues-with-pointers">8.4.3. Range Issues with Pointers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initialization-and-the-null-pointer">8.4.4. Initialization and the Null Pointer</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#stay-calm">8.4.4.2. Stay Calm</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#freeing-memory-with-delete">8.4.5. Freeing Memory with Delete</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#automatic-garbage-collection">8.4.6. Automatic Garbage Collection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#automatic-deletion-garbage-collection">8.4.6. Automatic Deletion -  Garbage Collection</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references-a-deeper-look">8.5. References: A Deeper Look</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">8.5. References</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-references">8.5.1. Creating References</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#range-based-for-loops-and-passing-vectors-to-functions">8.5.2. Range-Based For Loops and Passing Vectors to Functions</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pass-by-reference-vs-pass-by-value">8.6. Pass by Reference vs. Pass by Value</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#range-based-for-loops-and-auto">8.6.1. Range-Based For Loops and <code class="docutils literal notranslate"><span class="pre">auto&amp;</span></code></a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">8.6. Summary</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-problems">8.7. Practice Problems</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliography">8.8. Bibliography</a></li>
 </ul>

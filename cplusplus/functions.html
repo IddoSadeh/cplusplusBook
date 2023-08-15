@@ -364,8 +364,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-functions">5.3. Understanding Functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-definition-and-declaration">5.4. Function Definition and Declaration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-call">5.5. Function Call</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-functions">5.6. Types of Functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-parameters-and-arguments">5.7. Function Parameters and Arguments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-parameters-and-arguments">5.6. Function Parameters and Arguments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scope-and-a-note-about-parameters-and-arguments">5.7. Scope and a Note About Parameters and Arguments</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#return-values">5.8. Return Values</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-overloading">5.9. Function Overloading</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">5.10. Summary</a></li>
@@ -402,8 +402,8 @@ document.write(`
 <li><p><a class="reference internal" href="#understanding-functions" id="id7">Understanding Functions</a></p></li>
 <li><p><a class="reference internal" href="#function-definition-and-declaration" id="id8">Function Definition and Declaration</a></p></li>
 <li><p><a class="reference internal" href="#function-call" id="id9">Function Call</a></p></li>
-<li><p><a class="reference internal" href="#types-of-functions" id="id10">Types of Functions</a></p></li>
-<li><p><a class="reference internal" href="#function-parameters-and-arguments" id="id11">Function Parameters and Arguments</a></p></li>
+<li><p><a class="reference internal" href="#function-parameters-and-arguments" id="id10">Function Parameters and Arguments</a></p></li>
+<li><p><a class="reference internal" href="#scope-and-a-note-about-parameters-and-arguments" id="id11">Scope and a Note About Parameters and Arguments</a></p></li>
 <li><p><a class="reference internal" href="#return-values" id="id12">Return Values</a></p></li>
 <li><p><a class="reference internal" href="#function-overloading" id="id13">Function Overloading</a></p></li>
 <li><p><a class="reference internal" href="#summary" id="id14">Summary</a></p></li>
@@ -428,7 +428,7 @@ document.write(`
 <div class="section" id="understanding-functions">
 <h2><a class="toc-backref" href="#id7"><span class="section-number">5.3. </span>Understanding Functions</a><a class="headerlink" href="#understanding-functions" title="Permalink to this headline">#</a></h2>
 <p>In C++, a function is a group of statements that is given a name, and which can be called from some point of the program. The main function (<code class="docutils literal notranslate"><span class="pre">main()</span></code>) is the starting point of every C++ program.</p>
-<p>The syntax for declaring a function in C++ is as follows:</p>
+<p>The syntax for defining a function in C++ is as follows:</p>
 <div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="n">return_type</span><span class="w"> </span><span class="nf">function_name</span><span class="p">(</span><span class="w"> </span><span class="n">parameter</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">   </span><span class="n">body</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">function</span>
 <span class="p">}</span>
@@ -444,10 +444,23 @@ document.write(`
 </div>
 <div class="section" id="function-definition-and-declaration">
 <h2><a class="toc-backref" href="#id8"><span class="section-number">5.4. </span>Function Definition and Declaration</a><a class="headerlink" href="#function-definition-and-declaration" title="Permalink to this headline">#</a></h2>
-<p>A function declaration tells the compiler about a function’s name, return type, and parameters, but it doesn’t provide the actual body of the function.</p>
-<p>A function definition, on the other hand, provides the actual body of the function. Here’s an example of a function declaration and definition:</p>
-<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// function declaration</span>
+<p>To use a function in C++ we must first <strong>declare</strong> it. A function declaration differs from a function defenition as its only role is to tell the compiler about the function’s name, return type, and parameters, but it doesn’t provide the actual body of the function.</p>
+<p>In a way, you can think of a function definition as a way to give our computer a “heads up” that we will eventually have a function in our program with a given return type, name and parameters.</p>
+<p>To declare a function we use the following syntax:</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="n">return_type</span><span class="w"> </span><span class="nf">function_name</span><span class="p">(</span><span class="w"> </span><span class="n">parameter</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The function declaration ALWAYS comes before the definition. For example see the code below:</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+
+<span class="c1">// function declaration</span>
 <span class="kt">void</span><span class="w"> </span><span class="nf">printMessage</span><span class="p">();</span>
+
+<span class="c1">// main function</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">printMessage</span><span class="p">();</span><span class="w"> </span><span class="c1">//function call</span>
+<span class="p">}</span>
 
 <span class="c1">// function definition</span>
 <span class="kt">void</span><span class="w"> </span><span class="nf">printMessage</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -458,7 +471,7 @@ document.write(`
 </div>
 <div class="section" id="function-call">
 <h2><a class="toc-backref" href="#id9"><span class="section-number">5.5. </span>Function Call</a><a class="headerlink" href="#function-call" title="Permalink to this headline">#</a></h2>
-<p>A function call is how we execute a function in C++. We specify the function name and the values (if any) for its parameters. Here’s an example:</p>
+<p>Once you’ve declare and defined you function, how do you use it? functions are used by invoking a <strong>function call</strong>. A function call is how we execute a function in C++. We specify the function name and the values (if any) for its parameters. Here’s an example:</p>
 <div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">   </span><span class="c1">// function call</span>
 <span class="w">   </span><span class="n">printMessage</span><span class="p">();</span><span class="w">  </span><span class="c1">// outputs: Hello, World!</span>
@@ -467,34 +480,76 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="section" id="types-of-functions">
-<h2><a class="toc-backref" href="#id10"><span class="section-number">5.6. </span>Types of Functions</a><a class="headerlink" href="#types-of-functions" title="Permalink to this headline">#</a></h2>
-<p>In C++, there are two types of functions:</p>
-<ol class="arabic simple">
-<li><p><strong>Predefined Functions:</strong> These are the functions that are already defined in C++ Library, also known as library functions. For example, <code class="docutils literal notranslate"><span class="pre">main()</span></code>, <code class="docutils literal notranslate"><span class="pre">cout()</span></code>, etc.</p></li>
-<li><p><strong>User-Defined Functions:</strong> These are the functions that are defined by the user at the time of writing the program.</p></li>
-</ol>
-</div>
 <div class="section" id="function-parameters-and-arguments">
-<h2><a class="toc-backref" href="#id11"><span class="section-number">5.7. </span>Function Parameters and Arguments</a><a class="headerlink" href="#function-parameters-and-arguments" title="Permalink to this headline">#</a></h2>
-<p>Parameters are the variables listed inside the parentheses in the function declaration. When a function is invoked, you pass a value to the parameter. This value is referred to as an argument. Here’s an example:</p>
-<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// function declaration and definition</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">printSum</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">   </span><span class="kt">int</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
-<span class="w">   </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The sum is: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
+<h2><a class="toc-backref" href="#id10"><span class="section-number">5.6. </span>Function Parameters and Arguments</a><a class="headerlink" href="#function-parameters-and-arguments" title="Permalink to this headline">#</a></h2>
+<p>In your math class, you may have learned about functions of the form <code class="docutils literal notranslate"><span class="pre">f(x)=ax+b</span></code>. If you recall, mathematical functions map inputs to outputs. In programming, this is the same case.</p>
+<p>In the above <code class="docutils literal notranslate"><span class="pre">printMessage</span></code> example we have no inputs (which is an input in itself), and the same output everytime (print hellow world to our console).</p>
+<p>To add inputs to our functions we will use what is referred to as <strong>parameters</strong>.</p>
+<p>Parameters are the variables listed inside the parentheses in the function declaration and definition. When a function is invoked, you pass a value to the parameter. This value is referred to as an argument. Here’s an example:</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// function declaration</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">printSum</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">);</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">   </span><span class="c1">// function call</span>
 <span class="w">   </span><span class="n">printSum</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span><span class="w">  </span><span class="c1">// outputs: The sum is: 15</span>
 <span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
+
+<span class="c1">// function definition</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">printSum</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="kt">int</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">   </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The sum is: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>In this example, <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> are parameters, and <code class="docutils literal notranslate"><span class="pre">5</span></code> and <code class="docutils literal notranslate"><span class="pre">10</span></code> are arguments.</p>
 </div>
+<div class="section" id="scope-and-a-note-about-parameters-and-arguments">
+<h2><a class="toc-backref" href="#id11"><span class="section-number">5.7. </span>Scope and a Note About Parameters and Arguments</a><a class="headerlink" href="#scope-and-a-note-about-parameters-and-arguments" title="Permalink to this headline">#</a></h2>
+<p>New programmers often strugle with differentiating between parameters and arguments.</p>
+<p>Lets change the above example slightly to make this distinction clearer, and introduce a new concept - <strong>scope</strong>.</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// function declaration</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">printSum</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">);</span><span class="w"> </span><span class="c1">// declared in the global scope</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span><span class="w"> </span><span class="c1">// variable in global scope</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<span class="w">   </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">   </span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">15</span><span class="p">;</span>
+<span class="w">   </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">c</span><span class="p">;</span>
+<span class="w">   </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">d</span><span class="p">;</span><span class="w"> </span><span class="c1">// declared in a local scope</span>
+<span class="w">   </span><span class="n">printSum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">);</span><span class="w">  </span><span class="c1">// outputs: The sum is: 15</span>
+<span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// function definition</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">printSum</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="kt">int</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">   </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The sum is: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="w">   </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">c</span><span class="p">;</span>
+<span class="w">   </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">d</span><span class="p">;</span><span class="w"> </span><span class="c1">// d does not exist in this scope, will not compile</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In the above example we see the variables <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">b</span></code> declared three times. Once in the function declaration, once in the function definition, and onse in <code class="docutils literal notranslate"><span class="pre">main()</span></code>.</p>
+<p>You may recall from the chapter about variables, that we are only allowed to declare variables ONCE. This is still the case, but it is true only within a given <strong>scope</strong>.</p>
+<p>A scope is the part of a program where a name can be used to refer to some entity in our program. In the above example, we have three scopes: the global scope, and two local scopes.</p>
+<ul class="simple">
+<li><p>The global scope, in short, is the whole file. Anything declared here will be available in all parts of the file, i.e., we can use or print <code class="docutils literal notranslate"><span class="pre">c</span></code> form the above code anywhere in the code.</p></li>
+<li><p>A local scope, in short, is the piece of code enclosed between two curly brackets. Any variable declared in a local scope will only be accesible with in that scope, i.e., <code class="docutils literal notranslate"><span class="pre">d</span></code> from the above code will only be accesible in <code class="docutils literal notranslate"><span class="pre">main()</span></code>.</p></li>
+</ul>
+<p>So why do we do declare <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> three times?</p>
+<ul class="simple">
+<li><p>In the function declaration, as mentioned before, we are giving a heads up to the compiler that the function <code class="docutils literal notranslate"><span class="pre">printSum</span></code> exists, and once we use it we will need to create two new integer variables.</p></li>
+<li><p>In the function definition, we declare two variables to be used as our parameters. These parameters will hold the data passed to them until we are done using the function. They cease to exist when the function finishes it’s duty.</p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">main()</span></code> we declare the variables for the sake of this example and to confuse you a bit. The variables will hold data, that will be passed as arguments to our function. These arguments will be saved in to the function parameters until the function finishes it’s duty. The key here is to understand that <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> from <code class="docutils literal notranslate"><span class="pre">main()</span></code> are not the same <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>from <code class="docutils literal notranslate"><span class="pre">printSum</span></code>.</p></li>
+</ul>
+</div>
 <div class="section" id="return-values">
 <h2><a class="toc-backref" href="#id12"><span class="section-number">5.8. </span>Return Values</a><a class="headerlink" href="#return-values" title="Permalink to this headline">#</a></h2>
+<p>We talked about inputs in the previous subsection, but what about outputs? In the <code class="docutils literal notranslate"><span class="pre">printSum</span></code> and <code class="docutils literal notranslate"><span class="pre">printMessage</span></code> example our output was of type <code class="docutils literal notranslate"><span class="pre">void</span></code>. <code class="docutils literal notranslate"><span class="pre">void</span></code> outputs mean that the function output will be some sort of internal computational operation. In the given examples this was printing to the console.</p>
+<p>Sometimes, we want our function output to be some data that we can use later in our program. To do so we use need to <code class="docutils literal notranslate"><span class="pre">return</span></code> the data.</p>
 <p>A C++ function can return a value using the <code class="docutils literal notranslate"><span class="pre">return</span></code> statement in conjunction with a value or object. This value is considered the “output” of the function. Here’s an example:</p>
 <div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// function declaration and definition</span>
 <span class="kt">int</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -540,10 +595,11 @@ document.write(`
 <ul class="simple">
 <li><p><strong>Functions</strong> are fundamental building blocks in C++ programming. They provide a way to structure programs effectively, enabling code reuse, abstraction, and modularity.</p></li>
 <li><p>A <strong>function</strong> in C++ is defined with a return type, a function name, and a list of parameters enclosed in parentheses. The code to be executed is placed within curly braces <code class="docutils literal notranslate"><span class="pre">{}</span></code>.</p></li>
-<li><p>The <strong>return type</strong> of a function defines the type of value the function will return. It can be any valid data type. If the function does not return a value, the return type should be <code class="docutils literal notranslate"><span class="pre">void</span></code>.</p></li>
-<li><p><strong>Parameters</strong> are specified in the function declaration within the parentheses following the function name. They act as placeholders for the values that are passed into the function when it is called.</p></li>
-<li><p>The <strong>function body</strong> contains the block of code that performs the specific task of the function.</p></li>
 <li><p><strong>Function calls</strong> are used to invoke functions. The function name is written followed by parentheses, with any required arguments placed inside the parentheses.</p></li>
+<li><p><strong>Parameters</strong> are specified in the function declaration within the parentheses following the function name. They act as placeholders for the values that are passed into the function when it is called.</p></li>
+<li><p>The <strong>return type</strong> of a function defines the type of value the function will return. It can be any valid data type. If the function does not return a value, the return type should be <code class="docutils literal notranslate"><span class="pre">void</span></code>.</p></li>
+<li><p>The <strong>function body</strong> contains the block of code that performs the specific task of the function.</p></li>
+<li><p><strong>Scope</strong> is a section of a program in which a declared variable or function can be called.</p></li>
 <li><p>The <strong>main()</strong> function is a special function that serves as the entry point of the C++ program. Execution of the program begins and ends with the main function.</p></li>
 <li><p>The use of functions encourages the principle of <strong>encapsulation</strong>, allowing for easier debugging and increased readability of code.</p></li>
 <li><p><strong>Function Overloading</strong> allows multiple functions to have the same name but with different parameters, enabling the same function name to perform different tasks based on the arguments passed.</p></li>
@@ -638,8 +694,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-functions">5.3. Understanding Functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-definition-and-declaration">5.4. Function Definition and Declaration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-call">5.5. Function Call</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-functions">5.6. Types of Functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-parameters-and-arguments">5.7. Function Parameters and Arguments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-parameters-and-arguments">5.6. Function Parameters and Arguments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scope-and-a-note-about-parameters-and-arguments">5.7. Scope and a Note About Parameters and Arguments</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#return-values">5.8. Return Values</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-overloading">5.9. Function Overloading</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">5.10. Summary</a></li>

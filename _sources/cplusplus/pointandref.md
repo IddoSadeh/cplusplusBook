@@ -1,5 +1,5 @@
 # Pointers and References
-In this chapter, we will delve into the world of memory management in C++, focusing on pointers and references. These concepts are fundamental to understanding how data is stored and accessed in memory, and they enable powerful programming techniques.
+In this chapter, we will delve into the world of memory management in C++, focusing on pointers and references. These concepts are fundamental to understanding how data is stored and accessed in memory, and they enable powerful programming techniques. Many students find this topic extra difficult. See the resources section at the end of this chapter for more help.
 
 By the end of this chapter, you should be able to:
 - Understand what pointers and references are and how they work.
@@ -12,9 +12,9 @@ By the end of this chapter, you should be able to:
 ```
 
 
-## Introduction to Pointers
+## Pointers
 
-Previously, we imagined your computer's memory as a vast sequence of tiny compartments, each capable of holding a small piece of data. Recall, that these compartments are known as bytes, and they are arranged in a linear fashion, starting from address 0 and going up to the maximum available memory.
+Previously, we imagined your computer's memory as a vast sequence of tiny compartments, each capable of holding a small piece of data. 
 
 You can visualize this arrangement as a long shelf with numbered compartments:
 
@@ -30,80 +30,131 @@ double myValue = 3.14;
 
 The computer reserves a specific compartment (or a series of compartments, depending on the data type) to store the value 3.14. The unique number of that compartment is the address of the variable `myValue`.
 
-Now, what if you wanted to keep track of this address? In C++, you can use a special variable called a pointer. A pointer holds the address of another variable. If you want to create a pointer to an integer, you would declare it like this:
+Now, what if you wanted to keep track of this address? In C++, you can use a special variable called a pointer. **A pointer holds the address of another variable.**
+
+## Pointer Declaration and Assigment
+
+A pointer variable can be declared the same way as a regular variable with a slight change, we put an asterix (`*`) symbol after the type declaration as follows:
 
 ```c++
-double* pValue = &myValue; // Pointer to a double
+double* pValue; // Reads in english as "a double pointer named pValue"
 ```
 
-Here, `pValue` is a pointer that holds the address of the variable `myValue`. The ampersand (`&`) symbol is used to retrieve the address of `myValue`.:
-
-## Understanding Pointers
-
-Pointers are a fundamental concept in C++ that enable direct interaction with memory. Let's explore various aspects of pointers to understand their significance and usage.
-
-### Pointer Types
-
-In C++, every data type has a corresponding pointer type that can hold the address of that data type. This correspondence ensures that the pointer knows the size and structure of the data it's pointing to. Here's an example:
+But how do we assign values to a pointer variable? In other words, how do we get the address of a variable? To do so we place the ampersand (`&`) symbol before the variable we want the address to in the following manner:
 
 ```c++
-long age = 30;
-long* pAge = &age; // Pointer to long
-
-bool flag = true;
-bool* pFlag = &flag; // Pointer to bool
+pValue = &myValue; // Reads in english as "assign the address of myValue to pValue"
 ```
 
-These declarations create pointers that hold the addresses of a `long` variable and a `bool` variable, respectively.
+At this point you may still be confused, or you understand what a pointer is but not why we need it. Before we continue and build on what we learned, take a minute to explore pointers in your IDE. Use `cout` statements to print variables (i.e. `myValue`), the address of variables (i.e. `&myValue`), and pointers to those variables (i.e. `pValue`).
 
-### Pointers Are Not Integers
 
-Pointers may seem similar to integers since they hold numeric addresses, but they are distinct types. Pointers are designed to work with memory addresses, and they understand the size and structure of the data they point to. Integers, on the other hand, are simple numeric values. Mixing them can lead to errors:
+
+## A Deep Dive into Pointers
+
+ Let's explore the different functionalities of pointers to understand their significance and use cases. 
+
+
+
+### Pass by Reference vs. Pass by Value
+
+To start lets look at one of the most important functionalities pointers unlock for us.
+In C++, you can pass variables to functions either by reference or by value. What does this mean?
+
+- **Pass by Value**: This is what were used to up until know. The function receives a copy of the variable. Hence, changes inside the function do not affect the original variable. 
+
+  ```c++
+    #include <iostream>
+    using namespace std;
+
+    void modifyValue(int value);
+
+    int main() {
+        int a = 5 ;
+        modifyValue(a);
+        cout << a; // will print 5
+    }
+
+    void modifyValue(int value) {
+        value = 99; // Does not affect the original variable
+    }
+  ```
+  In the example above, you can see that even though the value of `a` gets passed and save to `value`, any operation done one `value` will not happen to `a`.
+
+- **Pass by Reference**: The function receives a reference to the original variable. As shown below, changes inside the function affect the original variable. 
+
+  ```c++
+    #include <iostream>
+    using namespace std;
+
+    void modifyValue(int* value);
+
+    int main() {
+        int a = 5 ;
+        int* pa = &a;
+        modifyValue(pa);
+        cout << a; // will print 99
+    }
+
+    void modifyValue(int* value) {
+        *value = 99; // Does affect the original variable
+    }
+  ```
+
+  In the code above we show what passing by reference enables in C++:
+  - We pass `pa` (the pointer to `a` - the adress of `a`) to the function `modifyValue()`. 
+  - Then `pa` gets stored in the pointer variable `value`, hence we have access to the location of `a` within the scope of `modifyValue`.
+  - Since we have a memory location stored in `value`, we can access and change the data at the location stored in `value` by putting an asterix (`*`) before `value` - this is referred to as the **derefrencing**. 
+
+  Any changes done in the above manner will persist in the computer memory. You will find this especially useful if you want to write clean code that utilizes functions for encapsulation and procedural abstraction.
+
+### Derefrencing
+
+We've just seen how derefrencing works, but lets spend a minute to make sure you understand what derefrencing is. Firs, to empahsize what derefrencing means, think of derefrencing a pointer as getting the data stored in the adress saved in the pointer.
+
+Now, open an IDE, run the code below, and make changes as needed to explore the different behaviours weve learned up until now.:
+
 
 ```c++
-int i = pAge; // Error: can't assign a long* to an int
-pAge = 5;     // Error: can't assign an int to a long*
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a = 5 ;
+    cout << "a = " << a <<endl;      // will print 5
+    cout << "&a = " << &a <<endl;     // will print the location of a
+    int* pa = &a;   // a pointer to the location of a
+    cout << "pa = " << pa <<endl;     // will print the location of a
+    int b = *pa;    // derefrence pa and save the result in b  
+    cout << "*pa = " << *pa <<endl;    // will print 5
+    cout << "b = " << b <<endl;     // will print 5
+    cout << "*&a = " << *&a <<endl;     // will print 5
+}
+
 ```
 
-### Different Pointer Types Are Incompatible
+### Pointers Are Distinct From Variables
 
-Pointers are specific to the types they point to. A pointer to one type cannot be assigned to a pointer of another type, as this would lead to confusion about the size and structure of the data:
+At this point, it is important to emphasize some key points about pointers:
 
-```c++
-char* pChar;
-pChar = pAge; // Error: can't assign a long* to a char*
-```
+- First recall that pointers are not interchangeable with regular data types, that is an `int` cant be saved into an `int*`. Although the type defintion looks the same, the data stored isn't.
 
-### Accessing Values Through Pointers
+- Unlike variables which can be dynamically casted (i.e. a `float` value can be saved into a `double` value), pointers are specific to the types they point to. A pointer to one type cannot be assigned to a pointer of another type, as this would lead to confusion about the size and structure of the data:
 
-Pointers provide a way to access the values stored at the addresses they hold. This is done using the dereference operator `*`. For example:
+    ```c++
+    long* pAge;
+    char* pChar;
+    pChar = pAge; // Error: can't assign a long* to a char*
+    ```
+- Pointers can be reassigned values, and pointers of the same type can be assigned to other pointers. For example:
+     ```c++
+    int* pAge = &age;
+    int* pNum = &num;
+    pNum = pAge; // This is allowed
+    ```
+    Keep this last point in mind for the next section.
 
-```c++
-long anotherAge = *pAge; // anotherAge now holds the value 30
-bool anotherFlag = *pFlag; // anotherFlag now holds the value true
-```
-
-### Modifying Values Through Pointers
-
-You can also modify the values at the addresses pointers are pointing to. This allows for dynamic changes to variables through their pointers:
-
-```c++
-*pAge = 40; // Changes the value of age to 40
-*pFlag = false; // Changes the value of flag to false
-```
-
-### Low-Level Programming
-
-Working with pointers brings us closer to the hardware, where we have only a few primitive operations and minimal protection from the language or standard library. While this level of programming can be challenging, it's essential for understanding how higher-level facilities are implemented and for writing specialized code.
-
-Our goal is to work at the highest level of abstraction possible for a given problem, appreciating the convenience and safety of higher-level software. In subsequent sections, we'll explore how to achieve a more comfortable level of abstraction by understanding and implementing more advanced features.
-
-
-Certainly! Here's a paraphrased version of the provided text, focusing on the key concepts and details:
-
-## Memory Management and Pointers
-
-### Memory Layout and Free Store
+### Memory Management
 
 When a C++ program is initiated, the compiler divides memory into different sections. These include areas for the code itself, global variables, and function calls. The remaining memory, often referred to as the "free store" or "heap," is available for dynamic allocation.
 
@@ -113,58 +164,87 @@ The free store can be accessed using the `new` operator. For instance, you can a
 double* p = new double[4];
 ```
 
-This command requests four doubles from the free store and returns a pointer to the first one.
+This command requests room for an array of four doubles from the free store and returns a pointer to the first one. This is the first time we use a poitner to point to an array. You may be wondering what happens when we derefrence an array, and how we can access data from the array. It's pretty simple:
+- `*p` returns the first value of the array.
+- Surprisingly, `p[0]` also returns the first value of the array.
+- The rest of the array can be accessed like a regular array i.e. `p[1]`, `p[3]`
 
-### Free Store Allocation
+The above syntax is a tad problemtic though. Lets explore why.
 
-The `new` operator is used to request memory from the free store, returning a pointer to the allocated space. This pointer points to an object of a specified type, but it doesn't know how many elements it points to.
+#### Free Store Allocation
 
-You can allocate individual elements or arrays:
+The `new` operator is used to request memory from the free store, returning a pointer to the allocated space. This pointer points to an object of a specified type, **but it doesn't know how many elements it points to**.
 
-```c++
-int* singleInt = new int;
-int* arrayOfInts = new int[4];
-```
+Why did I highlight the previous sentence? 
 
-The number of objects allocated can be variable, allowing flexibility in memory allocation.
-
-
-
-### Range Issues with Pointers
-
-Pointers present a challenge because they don't inherently know the number of elements they point to. For example, consider the following code:
+Lets look at two dangeourous examples. Frist some code:
 
 ```c++
-double* pd = new double[3];
-pd[1] = 1.1;
-pd[5] = 5.5; // Undefined behavior
+ // allocate memory for a new int, save the location at singleInt
+ int* singleInt = new int;
+// allocate memory for a new int array, save the location of the first element
+int* arrayOfInts = new int[4]; 
+```
+And lets bring back our depiction of how are computers memory is made up of a bunch of memory compartments:
+
+```
+[0] [1] [2] [3] [4] [5] [6] ... [N-1]
 ```
 
-The compiler doesn't know the size of the allocated memory, so accessing out-of-range elements like `pd[5]` can lead to unpredictable behavior and serious errors. These locations might be parts of other objects, and writing to them can cause program crashes or incorrect output. Ensuring that such access doesn't occur is crucial, and using higher-level abstractions like vectors, which know their size, can help prevent these issues.
+Now, lets imagine that in the depiction above we have the following allocations:
+- Compartment [0] is the C++ program minus the "free store" memory.
+- Compartment [1] is the location saved in arrayOfInts at time of declaration.
+- Compartments [1], [2], [3], [4]  are allocated for an array that will start at Compartment [1].
+- Compartment [5] is the location saved in singleInt at time of declaration.
+- Compartment [6] has very important information you dont want to lose.
 
-### Initialization and the Null Pointer
+##### Example 1:
 
-Proper initialization is essential for both pointers and the objects they point to. If a type has a constructor (we will talk about constructors in the next chapter), it should be used for initialization. For example:
+Recall that we learned earlier that pointers can be reassigned values, and pointers of the same type can be assigned to other pointers. That means that the following code is allowed in C++ and will compile without issues:
 
 ```c++
-class MyClass {
-public:
-    MyClass(int value) : value(value) {}
-private:
-    int value;
-};
+int* arrayOfInts = singleInt;
+```
 
-MyClass* obj = new MyClass(42); // Initialized with appropriate constructor
-```
-If you don't have an object to point to, you can use the null pointer `nullptr`:
+If we decide to run the code above, what will happen is that are memory organization will change as follows:
+
+- Compartment [0] is the C++ program minus the "free store" memory.
+- Compartment [1] will no longer have any pointer pointing to it.
+- Compartment [5] is now the location saved in the pointer arrayOfInts.
+- Compartments [5], [6], [7], [8]  are the locations we will be accessing if we use the notation for accesing array data (i.e. `arrayOfInts[0]` will access compatment [5], `arrayOfInts[1]` will access compartment [6] etc.)
+- Compartment [6] still has very important information you dont want to lose (we have onlayed iwth pointers up until now, no data was changed).
+
+In this case, as you may see, we are in big trouble. If you naively write code like this:
+
 ```c++
-double* p0 = nullptr;
+arrayOfInts[1] = 5;
 ```
-This value can be used to check whether a pointer is valid.
+The important data you had saved in compartment [6] of your computer is now gone!
+
+##### Example 2:
+Since pointers don't know how many addresses they actually occupy, we can theoretically do something like this:
+```c++
+arrayOfInts[5] = 5;
+```
+This is called out-of-range access. Again, if we only allocated 4 compartments to `arrayOfInts` and we try to access a 5th, we may end up dealing with data we have no business in dealing with.
+
+#### Stay Calm
+
+Modern operating systems will protect you from corrupting important files on your computer with pointers. If you do accidently access the wrong memory address, one of two things will happen:
+- your program will crash.
+- unexpected behaviours and outputs.
+
+You may be asking why even use pointers if they are so dangerous. There are f ew simple reasons:
+- You run out of memory on the non "free-store" memory for your program.
+- You want the memory you allocated to be accesible across different scopes (for example, return a pointer from a function)
+
+The next question you might be asking is how to stay safe? Generally speaking try to limit the use of making pointers with the `new` keyword. And if you must use the "free-store" memory, don't forget to delete your pointers :)
+
+
 
 ### Freeing Memory with Delete
 
-Memory allocated with `new` should be returned to the free store when no longer needed, using the `delete` operator. This practice prevents memory leaks, which can be critical in long-running or large programs.
+Memory allocated with `new` should be returned to the free-store when no longer needed, using the `delete` operator. This practice prevents memory leaks, which can be critical in long-running or large programs.
 
 ```c++
 double* p = new double[1000];
@@ -174,26 +254,47 @@ delete[] p; // Frees the allocated memory
 double* pSingle = new double;
 delete pSingle; // Frees the allocated single object
 ```
+Some notes:
 
-Deleting memory twice or deleting uninitialized pointers can lead to errors. 
+- Deleting memory twice or deleting uninitialized pointers can lead to errors.
+- When deleting an array, dont forget to use `[]`. 
+- Attempt to delete pointers as early as possible to prevent memory leaks.
+Here is what not to do:
 
-Deleting the null pointer is harmless but does nothing.
+    ```c++
+    double* p = new double[1000];
+    // good code here
+    // code with error here
+    delete[] p; // oops didnt delete in time - memory leak
+    ```
+    Here is an alternative:
+    ```c++
+    double* p = new double[1000];
+    // good code here 
+    delete[] p; // phew, we deleted the code before the error.
+    // code with error here
+   
+    ```
 
-### Automatic Garbage Collection
-
-In C++, memory management is typically manual, but the concept of automatic garbage collection does exist in some contexts. This method allows the system to reclaim memory automatically when it's no longer in use. However, implementing automatic garbage collection in C++ is not straightforward and may not be suitable for all applications.
+And what is a memory leak you ask? In short, say the data you forgot to delete is your SIN, and say you were writing code on a computer at the public library. If a memory leak occurs (say your program crashes before you are able to delete memory), than your SIN will be left unprotected somewhere in the depth of the memory of the computer you were using. This is not only a privacy issue, but the you will also take up space that the computer needs for other programs. Again, stay calm, modern operating systems will make sure this doesn't actually happen - at this point in your learning if you forget to deletem your code will just be "sloppy" and may behave unexpected.
 
 
+### Automatic Deletion -  Garbage Collection
 
-## References: A Deeper Look
+In C++, memory management is typically manual, but the concept of automatic garbage collection does exist in some contexts. This method allows the system to reclaim memory automatically when it's no longer in use. However, implementing automatic garbage collection in C++ is not straightforward and may not be suitable for all applications. 
 
-We've previously touched on references in C++, but it's worth delving a bit deeper, especially in the context of pointers and memory management.
+
+
+
+## References
+
+We've use the word "reference" alot and now it's time to learn about references. Don't worry, this will be a lot shorter than the pointers section.
 
 References in C++ provide a way to create an alias, or another name for a variable. Unlike pointers, references must be initialized when declared and cannot be null. They provide a more convenient and safer way to work with data.
 
 ### Creating References
 
-A reference variable is created with the `&` operator and must be initialized with an existing variable. Here's an example:
+A reference variable is created with the `&` operator and must be initialized with an existing variable. Here's an example that will cover most of what you need to know:
 
 ```c++
 int originalValue = 42;
@@ -206,53 +307,58 @@ aliasValue = 10; // Modifying the reference also modifies the original value
 cout << originalValue << "\n"; // Outputs 10
 ```
 
-Both `originalValue` and `aliasValue` refer to the same underlying data, so changes to one will affect the other
-Certainly! I've revised the sections to address your concerns:
+Both `originalValue` and `aliasValue` refer to the same underlying data, so changes to one will affect the other.
 
 
-## Pass by Reference vs. Pass by Value
 
-In C++, you can pass variables to functions either by reference or by value.
 
-- **Pass by Value**: The function receives a copy of the variable. Changes inside the function do not affect the original variable.
+### Range-Based For Loops and Passing Vectors to Functions
 
-  ```c++
-  void modifyValue(int value) {
-      value = 99; // Does not affect the original variable
-  }
-  ```
+In C++, when you pass an array or vector to a function, it gets automatically converted to a pointer to its first element, losing information about the size of the array. This conversion effectively decays the array into a pointer, making constructs like range-based for loops unusable.
 
-- **Pass by Reference**: The function receives a reference to the original variable. Changes inside the function affect the original variable.
+Essentialy, if we were to implement a function like the one below, `numbers` will be treated as a pointer with in the function. As we learned, C++ doesnt know how large an array is that is pointed to be a pointed. That means that a for-each leap like below wouldn't know when to stop:
 
-  ```c++
-  void modifyReference(int &value) {
-      value = 99; // Modifies the original variable
-  }
-  ```
-
-When you pass an array to a function, it gets automatically converted to a pointer to its first element, losing information about the size of the array. This conversion effectively decays the array into a pointer, making constructs like range-based for loops unusable.
-
-### Range-Based For Loops and `auto&`
-
-By passing the array by reference, you preserve the full type information, including the size of the array. This allows the range-based for loop to work correctly:
+```c++
+void doubleElements(vector<int> numbers) {
+    for (int number : numbers) {
+        //code
+    }
+}
+```
+Similarly, even if we define the parameter to be an array, and specify it's size the code won't run and experience the same problem:
+```c++
+void doubleElements(int numbers[3]) {
+    for (int number : numbers) {
+        //code
+    }
+}
+```
+The solution is to clarify to the compiler that we want the reference . By passing the array by reference, you preserve the full type information, including the size of the array. This allows the range-based for loop to work correctly:
 
 ```c++
 void doubleElements(vector<int> &numbers) {
-    for (auto& number : numbers) {
+    for (int& number : numbers) {
         number *= 2; // Modifies the original elements
     }
 }
 ```
 
-Here, `auto&` infers the type of the elements in the container and creates a reference to each element, allowing you to modify the original elements within the loop.
+Here, `doubleElements` expects a reference to a vector<int>, so it operates directly on the vector passed as an argument. Notice we also use the reference operator (`&`) in the loop itself. This indicates that each `number` is a reference to the actual element in the vector, rather than a copy of it.
+
+## Summary
+
+Working with pointers and references brings us closer to the hardware, where we have only a few primitive operations and minimal protection from the language or standard library. While this level of programming can be challenging, it's essential for understanding how higher-level facilities are implemented and for writing specialized code.
+
+There is still more to learn about pointers, references and memory management but for now we have enough new material to work with. 
+
+Make sure to complete the practice problems below before moving on to the next chapter. 
+
 
 ## Practice Problems
 
 1. **Pointer Basics**: Write a function that takes a pointer to an array and the array's size, then doubles each element in the array.
 2. **Reference Swap**: Write a function that swaps the values of two integers using references.
 3. **Range-Based Loop Modification**: Write a function that takes a vector of integers and uses a range-based for loop with `auto&` to increment each element by a given value.
-4. **Garbage Collection Research**: Investigate available garbage collection libraries for C++ and write a brief summary of how they work and when they might be used.
-Certainly! Here are some additional practice problems that integrate concepts from previous lessons:
 
 5. **Math with Pointers**: Write a function that takes two pointers to integers and returns the result of a mathematical operation (e.g., addition, subtraction, multiplication) performed on the values they point to. Use functions from the `cmath` library to perform more complex operations if desired.
 
@@ -262,17 +368,10 @@ Certainly! Here are some additional practice problems that integrate concepts fr
 
 8. **Conditional Pointer Manipulation**: Write a function that takes a pointer to an array of integers and the array's size. Use conditional statements to find and replace all even numbers in the array with their half value, and all odd numbers with their double value.
 
-9. **Time-Based Array Initialization**: Write a program that dynamically allocates an array of integers and initializes it with values based on the current time (e.g., seconds since the epoch). Use the `ctime` library to get the current time, and don't forget to free the memory when done.
 
-10. **Function Pointers and Operations**: Write a program that takes two integers and a function pointer as parameters. The function pointer should point to a function that performs a mathematical operation (e.g., addition, subtraction) on the two integers. Demonstrate how to call this function within your program.
 
-11. **Sorting with References**: Write a function that takes a reference to a vector of integers and sorts it in ascending order. You can implement any sorting algorithm you like, or use functions from the Standard Library.
+11. **Are strings palindromes**: Write a function that takes a array of strings and returns an array of all the locations of the palindromes. 
 
-12. **String Manipulation with Pointers**: Write a function that takes a pointer to a string and performs some string manipulation (e.g., reversing the string, converting to uppercase). Demonstrate this with various strings.
-
-These problems cover a wide range of topics and should provide a comprehensive practice experience for the students.
-
-These sections and practice problems should provide a comprehensive understanding of pointers, references, memory management, and related concepts in C++.
 
 
 ## Bibliography

@@ -29,7 +29,7 @@ Understanding and effectively utilizing functions is a key step in becoming prof
 
 In C++, a function is a group of statements that is given a name, and which can be called from some point of the program. The main function (`main()`) is the starting point of every C++ program.
 
-The syntax for declaring a function in C++ is as follows:
+The syntax for defining a function in C++ is as follows:
 
 ```C++
 return_type function_name( parameter list ) {
@@ -47,13 +47,28 @@ Where:
 
 ## Function Definition and Declaration
 
-A function declaration tells the compiler about a function's name, return type, and parameters, but it doesn't provide the actual body of the function.
+To use a function in C++ we must first **declare** it. A function declaration differs from a function defenition as its only role is to tell the compiler about the function's name, return type, and parameters, but it doesn't provide the actual body of the function.
 
-A function definition, on the other hand, provides the actual body of the function. Here's an example of a function declaration and definition:
+In a way, you can think of a function definition as a way to give our computer a "heads up" that we will eventually have a function in our program with a given return type, name and parameters.
+
+To declare a function we use the following syntax:
+```C++
+return_type function_name( parameter list );
+```
+
+The function declaration ALWAYS comes before the definition. For example see the code below:
 
 ```C++
+#include <iostream>
+using namespace std;
+
 // function declaration
 void printMessage();
+
+// main function
+int main() {
+    printMessage(); //function call
+}
 
 // function definition
 void printMessage() {
@@ -63,7 +78,7 @@ void printMessage() {
 
 ## Function Call
 
-A function call is how we execute a function in C++. We specify the function name and the values (if any) for its parameters. Here's an example:
+Once you've declare and defined you function, how do you use it? functions are used by invoking a **function call**. A function call is how we execute a function in C++. We specify the function name and the values (if any) for its parameters. Here's an example:
 
 ```C++
 int main() {
@@ -73,35 +88,88 @@ int main() {
 }
 ```
 
-## Types of Functions
-
-In C++, there are two types of functions:
-
-1. **Predefined Functions:** These are the functions that are already defined in C++ Library, also known as library functions. For example, `main()`, `cout()`, etc.
-
-2. **User-Defined Functions:** These are the functions that are defined by the user at the time of writing the program.
-
 ## Function Parameters and Arguments
 
-Parameters are the variables listed inside the parentheses in the function declaration. When a function is invoked, you pass a value to the parameter. This value is referred to as an argument. Here's an example:
+In your math class, you may have learned about functions of the form `f(x)=ax+b`. If you recall, mathematical functions map inputs to outputs. In programming, this is the same case. 
+
+In the above `printMessage` example we have no inputs (which is an input in itself), and the same output everytime (print hellow world to our console). 
+
+To add inputs to our functions we will use what is referred to as **parameters**. 
+
+Parameters are the variables listed inside the parentheses in the function declaration and definition. When a function is invoked, you pass a value to the parameter. This value is referred to as an argument. Here's an example:
 
 ```C++
-// function declaration and definition
-void printSum(int a, int b) {
-   int sum = a + b;
-   cout << "The sum is: " << sum << endl;
-}
+// function declaration
+void printSum(int a, int b);
 
 int main() {
    // function call
    printSum(5, 10);  // outputs: The sum is: 15
    return 0;
 }
+
+// function definition
+void printSum(int a, int b) {
+   int sum = a + b;
+   cout << "The sum is: " << sum << endl;
+}
 ```
 
 In this example, `a` and `b` are parameters, and `5` and `10` are arguments.
 
+## Scope and a Note About Parameters and Arguments
+
+New programmers often strugle with differentiating between parameters and arguments.
+
+Lets change the above example slightly to make this distinction clearer, and introduce a new concept - **scope**.
+
+```C++
+// function declaration
+void printSum(int a, int b); // declared in the global scope
+
+int c = 20; // variable in global scope
+
+int main() {
+   int a = 5;
+   int b = 10;
+   int d = 15;
+   cout << c;
+   cout << d; // declared in a local scope
+   printSum(a, b);  // outputs: The sum is: 15
+   return 0;
+}
+
+// function definition
+void printSum(int a, int b) {
+   int sum = a + b;
+   cout << "The sum is: " << sum << endl;
+   cout << c;
+   cout << d; // d does not exist in this scope, will not compile
+}
+```
+In the above example we see the variables `int a` and `int b` declared three times. Once in the function declaration, once in the function definition, and onse in `main()`.
+
+You may recall from the chapter about variables, that we are only allowed to declare variables ONCE. This is still the case, but it is true only within a given **scope**. 
+
+A scope is the part of a program where a name can be used to refer to some entity in our program. In the above example, we have three scopes: the global scope, and two local scopes.
+
+- The global scope, in short, is the whole file. Anything declared here will be available in all parts of the file, i.e., we can use or print `c` form the above code anywhere in the code. 
+
+- A local scope, in short, is the piece of code enclosed between two curly brackets. Any variable declared in a local scope will only be accesible with in that scope, i.e., `d` from the above code will only be accesible in `main()`.
+
+
+So why do we do declare `a` and `b` three times?
+- In the function declaration, as mentioned before, we are giving a heads up to the compiler that the function `printSum` exists, and once we use it we will need to create two new integer variables.
+- In the function definition, we declare two variables to be used as our parameters. These parameters will hold the data passed to them until we are done using the function. They cease to exist when the function finishes it's duty.
+- In `main()` we declare the variables for the sake of this example and to confuse you a bit. The variables will hold data, that will be passed as arguments to our function. These arguments will be saved in to the function parameters until the function finishes it's duty. The key here is to understand that `a` and `b` from `main()` are not the same `a` and `b`from `printSum`.
+
+
+
 ## Return Values
+
+We talked about inputs in the previous subsection, but what about outputs? In the `printSum` and `printMessage` example our output was of type `void`. `void` outputs mean that the function output will be some sort of internal computational operation. In the given examples this was printing to the console.
+
+Sometimes, we want our function output to be some data that we can use later in our program. To do so we use need to `return` the data.
 
 A C++ function can return a value using the `return` statement in conjunction with a value or object. This value is considered the "output" of the function. Here's an example:
 
@@ -149,7 +217,6 @@ int main() {
 
 Function overloading helps in writing flexible code, where a function's name succinctly expresses its purpose, while its varying parameters handle different specific cases. It allows programmers to write functions that can handle different data types and numbers of arguments, without needing to create a unique name for each variation.
 
-
 ## Summary
 
 With our understanding of functions, we've added a transformative tool to our coding arsenal. It's time to review what we've covered in this chapter, highlighting the crucial takeaways before embarking on our next programming adventure.
@@ -158,13 +225,16 @@ With our understanding of functions, we've added a transformative tool to our co
 
 - A **function** in C++ is defined with a return type, a function name, and a list of parameters enclosed in parentheses. The code to be executed is placed within curly braces `{}`.
 
-- The **return type** of a function defines the type of value the function will return. It can be any valid data type. If the function does not return a value, the return type should be `void`.
+- **Function calls** are used to invoke functions. The function name is written followed by parentheses, with any required arguments placed inside the parentheses.
 
 - **Parameters** are specified in the function declaration within the parentheses following the function name. They act as placeholders for the values that are passed into the function when it is called.
 
+- The **return type** of a function defines the type of value the function will return. It can be any valid data type. If the function does not return a value, the return type should be `void`.
+
+
 - The **function body** contains the block of code that performs the specific task of the function.
 
-- **Function calls** are used to invoke functions. The function name is written followed by parentheses, with any required arguments placed inside the parentheses.
+- **Scope** is a section of a program in which a declared variable or function can be called.
 
 - The **main()** function is a special function that serves as the entry point of the C++ program. Execution of the program begins and ends with the main function.
 
