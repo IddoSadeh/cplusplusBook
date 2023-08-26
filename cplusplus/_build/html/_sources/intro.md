@@ -2,9 +2,11 @@ Note: This textbook is a work in progress. last updated August 15, 2023.
 
 # Welcome!
 
-This website is built by <http://www.isadeh.com>. I aim to use this website to upload and organize all my teaching materials. Currently I am working on a [C++](cplusplus/start.md) textbook. In the future I'd like to compile a [AP CSA - Java  textbook](java/start.md) as well as an [Intro to Programming wtih Python textbook](py/start.md).
+This website is built by <http://www.isadeh.com>. I aim to use this website to upload and organize all my teaching and learning materials. 
 
- Click a section in the table of contents on the left side of the page to navigate to it. If you are on a mobile device, you may need to open the table of contents first by clicking the menu button on the top left of the page.
+The available textbook are:
+- [C++](cplusplus.programado.dev) - work in progress
+
 
 
 <!-- # My Teaching Ideology
