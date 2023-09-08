@@ -223,7 +223,10 @@ In the next chapter, we'll talk more about C++ standard libraries.
 
 8. **Challenging - Dynamic Resizing with Vectors:** Write a program that starts with an empty vector of integers. Allow the user to continuously add numbers to the vector until they enter a specific sentinel value (such as -1). After that, print the entire vector and its size. Then, allow the user to remove numbers from the end until they enter the sentinel value again.
 
-Remember to refer back to the concepts and examples in this chapter as you work on these problems. Happy coding!
+Remember to refer back to the concepts and examples in this chapter as you work on these problems.
+
+Happy coding!
+
 ## Bibliography
 ```{bibliography}
 :filter: docname in docnames

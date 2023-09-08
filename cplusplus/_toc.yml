@@ -15,4 +15,6 @@ parts:
   - file: cplusplus/arrays.md
   - file: cplusplus/libraries.md
   - file: cplusplus/pointandref.md
+  - file: cplusplus/oop.md
+  # - file: cplusplus/struct.md
 
