@@ -48,7 +48,6 @@ if (a > 5) {
 
 In this case, since `a` is not greater than 5, the condition `a > 5` is false, so the code within the `else` statement is executed.
 
-
 ### `if-else-if`
 
 In situations where you have multiple conditions to test, you can use the `if-else-if` construct. This allows you to check several conditions one after the other, and the first condition that is true will have its associated code block executed. Once a true condition is found, the rest of the conditions will be skipped.

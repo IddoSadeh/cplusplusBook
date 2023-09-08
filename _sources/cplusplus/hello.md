@@ -212,7 +212,6 @@ The common types and their basic constraints you will see in the next few lesson
 ### Circling Back
 So why did we see a logic error in the example from  section 2.3.3? The problem lies in the type we used along with the promises we made to our user. When we defined a variable as `int`, our computer expected we only store whole numbers in it. If you tried to enter a decimal in the program with the logic error, the computer will ignore any decimal input. To fix our logic error, we should have used the `double` type to insure our code will work for all inputs. 
 
-
 ## Bibliography
 ```{bibliography}
 :filter: docname in docnames

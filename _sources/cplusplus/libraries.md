@@ -147,8 +147,6 @@ Happy coding!
 
 
 
-
-
 ## Bibliography
 ```{bibliography}
 :filter: docname in docnames

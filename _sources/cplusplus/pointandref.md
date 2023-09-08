@@ -11,7 +11,6 @@ By the end of this chapter, you should be able to:
 ```{contents}
 ```
 
-
 ## Pointers
 
 Previously, we imagined your computer's memory as a vast sequence of tiny compartments, each capable of holding a small piece of data. 

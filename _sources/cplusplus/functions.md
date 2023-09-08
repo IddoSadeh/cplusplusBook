@@ -11,7 +11,6 @@ In the last chapter we learned about conditional statements as control structure
 
 ## Functions in C++
 
-
 In any programming language, functions serve as an essential tool for structuring and organizing code. In C++, this is no exception. Functions play a vital role in the creation of efficient, manageable, and coherent code. 
 
 Functions offer numerous advantages:

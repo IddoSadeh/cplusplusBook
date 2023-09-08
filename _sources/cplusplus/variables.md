@@ -438,7 +438,7 @@ string s = "Hello, World!";
 ```
 
 **String Operations**
-
+ 
 C++ provides a rich set of operations for manipulating strings:
 
 - Concatenation: You can concatenate, or join, two strings using the + operator:
